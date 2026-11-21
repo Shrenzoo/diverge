@@ -14,3 +14,4 @@ try {
     'CONTRIBUTING.md',
     'SECURITY.md',
     'package.json',
+    '.github/workflows/ci.yml',
