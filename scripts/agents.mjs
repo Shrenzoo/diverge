@@ -29,3 +29,11 @@ export function probe(agent) {
     reason: missing.length ? 'Missing CLI options: ' + missing.join(', ') : null,
   };
 }
+
+export function invocation(agent, condition, model, prompt) {
+  const explicit = agent === 'codex' ? 'Use $diverge. ' : '/diverge ';
+  const task = (condition === 'explicit' ? explicit : '') + prompt;
+  if (agent === 'codex')
+    return [
+      '-a',
+      'never',
