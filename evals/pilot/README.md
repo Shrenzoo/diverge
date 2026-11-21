@@ -6,3 +6,4 @@ Four fresh Codex-hosted agent sessions completed two tasks. Each pair received s
 
 The coordinator needed to fill a vacancy with volunteers who can call or text, including volunteers offering only partial coverage. Both artifacts were checked against the original [brief](../fixtures/shift-desk/brief.md). Each added only the requested plan. The baseline and explicit artifacts are preserved verbatim.
 
+| Artifact | Competing offers | Weak point observed |
