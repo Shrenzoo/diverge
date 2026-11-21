@@ -52,3 +52,5 @@ export async function validateSkill() {
   for (const name of required) assert(files.includes(name), `Missing ${name}`);
   assert.deepEqual(
     await fs.readFile(path.join(source, 'LICENSE')),
+    await fs.readFile(path.join(root, 'LICENSE')),
+    'Bundled license differs from repository license',
