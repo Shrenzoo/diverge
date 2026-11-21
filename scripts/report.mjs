@@ -135,3 +135,9 @@ export function report(manifest, ratings = []) {
     if (rows.length > 1)
       lines.push(
         '',
+        'Reviewer ranges: ' +
+          dimensions
+            .map((k) => {
+              const xs = rows.map((x) => x.scores[k]);
+              return k + ' ' + Math.min(...xs) + '–' + Math.max(...xs);
+            })
