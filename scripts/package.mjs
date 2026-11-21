@@ -37,3 +37,5 @@ export async function validateSkill() {
     'scripts/config.mjs',
     'references/config.schema.json',
     ...[
+      'activation',
+      'creative-workflow',
