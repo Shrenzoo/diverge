@@ -23,3 +23,4 @@ Each host is locked in a fixed order. Both destinations are preflighted before e
 
 ## Runtime boundary
 
+Skill instructions run in the host's normal permission model. The package has no telemetry or analytics. Its local tools never send source to a service. Using a hosted coding agent remains subject to that provider's normal data handling. The optional live evaluator invokes the selected provider CLI with synthetic fixtures and a dedicated API key. Provider charges and network traffic can result. The runner passes no shell command supplied by a case and does not execute generated application code to grade it.
