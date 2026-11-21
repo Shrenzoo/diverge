@@ -59,3 +59,6 @@ For illustrative UI, product, architecture, diagnosis, and Wildcard use cases, s
 | Adaptive | Match exploration to the task. |
 | Director | Examine hierarchy, interaction, feedback, and consistency. |
 | First Principles | Reconstruct the problem and test which layers or steps it needs. |
+| Wildcard | Explore a larger reframing and test the functional value of the strongest idea. |
+
+Place an optional `diverge.config.json` in the project root. These are the defaults:
