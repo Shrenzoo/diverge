@@ -25,3 +25,5 @@ test('schema defaults and configured modes resolve independently', () => {
     'docs/assets',
     'a b',
   ]);
+});
+
