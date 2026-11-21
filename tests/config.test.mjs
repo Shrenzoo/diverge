@@ -8,3 +8,5 @@ import { defaults, preferences, loadConfig, schema } from '../skills/diverge/scr
 import { source, validateSkill } from '../scripts/package.mjs';
 
 test('the portable skill validates, including all local references', async () => {
+  assert((await validateSkill()).includes('agents/openai.yaml'));
+});
