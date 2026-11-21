@@ -18,3 +18,10 @@ test('each evaluation budget and both selection expectations are exercised', asy
   const cases = await loadCases();
   assert.equal(new Set(cases.map((c) => c.budget)).size, 4);
   assert.equal(new Set(cases.map((c) => c.activation)).size, 2);
+});
+
+test('onboarding acceptance walks both routes and rejects broken transitions', async (t) => {
+  const dir = await scratch(t);
+  const c = (await loadCases()).find((c) => c.id === 'onboarding');
+  await fs.cp(path.join(fixtures, c.fixture), dir, { recursive: true });
+  const before = await snapshot(dir);
