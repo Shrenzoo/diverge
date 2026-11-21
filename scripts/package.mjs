@@ -76,3 +76,6 @@ export async function validateSkill() {
       assert(files.includes(target), `Broken reference in ${name}: ${match[1]}`);
     }
   }
+  preferences(defaults());
+  return files;
+}
