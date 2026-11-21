@@ -13,3 +13,4 @@ A diagnosis-first flow helps visitors who do not know which service to request. 
 ## A product trial
 
 A startup wants to increase repeat bookings. Compare a reminder the customer requests, a saved booking draft, and a subscription proposal. The first tests timing. The second tests repeated effort. The third assumes willingness to pay and changes the purchase relationship. A trial can measure completed repeat requests with informed participation. Billing changes need explicit authorization.
+
