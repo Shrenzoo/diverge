@@ -18,3 +18,4 @@ A startup wants to increase repeat bookings. Compare a reminder the customer req
 
 Two local views refresh after one SQLite save. Notify them after commit and reload from storage on restart. A transaction failure must leave both views unchanged. Add durable delivery only when an independently running consumer needs it. The simplest eligible mechanism can win.
 
+## A bug, an exact edit, and a wildcard
