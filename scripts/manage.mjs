@@ -211,3 +211,10 @@ export async function manage(operation, args = process.argv.slice(2)) {
         if (['install', 'replace'].includes(plan.action)) await install(target, plan, hashes);
         if (plan.action === 'uninstall') await uninstall(target.dest, plan);
       }
+      console.log(`${values['dry-run'] ? 'Would inspect/apply' : 'Result'} (${plan.action}): ${target.dest}`);
+      if (operation === 'install' && !values['dry-run']) console.log(instructions[target.agent]);
+    }
+  } finally {
+    for (const lock of locks.reverse()) await fs.rmdir(lock);
+  }
+}
