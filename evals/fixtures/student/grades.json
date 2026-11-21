@@ -1,0 +1,17 @@
+{
+  "courses": [
+    {
+      "name": "History",
+      "earned": 68,
+      "possible": 80,
+      "nextAssignmentPoints": 20
+    },
+    {
+      "name": "Art",
+      "earned": 0,
+      "possible": 0,
+      "nextAssignmentPoints": 10
+    }
+  ],
+  "targetPercent": 80
+}

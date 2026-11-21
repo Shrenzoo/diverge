@@ -1,0 +1,220 @@
+import * as fs from 'node:fs/promises';
+import path from 'node:path';
+import os from 'node:os';
+import { randomUUID } from 'node:crypto';
+import { parseArgs } from 'node:util';
+import { digest, filesIn, source, stat, validateSkill } from './package.mjs';
+
+const receipt = '.diverge-install.json';
+const hosts = { codex: '.agents', claude: '.claude' };
+const instructions = { codex: 'In Codex, use $diverge.', claude: 'In Claude Code, use /diverge.' };
+
+async function directory(dir, create = false) {
+  if (create) {
+    try {
+      await fs.mkdir(dir);
+    } catch (error) {
+      if (error.code !== 'EEXIST') throw error;
+    }
+  }
+  const info = await stat(dir);
+  if (info && !info.isDirectory()) throw new Error(`Expected a real directory: ${dir}`);
+  return !!info;
+}
+
+async function parentsOK(root, name) {
+  let parent = root;
+  for (const segment of name.split('/').slice(0, -1)) {
+    parent = path.join(parent, segment);
+    if (!(await stat(parent))?.isDirectory()) return false;
+  }
+  return true;
+}
+
+async function matches(dir, name, hash) {
+  if (!(await parentsOK(dir, name))) return false;
+  const file = path.join(dir, name);
+  return (await stat(file))?.isFile() && digest(await fs.readFile(file)) === hash;
+}
+
+async function readReceipt(dir, names) {
+  const file = path.join(dir, receipt);
+  const info = await stat(file);
+  if (!info) return null;
+  if (!info.isFile()) throw new Error(`Unsafe receipt: ${file}`);
+  const data = JSON.parse(await fs.readFile(file, 'utf8'));
+  if (
+    data?.format !== 1 ||
+    data.skill !== 'diverge' ||
+    !data.files ||
+    Array.isArray(data.files) ||
+    typeof data.files !== 'object'
+  )
+    throw new Error(`Invalid receipt: ${file}`);
+  for (const [name, hash] of Object.entries(data.files)) {
+    if (!names.includes(name) || typeof hash !== 'string' || !/^[a-f0-9]{64}$/.test(hash))
+      throw new Error(`Unrecognized receipt entry: ${name}. Original files preserved.`);
+  }
+  return data.files;
+}
+
+async function inspect(target, operation, replace, hashes) {
+  const { parent, meta, dest } = target;
+  await directory(meta);
+  await directory(parent);
+  if (!(await directory(dest))) return { action: operation === 'install' ? 'install' : 'absent' };
+  let old;
+  try {
+    old = await readReceipt(dest, Object.keys(hashes));
+  } catch (error) {
+    if (operation !== 'install' || !replace) throw error;
+    // Only a full-directory backup authorizes replacing an unreadable or older receipt.
+    console.warn(`Backing up conflicting installation with unrecognized receipt: ${dest}`);
+  }
+  if (operation === 'uninstall') {
+    if (!old) throw new Error(`Unmanaged installation: ${dest}. Review its files manually.`);
+    const remove = [];
+    for (const [name, hash] of Object.entries(old)) if (await matches(dest, name, hash)) remove.push(name);
+    return { action: 'uninstall', remove, old };
+  }
+  if (old && Object.keys(old).length === Object.keys(hashes).length) {
+    let identical = true;
+    for (const [name, hash] of Object.entries(hashes))
+      if (old[name] !== hash || !(await matches(dest, name, hash))) {
+        identical = false;
+        break;
+      }
+    if (identical) return { action: 'up to date' };
+  }
+  if (!replace)
+    throw new Error(`Conflicting installation: ${dest}. Review first, then use --replace to back it up.`);
+  const extras = (await filesIn(dest)).filter((name) => name !== receipt && !Object.hasOwn(hashes, name));
+  return { action: 'replace', extras };
+}
+
+async function copyFile(from, to, name) {
+  await fs.mkdir(path.dirname(path.join(to, name)), { recursive: true });
+  await fs.copyFile(path.join(from, name), path.join(to, name), fs.constants.COPYFILE_EXCL);
+}
+
+async function install(target, plan, hashes) {
+  const stage = await fs.mkdtemp(path.join(target.meta, '.diverge-stage-'));
+  let backup;
+  try {
+    for (const [name, hash] of Object.entries(hashes)) {
+      await copyFile(source, stage, name);
+      if (!(await matches(stage, name, hash))) throw new Error(`Source changed while copying: ${name}`);
+    }
+    for (const name of plan.extras ?? []) await copyFile(target.dest, stage, name);
+    await fs.writeFile(
+      path.join(stage, receipt),
+      JSON.stringify({ format: 1, skill: 'diverge', files: hashes }, null, 2) + '\n',
+      { flag: 'wx' },
+    );
+    if (plan.action === 'replace') {
+      backup = path.join(target.meta, `.diverge-backup-${randomUUID()}`);
+      await fs.rename(target.dest, backup);
+      console.log(`Backup: ${backup}`);
+    }
+    try {
+      await fs.rename(stage, target.dest);
+    } catch (error) {
+      if (backup && !(await stat(target.dest))) await fs.rename(backup, target.dest);
+      throw error;
+    }
+  } finally {
+    // Only the private directory created by mkdtemp above is eligible for recursive cleanup.
+    await fs.rm(stage, { recursive: true, force: true });
+  }
+}
+
+async function uninstall(dest, { remove, old }) {
+  const dirs = new Set();
+  for (const name of remove) {
+    if (!(await matches(dest, name, old[name]))) continue;
+    await fs.unlink(path.join(dest, name));
+    let dir = path.posix.dirname(name);
+    while (dir !== '.') {
+      dirs.add(dir);
+      dir = path.posix.dirname(dir);
+    }
+  }
+  await fs.unlink(path.join(dest, receipt));
+  for (const dir of [...dirs].sort((a, b) => b.length - a.length).concat('')) {
+    try {
+      await fs.rmdir(path.join(dest, dir));
+    } catch (error) {
+      if (!['ENOTEMPTY', 'EEXIST', 'ENOENT'].includes(error.code)) throw error;
+    }
+  }
+  if (await stat(dest)) console.log(`Preserved remaining contents in ${dest}`);
+}
+
+export async function manage(operation, args = process.argv.slice(2)) {
+  const options = {
+    agent: { type: 'string' },
+    scope: { type: 'string' },
+    'project-dir': { type: 'string' },
+    'dry-run': { type: 'boolean' },
+    help: { type: 'boolean' },
+  };
+  if (operation === 'install') options.replace = { type: 'boolean' };
+  const { values } = parseArgs({ args, options });
+  if (values.help) {
+    console.log(
+      `node scripts/${operation}.mjs --agent codex|claude|both --scope project|user [--project-dir PATH] [--dry-run]${operation === 'install' ? ' [--replace]' : ''}`,
+    );
+    return;
+  }
+  if (!['codex', 'claude', 'both'].includes(values.agent) || !['user', 'project'].includes(values.scope))
+    throw new Error('Choose --agent codex|claude|both and --scope user|project. See --help.');
+  if (values['project-dir'] && values.scope !== 'project')
+    throw new Error('--project-dir requires --scope project');
+  const base = await fs.realpath(
+    values.scope === 'user' ? os.homedir() : (values['project-dir'] ?? process.cwd()),
+  );
+  if (!(await directory(base))) throw new Error(`Missing root: ${base}`);
+  const names = await validateSkill();
+  const hashes = Object.fromEntries(
+    await Promise.all(names.map(async (n) => [n, digest(await fs.readFile(path.join(source, n)))])),
+  );
+  const targets = (values.agent === 'both' ? ['codex', 'claude'] : [values.agent]).map((agent) => {
+    const meta = path.join(base, hosts[agent]);
+    const parent = path.join(meta, 'skills');
+    const dest = path.join(parent, 'diverge');
+    if (dest.startsWith(source + path.sep) || source.startsWith(dest + path.sep) || dest === source)
+      throw new Error('Installation overlaps the package source');
+    return { agent, meta, parent, dest };
+  });
+  const locks = [];
+  try {
+    for (const target of targets) {
+      // Validate every existing ancestor before creating descendants. Dry runs create nothing.
+      await directory(target.meta, operation === 'install' && !values['dry-run']);
+      await directory(target.parent, operation === 'install' && !values['dry-run']);
+      if (!values['dry-run'] && (await stat(target.meta))) {
+        const lock = path.join(target.meta, '.diverge-lock');
+        try {
+          await fs.mkdir(lock);
+        } catch (error) {
+          if (error.code === 'EEXIST') throw new Error(`Installation busy: ${lock}`);
+          throw error;
+        }
+        locks.push(lock);
+      }
+    }
+    const plans = [];
+    for (const target of targets) plans.push(await inspect(target, operation, values.replace, hashes));
+    for (const [i, target] of targets.entries()) {
+      const plan = plans[i];
+      if (!values['dry-run']) {
+        if (['install', 'replace'].includes(plan.action)) await install(target, plan, hashes);
+        if (plan.action === 'uninstall') await uninstall(target.dest, plan);
+      }
+      console.log(`${values['dry-run'] ? 'Would inspect/apply' : 'Result'} (${plan.action}): ${target.dest}`);
+      if (operation === 'install' && !values['dry-run']) console.log(instructions[target.agent]);
+    }
+  } finally {
+    for (const lock of locks.reverse()) await fs.rmdir(lock);
+  }
+}

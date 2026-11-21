@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diverge"
+  short_description: "Explore useful alternatives for open-ended work"
+  default_prompt: "Use $diverge to improve the workflow within my existing constraints."

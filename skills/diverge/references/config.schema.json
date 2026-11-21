@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Diverge project preferences",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "mode": {
+      "type": "string",
+      "enum": [
+        "adaptive",
+        "director",
+        "first-principles",
+        "wildcard"
+      ],
+      "default": "adaptive"
+    },
+    "creativity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "balanced",
+        "high",
+        "experimental"
+      ],
+      "default": "balanced"
+    },
+    "interaction": {
+      "type": "string",
+      "enum": [
+        "autonomous",
+        "collaborative"
+      ],
+      "default": "autonomous"
+    },
+    "maxCandidates": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "default": 3
+    },
+    "maxRefinementPasses": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2,
+      "default": 1
+    },
+    "respectExistingDesignSystem": {
+      "type": "boolean",
+      "default": true
+    },
+    "allowMajorRedesignWithoutApproval": {
+      "type": "boolean",
+      "default": false
+    },
+    "showCreativeRationale": {
+      "type": "string",
+      "enum": [
+        "none",
+        "brief",
+        "detailed"
+      ],
+      "default": "brief"
+    },
+    "excludedPaths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(?![A-Za-z]:)(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/\\\\:\\u0000-\\u001f]+(?:/[^/\\\\:\\u0000-\\u001f]+)*$"
+      },
+      "uniqueItems": true,
+      "default": [
+        "vendor",
+        "node_modules",
+        "dist"
+      ]
+    }
+  }
+}
