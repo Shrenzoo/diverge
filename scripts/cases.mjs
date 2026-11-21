@@ -36,3 +36,7 @@ export async function loadCases() {
       if (check.replace) assert(input.includes(check.file) && check.replace.length === 2, c.id);
     }
   }
+  return cases;
+}
+
+// Inventory dotfiles as well. Never dereference links or copy device nodes into review bundles.
