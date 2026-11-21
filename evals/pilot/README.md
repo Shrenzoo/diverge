@@ -26,3 +26,4 @@ After this review, the product guide gained a trial-specific check for eligible 
 
 ## Narrow repair
 
+Both agents received the same [broken workflow](../fixtures/broken/flow.json). The task required correcting only the confirm target. Both changed `don` to `done`, preserved all other values and files, produced valid JSON, and passed the public route test (`continue`, `save`, `confirm`). The two outputs were byte-identical. See the [resulting workflow](fixed-flow.json). This case used the deterministic grader and received no subjective ratings.
