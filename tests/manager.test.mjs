@@ -80,3 +80,8 @@ test('two-host preflight detects an unmanaged second target before replacing the
   await assert.rejects(fs.access(path.join(dir, '.agents', 'skills', 'diverge')), { code: 'ENOENT' });
   assert.notEqual(command(dir, 'uninstall', ['--agent', 'claude', '--scope', 'project']).status, 0);
   ok(command(dir, 'install', [...both, '--replace']));
+  assert.equal(await fs.readFile(path.join(unmanaged, 'notes'), 'utf8'), 'mine');
+});
+
+test('host roots and installed parent links cannot redirect writes or removal', async (t) => {
+  const dir = await sandbox(t),
