@@ -11,3 +11,4 @@ Start with the narrowest row that can settle a real choice. Openness means an im
 
 Increase breadth for a requested departure with a practical upside. Lower it for regressions, expensive verification, little time, or little freedom. A consequential decision can warrant deep **proposal** work while execution waits for approval. These are heuristics.
 
+“Only fix this bug,” exact visual reproduction, a dependency pin, an exact API, formatting, running tests, explanation of an error, and a security patch suppress redesign even under explicit invocation. Difficult diagnosis can need multiple hypotheses while the repair remains narrow.
