@@ -98,3 +98,9 @@ async function copyFile(from, to, name) {
 }
 
 async function install(target, plan, hashes) {
+  const stage = await fs.mkdtemp(path.join(target.meta, '.diverge-stage-'));
+  let backup;
+  try {
+    for (const [name, hash] of Object.entries(hashes)) {
+      await copyFile(source, stage, name);
+      if (!(await matches(stage, name, hash))) throw new Error(`Source changed while copying: ${name}`);
