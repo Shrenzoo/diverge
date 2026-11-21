@@ -178,3 +178,9 @@ export async function manage(operation, args = process.argv.slice(2)) {
   const hashes = Object.fromEntries(
     await Promise.all(names.map(async (n) => [n, digest(await fs.readFile(path.join(source, n)))])),
   );
+  const targets = (values.agent === 'both' ? ['codex', 'claude'] : [values.agent]).map((agent) => {
+    const meta = path.join(base, hosts[agent]);
+    const parent = path.join(meta, 'skills');
+    const dest = path.join(parent, 'diverge');
+    if (dest.startsWith(source + path.sep) || source.startsWith(dest + path.sep) || dest === source)
+      throw new Error('Installation overlaps the package source');
