@@ -5,3 +5,4 @@ Give each artifact to a reviewer with the original brief, starter files, and thi
 | Score | Originality | Usefulness | Problem alignment | Feasibility | Execution quality | Simplicity |
 | --- | --- | --- | --- | --- | --- | --- |
 | 0 | Repeats the prompt | Cannot be used | Wrong problem | Impossible under constraints | No deliverable | Complexity prevents use |
+| 1 | Cosmetic variation | Trivial benefit | Addresses a symptom | Critical resource missing | Bare outline or broken primary path | Extra system dominates |
