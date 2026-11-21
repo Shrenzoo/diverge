@@ -68,3 +68,6 @@
         "pattern": "^(?![A-Za-z]:)(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/\\\\:\\u0000-\\u001f]+(?:/[^/\\\\:\\u0000-\\u001f]+)*$"
       },
       "uniqueItems": true,
+      "default": [
+        "vendor",
+        "node_modules",
