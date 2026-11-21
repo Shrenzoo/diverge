@@ -16,3 +16,7 @@ function command(dir, script, args) {
     cwd: dir,
     env: { ...process.env, HOME: dir, USERPROFILE: dir },
     encoding: 'utf8',
+  });
+}
+function ok(output) {
+  assert.equal(output.status, 0, output.stderr);
