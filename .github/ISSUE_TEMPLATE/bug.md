@@ -7,3 +7,4 @@ labels: bug
 
 ## Expected and observed behavior
 
+## Minimal reproduction
