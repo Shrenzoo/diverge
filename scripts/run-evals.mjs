@@ -118,3 +118,8 @@ async function main() {
   const adapter = probe(v.agent);
   const skip =
     adapter.reason ||
+    (!v.live
+      ? 'Preflight only. Use --live to call the provider.'
+      : !process.env[keyNames[v.agent]]
+        ? `Missing ${keyNames[v.agent]} for isolated CLI authentication.`
+        : null);
