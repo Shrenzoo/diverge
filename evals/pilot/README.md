@@ -16,3 +16,4 @@ Two independent model reviewers received anonymized artifacts, the brief and the
 | Blinded review | Originality | Usefulness | Alignment | Feasibility | Execution | Simplicity | Constraints | Artifact safety |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |
 | Rowan, baseline | 3 | 4 | 4 | 4 | 4 | 4 | Pass | Pass |
+| Cedar, baseline | 3 | 4 | 4 | 4 | 4 | 4 | Pass | Pass |
