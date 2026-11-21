@@ -82,3 +82,9 @@ export function report(manifest, ratings = []) {
     const group = runs.filter((r) => r.condition === arm);
     lines.push(
       '',
+      `### ${arm}`,
+      '',
+      `Seconds: ${stats(group.map((r) => r.runtime && r.runtime.ms / 1000))}. Tokens: ${stats(group.map((r) => r.metrics?.tokens))}.`,
+    );
+    for (const k of dimensions)
+      lines.push(
