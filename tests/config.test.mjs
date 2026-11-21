@@ -23,3 +23,5 @@ test('schema defaults and configured modes resolve independently', () => {
     }
   assert.deepEqual(preferences({ excludedPaths: ['docs/assets', 'a b'] }).excludedPaths, [
     'docs/assets',
+    'a b',
+  ]);
