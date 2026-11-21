@@ -53,3 +53,8 @@ async function runOne({ c, condition, repeat, agent, model, timeout, folder, ski
       if (after.get(name)?.kind === 'file')
         await fs.writeFile(path.join(deliverables, name), after.get(name).body);
     // Record extra artifact contents privately. Never traverse links or export host skill/config files.
+    for (const name of record.deterministic.unexpected) {
+      if (name.split('/').some((x) => x.startsWith('.')) || after.get(name)?.kind !== 'file') continue;
+      const file = path.join(raw, 'unexpected', name);
+      await fs.mkdir(path.dirname(file), { recursive: true });
+      await fs.writeFile(file, after.get(name).body);
