@@ -48,3 +48,8 @@ for (const [agent, base] of [
       ok(command(home, 'uninstall', [...args, '--dry-run']));
       await fs.access(path.join(dest, 'SKILL.md'));
       ok(command(home, 'uninstall', args));
+      await assert.rejects(fs.access(dest), { code: 'ENOENT' });
+      ok(command(home, 'uninstall', args));
+    });
+  }
+
