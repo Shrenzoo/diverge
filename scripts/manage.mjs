@@ -78,3 +78,9 @@ async function inspect(target, operation, replace, hashes) {
     return { action: 'uninstall', remove, old };
   }
   if (old && Object.keys(old).length === Object.keys(hashes).length) {
+    let identical = true;
+    for (const [name, hash] of Object.entries(hashes))
+      if (old[name] !== hash || !(await matches(dest, name, hash))) {
+        identical = false;
+        break;
+      }
