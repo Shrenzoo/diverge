@@ -93,3 +93,8 @@ export function report(manifest, ratings = []) {
   }
   lines.push(
     '',
+    '## Paired efficiency flags',
+    '',
+    'Flag at 1.5× baseline time or tokens on a completed pair. This threshold is a review trigger. An originality gain requires a higher mean blinded originality rating.',
+  );
+  let flags = 0;
