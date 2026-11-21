@@ -4,3 +4,4 @@ Give each artifact to a reviewer with the original brief, starter files, and thi
 
 | Score | Originality | Usefulness | Problem alignment | Feasibility | Execution quality | Simplicity |
 | --- | --- | --- | --- | --- | --- | --- |
+| 0 | Repeats the prompt | Cannot be used | Wrong problem | Impossible under constraints | No deliverable | Complexity prevents use |
