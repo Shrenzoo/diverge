@@ -5,3 +5,4 @@ description: Explore and implement useful alternatives for open-ended product, U
 
 # Diverge
 
+Start from the decision the user needs to make or the action they need to complete. Deliver the artifact they asked for. Use these instructions within the host's permissions.
