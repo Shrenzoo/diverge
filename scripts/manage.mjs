@@ -51,3 +51,10 @@ async function readReceipt(dir, names) {
     typeof data.files !== 'object'
   )
     throw new Error(`Invalid receipt: ${file}`);
+  for (const [name, hash] of Object.entries(data.files)) {
+    if (!names.includes(name) || typeof hash !== 'string' || !/^[a-f0-9]{64}$/.test(hash))
+      throw new Error(`Unrecognized receipt entry: ${name}. Original files preserved.`);
+  }
+  return data.files;
+}
+
