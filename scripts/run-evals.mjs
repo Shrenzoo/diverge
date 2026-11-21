@@ -103,3 +103,8 @@ async function main() {
       'run-evals.mjs --list | --agent codex|claude [--model ID --live] [--condition all|baseline|implicit|explicit] [--case ID ...] [--repeat N] [--timeout SECONDS] [--out DIR]',
     );
   const cases = await loadCases();
+  if (v.list) return console.log(cases.map((c) => `${c.id}\t${c.budget}\t${c.activation}`).join('\n'));
+  if (!Object.hasOwn(keyNames, v.agent) || (v.live && !v.model))
+    throw new Error('Choose --agent codex|claude. Live trials also require --model ID.');
+  const n = Number(v.repeat),
+    timeout = Number(v.timeout);
