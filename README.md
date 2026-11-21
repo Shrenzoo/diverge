@@ -106,3 +106,7 @@ Local verification passed all 23 tests on macOS with Node 24.22.3 and 26.10.0. T
 Ordinary CI is offline apart from fetching the CI tooling. It validates package structure, configuration, CLI behavior, installer conflict handling, update and removal, and grading. The optional runner supports 22 cases, three conditions, isolated workspaces, real host traces, deterministic checks, blinded ratings, cost comparisons, and JSON/Markdown reports. A case with no authenticated execution is recorded as skipped. [Evaluation protocol](evals/README.md) · [OpenAI skill evaluation guidance](https://developers.openai.com/blog/eval-skills)
 
 Diverge cannot guarantee novelty, host selection, or better outcomes. Extra exploration can increase latency and token use. The observed pilot did not measure either cost.
+
+## Contributing and license
+
+Contributions can add a technique, domain guide, integration, or evaluation case. Include a concrete decision that improves, a counterexample, and the smallest reproducible check. See [contributing](CONTRIBUTING.md), [security and privacy](SECURITY.md), and the [MIT license](LICENSE).
