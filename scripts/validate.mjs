@@ -13,3 +13,4 @@ try {
     'LICENSE',
     'CONTRIBUTING.md',
     'SECURITY.md',
+    'package.json',
