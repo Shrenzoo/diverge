@@ -61,3 +61,7 @@ export async function snapshot(dir) {
       } else
         entries.set(key, {
           kind: 'unsafe',
+          hash: info.isSymbolicLink() ? digest(await fs.readlink(file)) : 'special',
+        });
+    }
+  }
