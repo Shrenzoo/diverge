@@ -13,3 +13,4 @@ For each direction, write a private one-sentence hypothesis: “For this audienc
 
 **Adaptive** selects depth from the budget. **Director** follows a person's first meaningful action through hierarchy, feedback, motion, and recovery. **First Principles** tests whether the named feature or service is needed at all. **Wildcard** combines inversion with a distant functional analogy. Label its predictions as hypotheses and keep a feasible path back.
 
+At low creativity, look first for a local simplification. Balanced compares realistic mechanisms. High admits a wider reframing. Experimental admits distant analogies and more uncertain proposals. All respect the candidate cap, evidence, and decision owner.
