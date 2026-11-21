@@ -27,3 +27,4 @@ try {
       const result = spawnSync(process.execPath, ['--check', path.join(root, directory, file)], {
         encoding: 'utf8',
       });
+      assert.equal(result.status, 0, result.stderr);
