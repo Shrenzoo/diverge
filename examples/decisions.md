@@ -21,3 +21,4 @@ Two local views refresh after one SQLite save. Notify them after commit and relo
 ## A bug, an exact edit, and a wildcard
 
 A dead login button calls for tracing the existing action, fixing its owner, and exercising login. An exact visual reproduction preserves the reference. Both suppress redesign even under explicit invocation.
+
