@@ -25,3 +25,4 @@ Both reviewers preferred the fewer-handoffs rule. They agreed on every numeric s
 After this review, the product guide gained a trial-specific check for eligible cases, event recording, and an empty observation period. The plans and scores above predate that change. Its effect has not been measured.
 
 ## Narrow repair
+
