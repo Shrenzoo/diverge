@@ -10,3 +10,4 @@ For each direction, write a private one-sentence hypothesis: “For this audienc
 | Constraint transformation | Tighten, reverse, or remove one **assumed** constraint. Check against the ledger. | What if onboarding had to fit inside the first useful task? |
 | Opportunity expansion | Identify an adjacent unmet need. Estimate additional scope and keep it only if the original task depends on it. | An undo action can make bulk editing usable. A new reporting product can wait. |
 | Simplification | Eliminate one handoff, state, screen, dependency, or choice. Walk through the resulting failure case. | Can a validated import preview replace a separate clean-up wizard? |
+
