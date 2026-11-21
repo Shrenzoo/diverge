@@ -49,3 +49,5 @@ test('invalid configuration gets no partial effect', () => {
     assert.throws(() => preferences(invalid));
 });
 
+test('missing, malformed and valid project files yield documented results on CLI', async (t) => {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'diverge-config-'));
