@@ -109,3 +109,8 @@ export function report(manifest, ratings = []) {
     if (slow || costly) {
       flags++;
       const gain =
+        scored(r).length && scored(b).length
+          ? mean(scored(r).map((x) => x.scores.originality)) -
+            mean(scored(b).map((x) => x.scores.originality))
+          : null;
+      lines.push(
