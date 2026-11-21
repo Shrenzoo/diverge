@@ -125,3 +125,8 @@ export function report(manifest, ratings = []) {
     );
   lines.push('', '## Independent review', '');
   if (!ratings.length) lines.push('No ratings supplied. Creative quality is unassessed.');
+  for (const r of runs.filter((x) => scored(x).length)) {
+    const rows = scored(r);
+    lines.push(`### ${r.case} / ${r.condition} / ${r.repeat}`, '');
+    for (const x of rows)
+      lines.push(
