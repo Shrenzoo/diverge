@@ -24,3 +24,5 @@ function check(value, rule, field) {
   } else if (typeof value !== rule.type) {
     throw new Error(`${field} must be a ${rule.type}`);
   }
+  if (rule.enum && !rule.enum.includes(value))
+    throw new Error(`${field} must be one of ${rule.enum.join(', ')}`);
