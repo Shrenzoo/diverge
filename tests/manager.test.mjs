@@ -53,3 +53,7 @@ for (const [agent, base] of [
     });
   }
 
+test('replacement retains backup and extra files; uninstall retains edited and unowned content', async (t) => {
+  const dir = await sandbox(t);
+  ok(command(dir, 'install', both));
+  const parent = path.join(dir, '.agents');
