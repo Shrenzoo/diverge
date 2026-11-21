@@ -31,3 +31,5 @@
         "collaborative"
       ],
       "default": "autonomous"
+    },
+    "maxCandidates": {
