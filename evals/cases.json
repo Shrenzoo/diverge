@@ -254,3 +254,16 @@
     "outputs": [
       "diagnosis.md"
     ],
+    "checks": [],
+    "review": "Distinguish a race from slow rendering using predicted observations."
+  },
+  {
+    "id": "button-fix",
+    "fixture": "broken",
+    "budget": "SKIP",
+    "activation": "avoid",
+    "prompt": "Only fix the broken confirm action in flow.json. The public path is continue, save, confirm, ending at done. Change no other value.",
+    "outputs": [
+      "flow.json"
+    ],
+    "checks": [
