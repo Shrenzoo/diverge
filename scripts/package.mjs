@@ -27,3 +27,5 @@ export async function filesIn(directory, relative = '') {
     else throw new Error(`Unexpected link or special file: ${name}`);
   }
   return files.sort();
+}
+
