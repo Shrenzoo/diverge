@@ -33,3 +33,8 @@ async function runOne({ c, condition, repeat, agent, model, timeout, folder, ski
     const before = await snapshot(workspace);
     const args = invocation(agent, condition, model, c.prompt);
     const env = isolatedEnv(home, agent, tmp);
+    // Keep unrelated credentials and CLI settings out of the process. Only the selected provider key is passed.
+    const output = await runAgent(agent, args, workspace, env, timeout * 1000);
+    const clean = (s) => s.split(env[keyNames[agent]]).join('[redacted provider key]');
+    await fs.writeFile(path.join(raw, 'stdout.jsonl'), clean(output.stdout));
+    await fs.writeFile(path.join(raw, 'stderr.txt'), clean(output.stderr));
