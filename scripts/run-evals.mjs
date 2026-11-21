@@ -123,3 +123,8 @@ async function main() {
       : !process.env[keyNames[v.agent]]
         ? `Missing ${keyNames[v.agent]} for isolated CLI authentication.`
         : null);
+  await fs.mkdir(v.out, { recursive: true });
+  const folder = await fs.mkdtemp(path.join(path.resolve(v.out), 'run-'));
+  console.log(folder);
+  const manifest = {
+    format: 1,
