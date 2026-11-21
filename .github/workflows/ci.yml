@@ -5,3 +5,4 @@ permissions:
 jobs:
   verify:
     strategy:
+      fail-fast: false
