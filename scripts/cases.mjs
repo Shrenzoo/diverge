@@ -40,3 +40,7 @@ export async function loadCases() {
 }
 
 // Inventory dotfiles as well. Never dereference links or copy device nodes into review bundles.
+export async function snapshot(dir) {
+  const entries = new Map();
+  let bytes = 0;
+  async function visit(relative) {
