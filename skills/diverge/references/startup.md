@@ -2,3 +2,4 @@
 
 Separate observed facts, assumptions, and unknowns. Identify a specific user, current workaround, purchase or adoption trigger, competing substitute, and reachable distribution channel. Compare alternatives by the uncertainty each resolves and the cost of learning.
 
+For a home-service startup, visitors might fear an unexpected price or an unavailable appointment. A price range and a service-area lookup address different barriers. Identify which evidence would change positioning before claiming demand. A manual booking trial can test intent without building scheduling infrastructure.
