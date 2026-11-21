@@ -93,3 +93,11 @@ export function isolatedEnv(home, agent, tmp) {
   if (process.env[keyNames[agent]]) env[keyNames[agent]] = process.env[keyNames[agent]];
   return env;
 }
+
+// Bound runtime and trace volume; keep CLI output as evidence even when it exits unsuccessfully.
+export function runProcess(command, args, cwd, env, timeoutMs) {
+  return new Promise((resolve) => {
+    const start = performance.now(),
+      out = [],
+      err = [];
+    let bytes = 0,
