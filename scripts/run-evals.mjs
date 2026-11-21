@@ -88,3 +88,8 @@ async function main() {
     options: {
       agent: { type: 'string' },
       model: { type: 'string' },
+      condition: { type: 'string', default: 'all' },
+      case: { type: 'string', multiple: true },
+      repeat: { type: 'string', default: '1' },
+      timeout: { type: 'string', default: '180' },
+      out: { type: 'string', default: path.join(root, 'eval-results') },
