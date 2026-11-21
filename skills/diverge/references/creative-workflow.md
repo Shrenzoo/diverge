@@ -4,3 +4,4 @@ For each direction, write a private one-sentence hypothesis: “For this audienc
 
 | Technique | Procedure | Example functional question |
 | --- | --- | --- |
+| First principles | Take the named artifact apart into the job, constraints, information, and decisions. Rebuild from the minimum. | Which grade information changes a student's next action? |
