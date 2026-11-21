@@ -12,3 +12,4 @@ Eliminate directions that fail a hard contract, access need, budget, or safety r
 | Maintainability | Identify the layer that owns the invariant and who will operate it. |
 | Accessibility | Walk the alternative input and recovery paths. |
 | Risk | Examine a failure, its blast radius, and the cost of reversal. |
+| Constraint compliance | Cite the contract that makes the candidate eligible. |
