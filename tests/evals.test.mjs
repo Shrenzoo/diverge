@@ -208,3 +208,10 @@ console.log(JSON.stringify({type:'result',is_error:false,usage:{input_tokens:1,o
       assert.equal(r.status, 'passed');
       assert.deepEqual(r.deterministic.unexpected, []);
       assert.match(
+        await fs.readFile(path.join(folder, 'blind', r.id, 'deliverables', 'index.html'), 'utf8'),
+        /Request a repair/,
+      );
+      await fs.access(path.join(folder, 'raw', r.id, 'stdout.jsonl'));
+    }
+  },
+);
