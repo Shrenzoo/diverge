@@ -16,3 +16,4 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: node scripts/validate.mjs
+      - run: node --test
