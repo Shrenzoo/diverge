@@ -158,3 +158,9 @@ export async function manage(operation, args = process.argv.slice(2)) {
     'dry-run': { type: 'boolean' },
     help: { type: 'boolean' },
   };
+  if (operation === 'install') options.replace = { type: 'boolean' };
+  const { values } = parseArgs({ args, options });
+  if (values.help) {
+    console.log(
+      `node scripts/${operation}.mjs --agent codex|claude|both --scope project|user [--project-dir PATH] [--dry-run]${operation === 'install' ? ' [--replace]' : ''}`,
+    );
