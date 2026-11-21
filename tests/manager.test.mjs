@@ -135,3 +135,8 @@ test('explicit replacement retains a backup of an unreadable receipt', async (t)
   ok(command(dir, 'install', codex));
   const parent = path.join(dir, '.agents');
   const receipt = path.join('skills', 'diverge', '.diverge-install.json');
+  await fs.writeFile(path.join(parent, receipt), 'old receipt format');
+  assert.notEqual(command(dir, 'install', codex).status, 0);
+  ok(command(dir, 'install', [...codex, '--replace']));
+  const backup = (await fs.readdir(parent)).find((s) => s.startsWith('.diverge-backup-'));
+  assert.equal(
