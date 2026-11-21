@@ -15,3 +15,4 @@ try {
     'SECURITY.md',
     'package.json',
     '.github/workflows/ci.yml',
+    '.github/ISSUE_TEMPLATE/bug.md',
