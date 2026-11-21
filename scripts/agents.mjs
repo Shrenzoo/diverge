@@ -140,3 +140,11 @@ export function runProcess(command, args, cwd, env, timeoutMs) {
       reason = e.message;
     });
     child.on('close', (code, signal) => {
+      clearTimeout(timer);
+      resolve({
+        code,
+        signal,
+        reason,
+        ms: Math.round(performance.now() - start),
+        stdout: Buffer.concat(out).toString(),
+        stderr: Buffer.concat(err).toString(),
