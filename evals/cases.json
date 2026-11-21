@@ -305,3 +305,16 @@
     "prompt": "In index.html replace only the first literal Click here with Request a repair. Preserve every other byte.",
     "outputs": [
       "index.html"
+    ],
+    "checks": [
+      {
+        "file": "index.html",
+        "replace": [
+          "Click here",
+          "Request a repair"
+        ]
+      }
+    ],
+    "review": "Exact replacement is the complete task."
+  },
+  {
