@@ -108,3 +108,7 @@ test('forged receipt cannot select unrelated paths', async (t) => {
   const receipt = path.join(dir, '.agents', 'skills', 'diverge', '.diverge-install.json');
   const data = JSON.parse(await fs.readFile(receipt));
   data.files['../../../../victim'] = '0'.repeat(64);
+  await fs.writeFile(receipt, JSON.stringify(data));
+  await fs.writeFile(path.join(dir, 'victim'), 'keep');
+  assert.notEqual(command(dir, 'uninstall', codex).status, 0);
+  assert.equal(await fs.readFile(path.join(dir, 'victim'), 'utf8'), 'keep');
