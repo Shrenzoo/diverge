@@ -21,3 +21,5 @@ test('schema defaults and configured modes resolve independently', () => {
       assert.equal(settings.allowMajorRedesignWithoutApproval, false);
       assert.deepEqual(settings.excludedPaths, ['vendor', 'node_modules', 'dist']);
     }
+  assert.deepEqual(preferences({ excludedPaths: ['docs/assets', 'a b'] }).excludedPaths, [
+    'docs/assets',
