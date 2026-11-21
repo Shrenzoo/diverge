@@ -13,3 +13,9 @@ export const dimensions = [
 ];
 const mean = (xs) => xs.reduce((a, b) => a + b, 0) / xs.length;
 function stats(xs) {
+  const ns = xs.filter(Number.isFinite);
+  if (!ns.length) return 'unavailable';
+  const avg = mean(ns);
+  const sd =
+    ns.length > 1
+      ? Math.sqrt(ns.reduce((s, n) => s + (n - avg) ** 2, 0) / (ns.length - 1)).toFixed(2)
