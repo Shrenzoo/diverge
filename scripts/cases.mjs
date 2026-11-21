@@ -99,3 +99,8 @@ export function grade(c, before, after) {
     try {
       pass = !!passed(check, after.get(check.file).body.toString(), before.get(check.file)?.body?.toString());
     } catch {
+      /* Missing or malformed output cannot satisfy the case. */
+    }
+    checks.push({
+      name:
+        check.what ??
