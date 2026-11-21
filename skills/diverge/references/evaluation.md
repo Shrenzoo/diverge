@@ -4,3 +4,4 @@ Eliminate directions that fail a hard contract, access need, budget, or safety r
 
 | Dimension | Evidence to compare |
 | --- | --- |
+| Intent alignment | Walk a representative user from the trigger to the desired outcome. |
