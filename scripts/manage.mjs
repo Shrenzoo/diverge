@@ -91,3 +91,10 @@ async function inspect(target, operation, replace, hashes) {
   const extras = (await filesIn(dest)).filter((name) => name !== receipt && !Object.hasOwn(hashes, name));
   return { action: 'replace', extras };
 }
+
+async function copyFile(from, to, name) {
+  await fs.mkdir(path.dirname(path.join(to, name)), { recursive: true });
+  await fs.copyFile(path.join(from, name), path.join(to, name), fs.constants.COPYFILE_EXCL);
+}
+
+async function install(target, plan, hashes) {
