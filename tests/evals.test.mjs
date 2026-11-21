@@ -11,3 +11,10 @@ import { report, dimensions } from '../scripts/report.mjs';
 
 async function scratch(t) {
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'diverge-eval-test-'));
+  t.after(() => fs.rm(dir, { recursive: true, force: true }));
+  return dir;
+}
+test('each evaluation budget and both selection expectations are exercised', async () => {
+  const cases = await loadCases();
+  assert.equal(new Set(cases.map((c) => c.budget)).size, 4);
+  assert.equal(new Set(cases.map((c) => c.activation)).size, 2);
