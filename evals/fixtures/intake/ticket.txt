@@ -1,1 +1,2 @@
 A keyboard user cannot tell which service the request link opens. The page template uses link text "Click here".
+
