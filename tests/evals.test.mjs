@@ -167,3 +167,10 @@ test(
     await fs.writeFile(
       file,
       `#!/usr/bin/env node
+const fs = require('node:fs');
+if(process.argv.includes('--version')) {console.log('test-transport');process.exit(0);}
+if(process.argv.includes('--help')) {console.log('--setting-sources --tools --permission-mode --output-format --no-session-persistence --strict-mcp-config');process.exit(0);}
+const installed = fs.existsSync('.claude/skills/diverge/SKILL.md');
+console.log(JSON.stringify({type:'system',subtype:'init',skills:installed?['diverge']:[]}));
+const f='index.html';fs.writeFileSync(f,fs.readFileSync(f,'utf8').replace('Click here','Request a repair'));
+console.log(JSON.stringify({type:'result',is_error:false,usage:{input_tokens:1,output_tokens:1}}));\n`,
