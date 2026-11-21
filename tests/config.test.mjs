@@ -46,3 +46,6 @@ test('invalid configuration gets no partial effect', () => {
     { excludedPaths: ['a', 'a'] },
     { excludedPaths: [5] },
   ])
+    assert.throws(() => preferences(invalid));
+});
+
