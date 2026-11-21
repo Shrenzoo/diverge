@@ -164,3 +164,11 @@ export function traceMetrics(agent, raw) {
       return [];
     }
   });
+  let tools = 0,
+    failed = 0,
+    tokens = null,
+    invocationEvidence = null,
+    denied = 0,
+    edits = 0,
+    error = false,
+    discoverable = null;
