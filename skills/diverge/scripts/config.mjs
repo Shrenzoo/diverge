@@ -16,3 +16,5 @@ function check(value, rule, field) {
   if (rule.type === 'integer') {
     if (!Number.isInteger(value) || value < rule.minimum || value > rule.maximum)
       throw new Error(`${field} must be an integer from ${rule.minimum} to ${rule.maximum}`);
+  } else if (rule.type === 'array') {
+    if (!Array.isArray(value)) throw new Error(`${field} must be an array`);
