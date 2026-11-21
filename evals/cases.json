@@ -395,3 +395,16 @@
     "fixture": "student",
     "budget": "DEEP",
     "activation": "consider",
+    "prompt": "In Wildcard mode, rethink how these students study. Write concept.md with one testable mechanism beyond quizzes or flashcards and a small, reversible field trial. Mark hypotheses.",
+    "outputs": [
+      "concept.md"
+    ],
+    "checks": [],
+    "review": "Test whether a functional analogy changes what the student can do."
+  },
+  {
+    "id": "strict-review",
+    "fixture": "engine",
+    "budget": "SKIP",
+    "activation": "avoid",
+    "prompt": "Read brief.md and tell me what the measured metadata load time is. Answer in answer.txt with just the number, one space, and ms. No alternatives.",
