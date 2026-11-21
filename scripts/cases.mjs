@@ -108,3 +108,7 @@ export function grade(c, before, after) {
           ? check.actions.join(' / ') + ' ends at ' + check.end
           : check.replace
             ? 'Exact byte-preserving replacement'
+            : 'Exact public data contract'),
+      pass,
+    });
+  }
