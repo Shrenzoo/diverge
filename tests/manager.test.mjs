@@ -103,3 +103,8 @@ test('host roots and installed parent links cannot redirect writes or removal', 
 });
 
 test('forged receipt cannot select unrelated paths', async (t) => {
+  const dir = await sandbox(t);
+  ok(command(dir, 'install', codex));
+  const receipt = path.join(dir, '.agents', 'skills', 'diverge', '.diverge-install.json');
+  const data = JSON.parse(await fs.readFile(receipt));
+  data.files['../../../../victim'] = '0'.repeat(64);
