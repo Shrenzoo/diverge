@@ -53,3 +53,11 @@ export function invocation(agent, condition, model, prompt) {
   return [
     '-p',
     '--setting-sources',
+    'project',
+    '--strict-mcp-config',
+    '--tools',
+    'Read,Glob,Grep,Skill,Edit,Write',
+    '--permission-mode',
+    'acceptEdits',
+    '--no-session-persistence',
+    '--output-format',
