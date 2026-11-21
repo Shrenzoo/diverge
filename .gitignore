@@ -3,3 +3,4 @@ eval-results/
 .DS_Store
 .env
 .env.*
+.agents/
