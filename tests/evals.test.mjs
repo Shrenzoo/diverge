@@ -201,3 +201,10 @@ console.log(JSON.stringify({type:'result',is_error:false,usage:{input_tokens:1,o
       },
     );
     assert.equal(run.status, 0, run.stdout + run.stderr);
+    const folder = path.join(out, (await fs.readdir(out))[0]);
+    const data = JSON.parse(await fs.readFile(path.join(folder, 'results.json')));
+    assert.equal(data.runs.length, 3);
+    for (const r of data.runs) {
+      assert.equal(r.status, 'passed');
+      assert.deepEqual(r.deterministic.unexpected, []);
+      assert.match(
