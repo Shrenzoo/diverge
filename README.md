@@ -45,3 +45,6 @@ For removal, use the same agent, scope and optional project directory with `node
 6. **Reflection.** Try the defining path and an edge case. Make a bounded improvement when evidence warrants it.
 
 The [entry point](skills/diverge/SKILL.md) is the portable instruction set. Domain guides load when relevant. Node scripts perform the deterministic work of configuration validation, installation, and evaluation. There is no daemon, model service, persistent memory, telemetry, or change to model weights. Offline use requires a host/model that can itself operate offline.
+
+## One observed difference
+
