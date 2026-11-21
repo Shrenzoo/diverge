@@ -72,3 +72,10 @@ test('adapters preserve the implicit control prompt and pin the chosen model', (
 test('trace interpretation separates host discovery, observed calls, denials and absent evidence', () => {
   const lines = (...xs) => xs.map((x) => JSON.stringify(x)).join('\n');
   const raw = lines(
+    { type: 'system', subtype: 'init', skills: ['diverge'] },
+    {
+      type: 'assistant',
+      message: { content: [{ type: 'tool_use', name: 'Skill', input: { skill: 'diverge' } }] },
+    },
+    {
+      type: 'result',
