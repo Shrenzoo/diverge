@@ -191,3 +191,10 @@ export async function manage(operation, args = process.argv.slice(2)) {
     for (const target of targets) {
       // Validate every existing ancestor before creating descendants. Dry runs create nothing.
       await directory(target.meta, operation === 'install' && !values['dry-run']);
+      await directory(target.parent, operation === 'install' && !values['dry-run']);
+      if (!values['dry-run'] && (await stat(target.meta))) {
+        const lock = path.join(target.meta, '.diverge-lock');
+        try {
+          await fs.mkdir(lock);
+        } catch (error) {
+          if (error.code === 'EEXIST') throw new Error(`Installation busy: ${lock}`);
