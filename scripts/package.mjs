@@ -20,3 +20,5 @@ export async function stat(file) {
 
 export async function filesIn(directory, relative = '') {
   const files = [];
+  for (const entry of await fs.readdir(path.join(directory, relative), { withFileTypes: true })) {
+    const name = path.posix.join(relative, entry.name);
