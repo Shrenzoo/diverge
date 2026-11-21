@@ -4,3 +4,4 @@ State the observable failure, the desired change, and constraints on the repair.
 
 For a slow search, compare input latency, query execution, and rendering. Measure at boundaries using the same dataset. Ask what would still be slow with a cached result. Run the cheapest test that would rule out a plausible cause, then change its owner. Respect privacy when inspecting traces.
 
+Try the original reproduction and a nearby case after the repair. For a precise bug report, this investigation can finish with a one-line fix. An architectural proposal requires evidence that the local repair cannot satisfy the constraint.
