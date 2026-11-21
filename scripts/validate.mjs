@@ -6,3 +6,4 @@ import { root, validateSkill, filesIn } from './package.mjs';
 import { loadCases } from './cases.mjs';
 
 try {
+  const files = await validateSkill();
