@@ -21,3 +21,11 @@ export function probe(agent) {
           '--permission-mode',
           '--output-format',
           '--no-session-persistence',
+          '--strict-mcp-config',
+        ];
+  const missing = required.filter((option) => !help.stdout?.includes(option));
+  return {
+    version: version.stdout.trim(),
+    reason: missing.length ? 'Missing CLI options: ' + missing.join(', ') : null,
+  };
+}
