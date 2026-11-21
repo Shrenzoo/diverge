@@ -57,3 +57,5 @@
       "enum": [
         "none",
         "brief",
+        "detailed"
+      ],
