@@ -42,3 +42,5 @@ test('invalid configuration gets no partial effect', () => {
     { respectExistingDesignSystem: 'false' },
     ...['/tmp', '../data', 'a/..', 'x/./y', 'C:/etc', 'a\\b', 'a//b', ''].map((s) => ({
       excludedPaths: [s],
+    })),
+    { excludedPaths: ['a', 'a'] },
