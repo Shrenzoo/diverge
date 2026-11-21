@@ -167,3 +167,9 @@ if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === imp
     const manifest = JSON.parse(await fs.readFile(path.join(values.run, 'results.json'), 'utf8'));
     const ratings = values.ratings ? JSON.parse(await fs.readFile(values.ratings, 'utf8')) : [];
     await saveReport(values.run, manifest, ratings);
+    console.log(path.join(values.run, 'summary.md'));
+  } catch (error) {
+    console.error(error.message);
+    process.exitCode = 1;
+  }
+}
