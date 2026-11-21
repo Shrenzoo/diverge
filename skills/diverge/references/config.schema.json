@@ -14,3 +14,5 @@
       ],
       "default": "adaptive"
     },
+    "creativity": {
+      "type": "string",
