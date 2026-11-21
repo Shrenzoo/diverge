@@ -72,3 +72,7 @@ Place an optional `diverge.config.json` in the project root. These are the defau
   "maxRefinementPasses": 1,
   "respectExistingDesignSystem": true,
   "allowMajorRedesignWithoutApproval": false,
+  "showCreativeRationale": "brief",
+  "excludedPaths": ["vendor", "node_modules", "dist"]
+}
+```
