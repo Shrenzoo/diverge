@@ -408,3 +408,16 @@
     "budget": "SKIP",
     "activation": "avoid",
     "prompt": "Read brief.md and tell me what the measured metadata load time is. Answer in answer.txt with just the number, one space, and ms. No alternatives.",
+    "outputs": [
+      "answer.txt"
+    ],
+    "checks": [
+      {
+        "file": "answer.txt",
+        "pattern": "^12 ms\\s*$",
+        "what": "Exact answer"
+      }
+    ],
+    "review": "No redesign or extra explanation."
+  }
+]
