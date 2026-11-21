@@ -13,3 +13,8 @@ const json = (value) => JSON.stringify(value, null, 2) + '\n';
 
 async function runOne({ c, condition, repeat, agent, model, timeout, folder, skip }) {
   const id = randomUUID();
+  const record = { id, case: c.id, condition, repeat, agent, model, expectedActivation: c.activation };
+  if (skip) return { ...record, status: 'skipped', reason: skip };
+  const temp = await fs.mkdtemp(path.join(os.tmpdir(), 'diverge-trial-'));
+  const workspace = path.join(temp, 'workspace'),
+    home = path.join(temp, 'home'),
