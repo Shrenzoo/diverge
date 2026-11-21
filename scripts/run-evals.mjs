@@ -68,3 +68,8 @@ async function runOne({ c, condition, repeat, agent, model, timeout, folder, ski
       !['contaminated baseline', 'skill missing', 'unexpected activation'].includes(record.activation) &&
       record.deterministic.pass;
     return { ...record, status: ok ? 'passed' : 'failed' };
+  } catch (error) {
+    return { ...record, status: 'failed', reason: error.message };
+  } finally {
+    await fs.rm(temp, { recursive: true, force: true });
+  }
