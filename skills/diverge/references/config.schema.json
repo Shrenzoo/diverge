@@ -9,3 +9,6 @@
       "enum": [
         "adaptive",
         "director",
+        "first-principles",
+        "wildcard"
+      ],
