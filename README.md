@@ -38,3 +38,7 @@ For removal, use the same agent, scope and optional project directory with `node
 ## How it works
 
 1. **Intent.** Identify the audience, job, evidence, explicit constraints, and delegated decisions.
+2. **Opportunity.** Budget zero exploration for exact tasks. Use light, standard, or deep exploration where the expected benefit justifies it.
+3. **Exploration.** Compare mechanisms. Inversion, analogies, and removing steps can change what a user can do. Cosmetic variation alone is insufficient.
+4. **Evaluation.** Gate on hard requirements, then compare user benefit, feasibility, accessibility, maintenance effort, simplicity and risk.
+5. **Execution.** Build or write the selected deliverable. Seek approval for consequential choices outside existing authorization.
