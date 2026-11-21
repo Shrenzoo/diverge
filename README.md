@@ -11,3 +11,6 @@ A dashboard brief, for example, often leaves a decision unstated. A student who 
 Requires Node.js 20+ for the installer. Run from this source checkout. No npm install, account, API key, or network connection is needed to install.
 
 | Destination | Command |
+| --- | --- |
+| Codex, this project | `node scripts/install.mjs --agent codex --scope project` |
+| Claude Code, this project | `node scripts/install.mjs --agent claude --scope project` |
