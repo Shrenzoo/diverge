@@ -34,3 +34,5 @@ export function preferences(input) {
   if (input === null || typeof input !== 'object' || Array.isArray(input))
     throw new Error('Expected a JSON object');
   const result = defaults();
+  for (const [key, value] of Object.entries(input)) {
+    if (!Object.hasOwn(schema.properties, key)) throw new Error(`Unknown preference: ${key}`);
