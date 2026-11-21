@@ -78,3 +78,7 @@ function passed(check, body, initial) {
   let current = data.start;
   for (const action of check.actions) current = data.screens[current]?.[action];
   return current === check.end && Object.hasOwn(data.screens, current);
+}
+
+export function grade(c, before, after) {
+  const changed = [...new Set([...before.keys(), ...after.keys()])]
