@@ -118,3 +118,9 @@ async function install(target, plan, hashes) {
     }
     try {
       await fs.rename(stage, target.dest);
+    } catch (error) {
+      if (backup && !(await stat(target.dest))) await fs.rename(backup, target.dest);
+      throw error;
+    }
+  } finally {
+    // Only the private directory created by mkdtemp above is eligible for recursive cleanup.
