@@ -196,3 +196,11 @@ export function traceMetrics(agent, raw) {
         edits++;
         for (const change of item.changes ?? []) noteEdit(change.path);
       }
+      if (item.status === 'failed' || (item.exit_code != null && item.exit_code !== 0)) failed++;
+      if (
+        item.type === 'command_execution' &&
+        item.exit_code === 0 &&
+        /(?:^|[\s'"])(?:cat|Get-Content)\s+[^;&|\n]*[\\/]diverge[\\/]SKILL\.md(?:[\s'"]|$)/i.test(
+          item.command ?? '',
+        )
+      )
