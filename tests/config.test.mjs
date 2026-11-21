@@ -17,3 +17,5 @@ test('schema defaults and configured modes resolve independently', () => {
     for (const interaction of schema.properties.interaction.enum) {
       const settings = preferences({ mode, interaction, creativity: 'experimental', maxRefinementPasses: 0 });
       assert.equal(settings.mode, mode);
+      assert.equal(settings.interaction, interaction);
+      assert.equal(settings.allowMajorRedesignWithoutApproval, false);
