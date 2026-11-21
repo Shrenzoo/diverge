@@ -35,3 +35,8 @@ function validateRatings(runs, ratings) {
       typeof r.reviewer !== 'string' ||
       !r.reviewer.trim() ||
       !dimensions.every((k) => Number.isInteger(r.scores?.[k]) && r.scores[k] >= 0 && r.scores[k] <= 5) ||
+      ![true, false, null].includes(r.constraints) ||
+      ![true, false, null].includes(r.safety) ||
+      typeof r.note !== 'string' ||
+      !r.note.trim()
+    )
