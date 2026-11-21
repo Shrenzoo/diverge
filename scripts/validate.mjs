@@ -11,3 +11,4 @@ try {
   for (const name of [
     'README.md',
     'LICENSE',
+    'CONTRIBUTING.md',
