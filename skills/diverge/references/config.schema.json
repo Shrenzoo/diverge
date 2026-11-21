@@ -50,3 +50,5 @@
     },
     "allowMajorRedesignWithoutApproval": {
       "type": "boolean",
+      "default": false
+    },
