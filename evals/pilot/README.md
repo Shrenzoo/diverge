@@ -31,3 +31,5 @@ Both agents received the same [broken workflow](../fixtures/broken/flow.json). T
 ## Scope of evidence
 
 Four artifacts, four deterministic passes, zero observed scope violations or execution failures in these sessions. Two plans received four sheets from two model reviewers. No human or field evaluation. Two distinct task types, one repetition each, and no cost comparison cannot support a general efficacy claim.
+
+Separately, the standalone runner attempted to schedule the shift-desk and exact-label cases on both native CLIs. All 12 assignments across baseline, implicit, and explicit were skipped because the isolated provider keys were absent. No model executions or quality scores were credited to those assignments. The test suite uses a clearly labeled synthetic CLI transport to exercise capture and reporting without credentials.
