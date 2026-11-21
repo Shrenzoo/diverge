@@ -61,3 +61,11 @@ export function invocation(agent, condition, model, prompt) {
     'acceptEdits',
     '--no-session-persistence',
     '--output-format',
+    'stream-json',
+    '--verbose',
+    '--model',
+    model,
+    '--',
+    task,
+  ];
+}
