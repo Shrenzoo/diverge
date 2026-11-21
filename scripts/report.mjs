@@ -24,3 +24,8 @@ function stats(xs) {
 }
 const safe = (s) =>
   String(s ?? '—')
+    .replace(/[|\r\n]/g, ' ')
+    .replaceAll('<', '&lt;');
+function validateRatings(runs, ratings) {
+  if (!Array.isArray(ratings)) throw new Error('Ratings must be a JSON array');
+  const seen = new Set();
