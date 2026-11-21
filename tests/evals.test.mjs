@@ -113,3 +113,10 @@ test('timeout terminates the CLI and returns captured evidence', async (t) => {
 
 test('report separates quality, gate disagreement and paired inefficiency', () => {
   const sim = {
+    format: 1,
+    agent: 'test',
+    runs: ['baseline', 'explicit'].map((condition, i) => ({
+      case: 'item',
+      repeat: 1,
+      id: condition,
+      condition,
