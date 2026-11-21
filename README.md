@@ -99,3 +99,7 @@ Codex supports separate `agents/openai.yaml` interface metadata and can discover
 node scripts/validate.mjs
 node --test
 node scripts/run-evals.mjs --list
+```
+
+Local verification passed all 23 tests on macOS with Node 24.22.3 and 26.10.0. The skill also passed the skill-creator metadata validator.
+
