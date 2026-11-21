@@ -92,3 +92,10 @@ test('trace interpretation separates host discovery, observed calls, denials and
   assert.equal(activation('explicit', 'avoid', claude), 'observed');
   assert.equal(activation('implicit', 'consider', { discoverable: false }), 'skill missing');
   const events = lines(
+    {
+      type: 'item.completed',
+      item: { type: 'command_execution', command: 'cat .agents/skills/diverge/SKILL.md', exit_code: 0 },
+    },
+    { type: 'turn.completed', usage: { input_tokens: 12, output_tokens: 6 } },
+  );
+  assert.equal(traceMetrics('codex', events).tokens, 18);
