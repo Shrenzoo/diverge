@@ -42,3 +42,5 @@ export function preferences(input) {
   return result;
 }
 
+export function loadConfig(file) {
+  let raw;
