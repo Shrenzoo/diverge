@@ -124,3 +124,10 @@ async function install(target, plan, hashes) {
     }
   } finally {
     // Only the private directory created by mkdtemp above is eligible for recursive cleanup.
+    await fs.rm(stage, { recursive: true, force: true });
+  }
+}
+
+async function uninstall(dest, { remove, old }) {
+  const dirs = new Set();
+  for (const name of remove) {
