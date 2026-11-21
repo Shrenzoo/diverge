@@ -60,3 +60,5 @@ export function loadConfig(file) {
 if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.meta.url) {
   const { config, error } = loadConfig(process.argv[2] ?? 'diverge.config.json');
   if (error) {
+    console.error(`Invalid configuration, using defaults: ${error}`);
+    process.exitCode = 1;
