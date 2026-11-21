@@ -10,3 +10,5 @@ export function defaults() {
     Object.entries(schema.properties).map(([key, rule]) => [key, structuredClone(rule.default)]),
   );
 }
+
+// Implement the small, closed set of JSON Schema keywords used by this package.
