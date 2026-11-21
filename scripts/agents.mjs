@@ -117,3 +117,11 @@ export function runProcess(command, args, cwd, env, timeoutMs) {
       if (group) {
         try {
           process.kill(-child.pid, 'SIGKILL');
+        } catch (error) {
+          if (error.code !== 'ESRCH') child.kill('SIGKILL');
+        }
+      } else
+        spawnSync('taskkill.exe', ['/pid', String(child.pid), '/t', '/f'], {
+          windowsHide: true,
+          timeout: 5000,
+        });
