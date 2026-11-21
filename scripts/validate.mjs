@@ -16,3 +16,5 @@ try {
     'package.json',
     '.github/workflows/ci.yml',
     '.github/ISSUE_TEMPLATE/bug.md',
+    '.github/ISSUE_TEMPLATE/evaluation.md',
+    'evals/rubric.md',
