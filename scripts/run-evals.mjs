@@ -58,3 +58,8 @@ async function runOne({ c, condition, repeat, agent, model, timeout, folder, ski
       const file = path.join(raw, 'unexpected', name);
       await fs.mkdir(path.dirname(file), { recursive: true });
       await fs.writeFile(file, after.get(name).body);
+    }
+    const ok =
+      output.code === 0 &&
+      !output.reason &&
+      record.metrics.traceComplete &&
