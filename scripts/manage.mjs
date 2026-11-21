@@ -44,3 +44,10 @@ async function readReceipt(dir, names) {
   if (!info.isFile()) throw new Error(`Unsafe receipt: ${file}`);
   const data = JSON.parse(await fs.readFile(file, 'utf8'));
   if (
+    data?.format !== 1 ||
+    data.skill !== 'diverge' ||
+    !data.files ||
+    Array.isArray(data.files) ||
+    typeof data.files !== 'object'
+  )
+    throw new Error(`Invalid receipt: ${file}`);
