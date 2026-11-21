@@ -204,3 +204,11 @@ export function traceMetrics(agent, raw) {
           item.command ?? '',
         )
       )
+        invocationEvidence = 'Successful command reading the entry point';
+    } else {
+      if (event.type === 'system' && event.subtype === 'init' && Array.isArray(event.skills))
+        discoverable = event.skills.includes('diverge');
+      if (event.type === 'assistant')
+        for (const b of event.message?.content ?? [])
+          if (b.type === 'tool_use') {
+            tools++;
