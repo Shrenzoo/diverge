@@ -27,3 +27,7 @@ export async function loadCases() {
     const input = await filesIn(path.join(fixtures, c.fixture));
     assert(input.length, c.fixture);
     for (const check of c.checks) {
+      assert(
+        c.outputs.includes(check.file) &&
+          ['pattern', 'equals', 'actions', 'replace'].filter((k) => Object.hasOwn(check, k)).length === 1,
+        c.id,
