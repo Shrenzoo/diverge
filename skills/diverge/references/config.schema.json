@@ -52,3 +52,5 @@
       "type": "boolean",
       "default": false
     },
+    "showCreativeRationale": {
+      "type": "string",
