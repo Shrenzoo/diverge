@@ -14,3 +14,5 @@ export function defaults() {
 // Implement the small, closed set of JSON Schema keywords used by this package.
 function check(value, rule, field) {
   if (rule.type === 'integer') {
+    if (!Number.isInteger(value) || value < rule.minimum || value > rule.maximum)
+      throw new Error(`${field} must be an integer from ${rule.minimum} to ${rule.maximum}`);
