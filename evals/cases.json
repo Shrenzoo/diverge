@@ -23,3 +23,16 @@
     "review": "Does the experience resolve visitor uncertainty? Check claims against the brief."
   },
   {
+    "id": "grade-dashboard",
+    "fixture": "student",
+    "budget": "STANDARD",
+    "activation": "consider",
+    "prompt": "Build a single-file offline grade dashboard in index.html using the sample data. Show History and Art and help a student decide what to do next. Treat ungraded work honestly.",
+    "outputs": [
+      "index.html"
+    ],
+    "checks": [
+      {
+        "file": "index.html",
+        "pattern": "History",
+        "what": "History included"
