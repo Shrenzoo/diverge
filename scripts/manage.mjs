@@ -138,3 +138,9 @@ async function uninstall(dest, { remove, old }) {
       dirs.add(dir);
       dir = path.posix.dirname(dir);
     }
+  }
+  await fs.unlink(path.join(dest, receipt));
+  for (const dir of [...dirs].sort((a, b) => b.length - a.length).concat('')) {
+    try {
+      await fs.rmdir(path.join(dest, dir));
+    } catch (error) {
