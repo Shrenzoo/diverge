@@ -9,3 +9,4 @@ The coordinator needed to fill a vacancy with volunteers who can call or text, i
 | Artifact | Competing offers | Weak point observed |
 | --- | --- | --- |
 | [Baseline](baseline.md) | Prioritize arrival order, break unresolved ties by coin toss. | An early partial offer can create an avoidable handoff. Its empty-week fallback is useful. |
+| [Explicit Diverge](explicit.md) | Choose complete coverage with the fewest handoffs, then break ties by arrival order. | Extra offer-number bookkeeping. Its success measure lacks a rule for zero vacancies. |
