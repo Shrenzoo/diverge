@@ -29,3 +29,6 @@ test('schema defaults and configured modes resolve independently', () => {
 
 test('invalid configuration gets no partial effect', () => {
   for (const invalid of [
+    null,
+    [],
+    false,
