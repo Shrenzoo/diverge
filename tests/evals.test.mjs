@@ -147,3 +147,9 @@ test('preflight writes valid JSON and Markdown without starting a trial', async 
   const out = spawnSync(
     process.execPath,
     [path.join(root, 'scripts', 'run-evals.mjs'), '--agent', 'codex', '--case', 'button-fix', '--out', dir],
+    { encoding: 'utf8' },
+  );
+  assert.equal(out.status, 0, out.stderr);
+  const folder = path.join(dir, (await fs.readdir(dir))[0]);
+  const results = JSON.parse(await fs.readFile(path.join(folder, 'results.json')));
+  assert.equal(results.runs.length, 3);
