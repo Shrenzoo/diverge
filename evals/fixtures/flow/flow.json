@@ -3,3 +3,4 @@
   "screens": {
     "welcome": {
       "continue": "details"
+    },
