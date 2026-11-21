@@ -76,3 +76,6 @@ Place an optional `diverge.config.json` in the project root. These are the defau
   "excludedPaths": ["vendor", "node_modules", "dist"]
 }
 ```
+
+Creativity accepts `low`, `balanced`, `high`, or `experimental`. Interaction accepts `autonomous` or `collaborative`. Candidate caps range from 1–5 and refinement caps from 0–2. Rationale accepts `none`, `brief`, or `detailed`. Use lowercase mode names, including `first-principles`. A malformed configuration produces a diagnostic and falls back to all defaults. From the checkout, run `node skills/diverge/scripts/config.mjs diverge.config.json` to print the effective settings. The [schema](skills/diverge/references/config.schema.json) and [configuration guide](skills/diverge/references/configuration.md) cover every field.
+
