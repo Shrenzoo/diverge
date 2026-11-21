@@ -157,3 +157,8 @@ export function report(manifest, ratings = []) {
 }
 
 export async function saveReport(folder, manifest, ratings) {
+  await fs.writeFile(path.join(folder, 'summary.md'), report(manifest, ratings));
+}
+
+if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url) {
+  try {
