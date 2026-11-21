@@ -30,3 +30,7 @@ for (const [agent, base] of [
 ])
   for (const scope of ['project', 'user']) {
     test(agent + ' ' + scope + ' lifecycle in a path with spaces', async (t) => {
+      const home = await sandbox(t);
+      const project = path.join(home, 'consumer project');
+      await fs.mkdir(project);
+      const args = ['--agent', agent, '--scope', scope];
