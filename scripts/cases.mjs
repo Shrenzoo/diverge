@@ -65,3 +65,8 @@ export async function snapshot(dir) {
         });
     }
   }
+  await visit('');
+  return entries;
+}
+
+function passed(check, body, initial) {
