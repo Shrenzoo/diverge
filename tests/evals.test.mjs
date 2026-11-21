@@ -181,3 +181,9 @@ console.log(JSON.stringify({type:'result',is_error:false,usage:{input_tokens:1,o
       process.execPath,
       [
         path.join(root, 'scripts', 'run-evals.mjs'),
+        '--live',
+        '--model',
+        'test-model',
+        '--agent',
+        'claude',
+        '--case',
