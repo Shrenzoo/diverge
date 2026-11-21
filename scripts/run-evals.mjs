@@ -18,3 +18,8 @@ async function runOne({ c, condition, repeat, agent, model, timeout, folder, ski
   const temp = await fs.mkdtemp(path.join(os.tmpdir(), 'diverge-trial-'));
   const workspace = path.join(temp, 'workspace'),
     home = path.join(temp, 'home'),
+    tmp = path.join(temp, 'tmp');
+  const raw = path.join(folder, 'raw', id);
+  try {
+    await fs.mkdir(raw, { recursive: true });
+    await fs.mkdir(path.join(home, '.codex'), { recursive: true });
