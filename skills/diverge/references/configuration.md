@@ -4,3 +4,4 @@ Read only `diverge.config.json` in the active project root. Omission uses defaul
 
 If Node 20+ is available, run `node "<installed skill>/scripts/config.mjs" "<project>/diverge.config.json"`, substituting actual paths. It prints effective JSON to stdout; malformed or unreadable input also produces a diagnostic on stderr and exit 1. Without Node, apply the schema directly.
 
+| Preference | Effect |
