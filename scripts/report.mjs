@@ -114,3 +114,8 @@ export function report(manifest, ratings = []) {
             mean(scored(b).map((x) => x.scores.originality))
           : null;
       lines.push(
+        `- ${r.case} / ${r.repeat} / ${r.condition}: ${[slow && 'time', costly && 'tokens'].filter(Boolean).join(' and ')} flagged. Originality delta ${gain === null ? 'unrated' : gain.toFixed(2)}.`,
+      );
+    }
+  }
+  if (!flags)
