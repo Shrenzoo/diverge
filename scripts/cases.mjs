@@ -53,3 +53,7 @@ export async function snapshot(dir) {
       if (info.isDirectory()) {
         entries.set(key, { kind: 'directory' });
         await visit(key);
+      } else if (info.isFile() && info.nlink === 1) {
+        bytes += info.size;
+        if (info.size > 4_000_000 || bytes > 30_000_000) throw new Error('Workspace size limit exceeded');
+        const body = await fs.readFile(file);
