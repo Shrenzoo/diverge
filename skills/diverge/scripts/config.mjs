@@ -12,3 +12,5 @@ export function defaults() {
 }
 
 // Implement the small, closed set of JSON Schema keywords used by this package.
+function check(value, rule, field) {
+  if (rule.type === 'integer') {
