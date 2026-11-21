@@ -153,3 +153,8 @@ async function main() {
         });
         manifest.runs.push(run);
         const partial = path.join(folder, 'results.partial');
+        await fs.writeFile(partial, json(manifest));
+        await fs.rename(partial, path.join(folder, 'results.json'));
+        console.log(`${c.id} / ${condition}: ${run.status}${run.reason ? ' — ' + run.reason : ''}`);
+      }
+  await saveReport(folder, manifest, []);
