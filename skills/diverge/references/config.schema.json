@@ -24,3 +24,5 @@
       ],
       "default": "balanced"
     },
+    "interaction": {
+      "type": "string",
