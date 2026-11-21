@@ -172,3 +172,11 @@ export function traceMetrics(agent, raw) {
     edits = 0,
     error = false,
     discoverable = null;
+  const editedPaths = new Set();
+  let revisions = 0;
+  function noteEdit(file) {
+    if (typeof file !== 'string') return;
+    if (editedPaths.has(file)) revisions++;
+    editedPaths.add(file);
+  }
+  for (const event of events) {
