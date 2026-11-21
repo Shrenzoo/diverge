@@ -8,3 +8,4 @@ For each direction, write a private one-sentence hypothesis: “For this audienc
 | Inversion | Remove the central interaction and find another way to deliver its benefit. | Could a digest eliminate inbox triage? |
 | Cross-domain transfer | Name the source mechanism, map its moving parts, and identify where the analogy breaks. | A forecast lets students test scenarios, but a grade estimate must show uncertainty. |
 | Constraint transformation | Tighten, reverse, or remove one **assumed** constraint. Check against the ledger. | What if onboarding had to fit inside the first useful task? |
+| Opportunity expansion | Identify an adjacent unmet need. Estimate additional scope and keep it only if the original task depends on it. | An undo action can make bulk editing usable. A new reporting product can wait. |
