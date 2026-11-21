@@ -22,3 +22,5 @@ try {
   ]) {
     assert((await fs.stat(path.join(root, name))).size > 0, name + ' is empty');
   }
+  for (const directory of ['scripts', 'skills', 'tests']) {
+    for (const file of (await filesIn(path.join(root, directory))).filter((f) => f.endsWith('.mjs'))) {
