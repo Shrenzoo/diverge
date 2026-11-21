@@ -39,3 +39,6 @@ export async function validateSkill() {
     ...[
       'activation',
       'creative-workflow',
+      'evaluation',
+      'autonomy',
+      'frontend',
