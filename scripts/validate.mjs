@@ -5,3 +5,4 @@ import { spawnSync } from 'node:child_process';
 import { root, validateSkill, filesIn } from './package.mjs';
 import { loadCases } from './cases.mjs';
 
+try {
