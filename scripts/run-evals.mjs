@@ -63,3 +63,8 @@ async function runOne({ c, condition, repeat, agent, model, timeout, folder, ski
       output.code === 0 &&
       !output.reason &&
       record.metrics.traceComplete &&
+      !record.metrics.agentError &&
+      !record.metrics.permissionDenials &&
+      !['contaminated baseline', 'skill missing', 'unexpected activation'].includes(record.activation) &&
+      record.deterministic.pass;
+    return { ...record, status: ok ? 'passed' : 'failed' };
