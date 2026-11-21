@@ -151,3 +151,9 @@ export function report(manifest, ratings = []) {
     '## Limits',
     '',
     'Artifact checks cover only declared contracts. Build is n/a where no build step applies. Tool requests and entry-point reads are partial evidence of activation. Missing events, permission observability, and unknown revision counts remain unassessed. Inspect raw traces for failures. Host sandboxes and models differ. These descriptive results do not establish statistical significance.',
+    '',
+  );
+  return lines.join('\n');
+}
+
+export async function saveReport(folder, manifest, ratings) {
