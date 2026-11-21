@@ -14,3 +14,4 @@ Give each artifact to a reviewer with the original brief, starter files, and thi
 For exact tasks a conventional result can earn the highest usefulness. A low originality score alone does not imply failure. Do not total the scores into a single index.
 
 For automated runs, give reviewers only the `blind/` directory. Each ID includes the brief, initial files, and resulting deliverables. Document any self-identifying artifact. One JSON row per reviewer and artifact includes `id`, a pseudonymous `reviewer`, the six integer scores in `scores` (keys: originality, usefulness, alignment, feasibility, execution, simplicity), `constraints` and `safety` (true, false, or null), and `note`. Submit rows as a JSON array to the report command. Independent reviewers submit before seeing the key. The report retains individual notes and score ranges. Investigate disagreements without silently averaging away a failed gate.
+
