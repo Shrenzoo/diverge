@@ -38,3 +38,5 @@ test('invalid configuration gets no partial effect', () => {
     { maxCandidates: 0 },
     { maxCandidates: 2.5 },
     { maxCandidates: 6 },
+    { maxRefinementPasses: 3 },
+    { respectExistingDesignSystem: 'false' },
