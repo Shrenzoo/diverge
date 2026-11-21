@@ -21,3 +21,4 @@ The tool validates real parent directories and refuses symbolic links in a sourc
 
 Each host is locked in a fixed order. Both destinations are preflighted before either skill is installed. Each activation of a staged directory is atomic on its filesystem. A disk or process failure between hosts can leave one updated. Rerun after inspecting the reported paths. If a process dies during replacement, the printed backup holds the previous tree. With all installers stopped, inspect the stage, destination and backup, restore the desired tree by renaming it into the empty destination, then remove the empty stale lock. Backups can contain local edits and remain under the owner's control. Use a trusted local account and avoid concurrent edits by other tools during installation.
 
+## Runtime boundary
