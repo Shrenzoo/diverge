@@ -17,3 +17,4 @@ Project scope anchors at the current directory or the existing directory passed 
 | `.diverge-stage-*` | Private staging directory for an incoming copy. Installation publishes it with a rename. |
 | `.diverge-backup-*` | The complete previous directory, retained after an explicitly authorized replacement. |
 
+The tool validates real parent directories and refuses symbolic links in a source or replacement tree. Uninstall checks safe parents, receipt names, and file hashes and leaves local edits, links, and extra content in place. An identical reinstall does nothing. An installation without a receipt is unmanaged. Dry runs perform validation and inspection without filesystem changes.
