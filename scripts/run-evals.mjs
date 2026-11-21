@@ -43,3 +43,8 @@ async function runOne({ c, condition, repeat, agent, model, timeout, folder, ski
     record.activation = activation(condition, c.activation, record.metrics);
     const after = await snapshot(workspace);
     record.deterministic = grade(c, before, after);
+    const blind = path.join(folder, 'blind', id);
+    await fs.mkdir(blind, { recursive: true });
+    await fs.writeFile(path.join(blind, 'task.txt'), c.prompt + '\n');
+    await fs.cp(path.join(fixtures, c.fixture), path.join(blind, 'starter'), { recursive: true });
+    const deliverables = path.join(blind, 'deliverables');
