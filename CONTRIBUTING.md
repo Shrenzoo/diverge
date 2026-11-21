@@ -9,3 +9,4 @@ Start with a realistic request and the decision you want to improve. State the h
 
 From the repository root run `node scripts/validate.mjs` and `node --test`. No package install, credentials, or hosted models are required. Include the measured results and remaining limitations in the change description. Run optional paid evaluations only with an explicit budget and authorized credentials.
 
+Release maintainers should run the cross-platform matrix, review the public files and license notice, enable a private disclosure channel, and verify platform claims against the current host versions. Publish only after the repository owner authorizes it.
