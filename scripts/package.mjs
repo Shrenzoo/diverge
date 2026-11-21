@@ -15,3 +15,5 @@ export async function stat(file) {
   } catch (error) {
     if (error.code !== 'ENOENT') throw error;
     return null;
+  }
+}
