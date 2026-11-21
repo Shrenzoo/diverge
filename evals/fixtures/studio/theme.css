@@ -1,1 +1,2 @@
 :root { --ink: #17272b; --paper: #f9f6ee; --accent: #155d51; --space: 1rem; }
+body { font: 1rem/1.5 system-ui, sans-serif; color: var(--ink); background: var(--paper); margin: var(--space); }
