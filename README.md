@@ -35,3 +35,6 @@ For removal, use the same agent, scope and optional project directory with `node
 
 **Manual install.** Copy the entire `skills/diverge` directory into the chosen skills directory in the table below. Use an absent destination, or back up the existing one first. No symlink is required. To remove a manual install, compare its contents with the source, retain any local files, and remove only your copy. The managed uninstaller needs an installer receipt.
 
+## How it works
+
+1. **Intent.** Identify the audience, job, evidence, explicit constraints, and delegated decisions.
