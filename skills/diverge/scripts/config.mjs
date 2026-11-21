@@ -54,3 +54,5 @@ export function loadConfig(file) {
     return { config: preferences(JSON.parse(raw)) };
   } catch (error) {
     return { config: defaults(), error: error.message };
+  }
+}
