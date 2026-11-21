@@ -7,3 +7,7 @@ import { spawnSync, spawn } from 'node:child_process';
 import { root, source, filesIn } from '../scripts/package.mjs';
 
 async function sandbox(t) {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'diverge test '));
+  t.after(() => fs.rm(dir, { recursive: true, force: true }));
+  return dir;
+}
