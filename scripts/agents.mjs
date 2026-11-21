@@ -109,3 +109,11 @@ export function runProcess(command, args, cwd, env, timeoutMs) {
       shell: false,
       windowsHide: true,
       detached: group,
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
+    const stop = (why) => {
+      reason ??= why;
+      if (!child.pid) return;
+      if (group) {
+        try {
+          process.kill(-child.pid, 'SIGKILL');
