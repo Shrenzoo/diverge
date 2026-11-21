@@ -125,3 +125,10 @@ export function runProcess(command, args, cwd, env, timeoutMs) {
           windowsHide: true,
           timeout: 5000,
         });
+    };
+    const timer = setTimeout(() => stop('Time limit exceeded'), timeoutMs);
+    for (const [stream, chunks] of [
+      [child.stdout, out],
+      [child.stderr, err],
+    ])
+      stream.on('data', (chunk) => {
