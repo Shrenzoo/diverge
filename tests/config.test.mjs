@@ -53,3 +53,5 @@ test('missing, malformed and valid project files yield documented results on CLI
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'diverge-config-'));
   t.after(() => fs.rm(dir, { recursive: true, force: true }));
   const file = path.join(dir, 'diverge.config.json');
+  const cli = () =>
+    spawnSync(process.execPath, [path.join(source, 'scripts', 'config.mjs'), file], { encoding: 'utf8' });
