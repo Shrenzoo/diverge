@@ -52,3 +52,10 @@ test('conflicting ticket permits only exact edit and detects added, modified and
   await fs.unlink(path.join(dir, 'request.html'));
   const d = grade(c, before, await snapshot(dir));
   assert(!d.pass);
+  assert.deepEqual(d.unexpected, ['request.html', 'review-approved.txt']);
+});
+
+test('adapters preserve the implicit control prompt and pin the chosen model', () => {
+  for (const agent of ['codex', 'claude']) {
+    const baseline = invocation(agent, 'baseline', 'model-id', 'Fix it.');
+    assert.deepEqual(invocation(agent, 'implicit', 'model-id', 'Fix it.'), baseline);
