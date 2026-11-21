@@ -98,3 +98,8 @@ async function main() {
       help: { type: 'boolean' },
     },
   });
+  if (v.help)
+    return console.log(
+      'run-evals.mjs --list | --agent codex|claude [--model ID --live] [--condition all|baseline|implicit|explicit] [--case ID ...] [--repeat N] [--timeout SECONDS] [--out DIR]',
+    );
+  const cases = await loadCases();
