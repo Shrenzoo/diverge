@@ -198,3 +198,9 @@ export async function manage(operation, args = process.argv.slice(2)) {
           await fs.mkdir(lock);
         } catch (error) {
           if (error.code === 'EEXIST') throw new Error(`Installation busy: ${lock}`);
+          throw error;
+        }
+        locks.push(lock);
+      }
+    }
+    const plans = [];
