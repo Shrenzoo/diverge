@@ -36,3 +36,16 @@
         "file": "index.html",
         "pattern": "History",
         "what": "History included"
+      },
+      {
+        "file": "index.html",
+        "pattern": "Art",
+        "what": "Art included"
+      }
+    ],
+    "review": "Exercise the main decision, the ungraded case and any prediction. Grade usability and arithmetic independently."
+  },
+  {
+    "id": "study-session",
+    "fixture": "student",
+    "budget": "STANDARD",
