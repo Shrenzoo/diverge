@@ -19,3 +19,4 @@ Two independent model reviewers received anonymized artifacts, the brief and the
 | Cedar, baseline | 3 | 4 | 4 | 4 | 4 | 4 | Pass | Pass |
 | Rowan, explicit | 4 | 5 | 5 | 4 | 4 | 4 | Pass | Pass |
 | Cedar, explicit | 4 | 5 | 5 | 4 | 4 | 4 | Pass | Pass |
+
