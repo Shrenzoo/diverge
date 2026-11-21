@@ -93,3 +93,6 @@ Native CLI discovery was checked on macOS. Authenticated CLI execution and impli
 
 Codex supports separate `agents/openai.yaml` interface metadata and can discover skills along a repository path. Claude exposes a slash command and applies its own precedence to same-named skills. The shared frontmatter contains only name and description. See the [Agent Skills specification](https://agentskills.io/specification), [Codex skills](https://developers.openai.com/codex/skills), and [Claude Code skills](https://code.claude.com/docs/en/skills).
 
+## Verification and evaluation
+
+```sh
