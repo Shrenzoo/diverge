@@ -35,3 +35,6 @@
     "maxCandidates": {
       "type": "integer",
       "minimum": 1,
+      "maximum": 5,
+      "default": 3
+    },
