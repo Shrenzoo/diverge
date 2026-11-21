@@ -204,3 +204,10 @@ export async function manage(operation, args = process.argv.slice(2)) {
       }
     }
     const plans = [];
+    for (const target of targets) plans.push(await inspect(target, operation, values.replace, hashes));
+    for (const [i, target] of targets.entries()) {
+      const plan = plans[i];
+      if (!values['dry-run']) {
+        if (['install', 'replace'].includes(plan.action)) await install(target, plan, hashes);
+        if (plan.action === 'uninstall') await uninstall(target.dest, plan);
+      }
