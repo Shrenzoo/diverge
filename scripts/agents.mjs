@@ -188,3 +188,11 @@ export function traceMetrics(agent, raw) {
       if (
         event.type !== 'item.completed' ||
         !item ||
+        !['command_execution', 'file_change', 'mcp_tool_call', 'web_search'].includes(item.type)
+      )
+        continue;
+      tools++;
+      if (item.type === 'file_change') {
+        edits++;
+        for (const change of item.changes ?? []) noteEdit(change.path);
+      }
