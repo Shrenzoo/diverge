@@ -64,3 +64,10 @@ async function inspect(target, operation, replace, hashes) {
   await directory(parent);
   if (!(await directory(dest))) return { action: operation === 'install' ? 'install' : 'absent' };
   let old;
+  try {
+    old = await readReceipt(dest, Object.keys(hashes));
+  } catch (error) {
+    if (operation !== 'install' || !replace) throw error;
+    // Only a full-directory backup authorizes replacing an unreadable or older receipt.
+    console.warn(`Backing up conflicting installation with unrecognized receipt: ${dest}`);
+  }
