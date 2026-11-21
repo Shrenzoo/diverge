@@ -32,3 +32,5 @@ function check(value, rule, field) {
 
 export function preferences(input) {
   if (input === null || typeof input !== 'object' || Array.isArray(input))
+    throw new Error('Expected a JSON object');
+  const result = defaults();
