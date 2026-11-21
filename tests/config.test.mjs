@@ -44,3 +44,5 @@ test('invalid configuration gets no partial effect', () => {
       excludedPaths: [s],
     })),
     { excludedPaths: ['a', 'a'] },
+    { excludedPaths: [5] },
+  ])
