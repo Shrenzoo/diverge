@@ -138,3 +138,8 @@ async function main() {
     repeats: n,
     runs: [],
   };
+  for (let repeat = 1; repeat <= n; repeat++)
+    for (const c of selected)
+      for (const condition of shuffle([...arms])) {
+        const run = await runOne({
+          c,
