@@ -59,3 +59,5 @@ export async function validateSkill() {
   // Validate the deliberately narrow portable frontmatter emitted in this repository.
   const header = /^---\r?\nname: diverge\r?\ndescription: ([^\r\n]+)\r?\n---\r?\n/.exec(skill);
   assert(
+    header && header[1].trim().length > 0 && header[1].length <= 1024 && !/[:#]\s/.test(header[1]),
+    'Invalid skill metadata',
