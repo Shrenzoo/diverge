@@ -236,3 +236,11 @@ export function traceMetrics(agent, raw) {
       }
     }
   }
+  const observed = events.some((e) =>
+    agent === 'codex' ? e.type === 'turn.completed' : e.type === 'result',
+  );
+  return {
+    tokens: Number.isFinite(tokens) ? tokens : null,
+    toolCalls: observed ? tools : null,
+    failedAttempts: observed ? failed : null,
+    editCalls: observed ? edits : null,
