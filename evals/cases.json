@@ -177,3 +177,16 @@
       "plan.md"
     ],
     "checks": [],
+    "review": "Walk two simultaneous offers and an unfilled last hour. Verify privacy, confirmation, and the measurement denominator."
+  },
+  {
+    "id": "differentiation",
+    "fixture": "studio",
+    "budget": "STANDARD",
+    "activation": "consider",
+    "prompt": "Write positioning.md for this repair team. Compare a service-area-first promise with one other position, recommend one, and state how to test it without invented customer evidence.",
+    "outputs": [
+      "positioning.md"
+    ],
+    "checks": [],
+    "review": "Can the proposed test distinguish the two positioning hypotheses?"
