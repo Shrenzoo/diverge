@@ -14,3 +14,4 @@ Eliminate directions that fail a hard contract, access need, budget, or safety r
 | Risk | Examine a failure, its blast radius, and the cost of reversal. |
 | Constraint compliance | Cite the contract that makes the candidate eligible. |
 
+For close calls, record one short reason for each dimension that distinguishes the candidates. Prefer a small discriminating test over a weighted sum. If evidence is sparse, use the simpler reversible choice and state the uncertainty.
