@@ -141,3 +141,8 @@ export function report(manifest, ratings = []) {
               const xs = rows.map((x) => x.scores[k]);
               return k + ' ' + Math.min(...xs) + '–' + Math.max(...xs);
             })
+            .join(', ') +
+          '.',
+      );
+    lines.push('');
+  }
