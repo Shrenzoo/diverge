@@ -4,3 +4,4 @@ permissions:
   contents: read
 jobs:
   verify:
+    strategy:
