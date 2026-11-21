@@ -31,3 +31,7 @@ Claude Code: /diverge Design a dashboard that helps students choose what to work
 
 > Use Diverge for open-ended design, workflow, or architecture choices when several mechanisms could serve the user. Preserve exact instructions and keep narrow fixes narrow.
 
+For removal, use the same agent, scope and optional project directory with `node scripts/uninstall.mjs`. For example, `node scripts/uninstall.mjs --agent both --scope project`. Hash checks protect local edits, and unrelated files remain in place. Both tools accept `--help`.
+
+**Manual install.** Copy the entire `skills/diverge` directory into the chosen skills directory in the table below. Use an absent destination, or back up the existing one first. No symlink is required. To remove a manual install, compare its contents with the source, retain any local files, and remove only your copy. The managed uninstaller needs an installer receipt.
+
