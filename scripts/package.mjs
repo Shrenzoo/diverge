@@ -17,3 +17,6 @@ export async function stat(file) {
     return null;
   }
 }
+
+export async function filesIn(directory, relative = '') {
+  const files = [];
