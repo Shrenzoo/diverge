@@ -76,3 +76,7 @@ test('two-host preflight detects an unmanaged second target before replacing the
   const unmanaged = path.join(dir, '.claude', 'skills', 'diverge');
   await fs.mkdir(unmanaged, { recursive: true });
   await fs.writeFile(path.join(unmanaged, 'notes'), 'mine');
+  assert.notEqual(command(dir, 'install', both).status, 0);
+  await assert.rejects(fs.access(path.join(dir, '.agents', 'skills', 'diverge')), { code: 'ENOENT' });
+  assert.notEqual(command(dir, 'uninstall', ['--agent', 'claude', '--scope', 'project']).status, 0);
+  ok(command(dir, 'install', [...both, '--replace']));
