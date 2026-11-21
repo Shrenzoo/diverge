@@ -45,3 +45,10 @@ test('conflicting ticket permits only exact edit and detects added, modified and
   const before = await snapshot(dir);
   await fs.writeFile(
     path.join(dir, 'index.html'),
+    before.get('index.html').body.toString().replace('Click here', 'Request a repair'),
+  );
+  assert(grade(c, before, await snapshot(dir)).pass);
+  await fs.writeFile(path.join(dir, 'review-approved.txt'), 'YES');
+  await fs.unlink(path.join(dir, 'request.html'));
+  const d = grade(c, before, await snapshot(dir));
+  assert(!d.pass);
