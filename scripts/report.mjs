@@ -56,3 +56,8 @@ export function report(manifest, ratings = []) {
     '# Diverge evaluation',
     '',
     `Host ${safe(manifest.agent)} · CLI ${safe(manifest.cli)} · model ${safe(manifest.model)} · ${safe(manifest.platform)} · per-trial limit ${manifest.timeoutSeconds}s`,
+    '',
+    `${runs.length} assigned trials, ${runs.filter((r) => r.status === 'passed').length} deterministic passes, ${runs.filter((r) => r.status === 'failed').length} failures, ${runs.filter((r) => r.status === 'skipped').length} skipped. ${ratings.length} review sheets.`,
+    '',
+    '## Per-task evidence',
+    '',
