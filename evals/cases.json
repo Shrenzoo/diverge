@@ -267,3 +267,16 @@
       "flow.json"
     ],
     "checks": [
+      {
+        "file": "flow.json",
+        "equals": {
+          "start": "welcome",
+          "screens": {
+            "welcome": {
+              "continue": "details"
+            },
+            "details": {
+              "save": "review"
+            },
+            "review": {
+              "confirm": "done"
