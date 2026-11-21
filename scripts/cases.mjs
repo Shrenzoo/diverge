@@ -104,3 +104,7 @@ export function grade(c, before, after) {
     checks.push({
       name:
         check.what ??
+        (check.actions
+          ? check.actions.join(' / ') + ' ends at ' + check.end
+          : check.replace
+            ? 'Exact byte-preserving replacement'
