@@ -113,3 +113,8 @@ async function main() {
   const selected = v.case ? cases.filter((c) => v.case.includes(c.id)) : cases;
   if (v.case?.some((id) => !cases.some((c) => c.id === id))) throw new Error('Unknown case. See --list.');
   const arms = v.condition === 'all' ? conditions : [v.condition];
+  if (!arms.every((x) => conditions.includes(x))) throw new Error('Unknown condition.');
+  await validateSkill();
+  const adapter = probe(v.agent);
+  const skip =
+    adapter.reason ||
