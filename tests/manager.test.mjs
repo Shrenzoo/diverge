@@ -62,3 +62,7 @@ test('replacement retains backup and extra files; uninstall retains edited and u
   await fs.writeFile(path.join(dest, 'mine.txt'), 'keep');
   assert.notEqual(command(dir, 'install', both).status, 0);
   ok(command(dir, 'install', [...both, '--replace']));
+  const backup = (await fs.readdir(parent)).find((s) => s.startsWith('.diverge-backup-'));
+  assert.equal(await fs.readFile(path.join(parent, backup, 'SKILL.md'), 'utf8'), 'local customization');
+  await fs.writeFile(path.join(dest, 'references', 'frontend.md'), 'local guide');
+  ok(command(dir, 'uninstall', both));
