@@ -85,3 +85,7 @@ test('two-host preflight detects an unmanaged second target before replacing the
 
 test('host roots and installed parent links cannot redirect writes or removal', async (t) => {
   const dir = await sandbox(t),
+    elsewhere = await sandbox(t);
+  await fs.symlink(elsewhere, path.join(dir, '.agents'), process.platform === 'win32' ? 'junction' : 'dir');
+  assert.notEqual(command(dir, 'install', codex).status, 0);
+  assert.deepEqual(await fs.readdir(elsewhere), []);
