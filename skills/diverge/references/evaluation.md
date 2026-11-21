@@ -10,3 +10,4 @@ Eliminate directions that fail a hard contract, access need, budget, or safety r
 | Feasibility | Identify required data, integrations, time, and missing capabilities. |
 | Simplicity | Count added steps, states, dependencies, and concepts. |
 | Maintainability | Identify the layer that owns the invariant and who will operate it. |
+| Accessibility | Walk the alternative input and recovery paths. |
