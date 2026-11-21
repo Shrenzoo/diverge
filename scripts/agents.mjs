@@ -85,3 +85,11 @@ export function isolatedEnv(home, agent, tmp) {
     APPDATA: path.join(home, 'appdata'),
     LOCALAPPDATA: path.join(home, 'local'),
     TMPDIR: tmp,
+    TEMP: tmp,
+    TMP: tmp,
+    DISABLE_TELEMETRY: '1',
+    CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: '1',
+  });
+  if (process.env[keyNames[agent]]) env[keyNames[agent]] = process.env[keyNames[agent]];
+  return env;
+}
