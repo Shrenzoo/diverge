@@ -12,3 +12,6 @@ test('the portable skill validates, including all local references', async () =>
 });
 
 test('schema defaults and configured modes resolve independently', () => {
+  assert.deepEqual(preferences({}), defaults());
+  for (const mode of schema.properties.mode.enum)
+    for (const interaction of schema.properties.interaction.enum) {
