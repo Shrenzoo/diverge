@@ -6,3 +6,4 @@ Eliminate directions that fail a hard contract, access need, budget, or safety r
 | --- | --- |
 | Intent alignment | Walk a representative user from the trigger to the desired outcome. |
 | Originality | Identify the functional difference from the conventional baseline. |
+| Usefulness | Show the saved decision, prevented error, or newly possible action. |
