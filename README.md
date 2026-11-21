@@ -62,3 +62,6 @@ For illustrative UI, product, architecture, diagnosis, and Wildcard use cases, s
 | Wildcard | Explore a larger reframing and test the functional value of the strongest idea. |
 
 Place an optional `diverge.config.json` in the project root. These are the defaults:
+
+```json
+{
