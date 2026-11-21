@@ -57,3 +57,8 @@ test('replacement retains backup and extra files; uninstall retains edited and u
   const dir = await sandbox(t);
   ok(command(dir, 'install', both));
   const parent = path.join(dir, '.agents');
+  const dest = path.join(parent, 'skills', 'diverge');
+  await fs.writeFile(path.join(dest, 'SKILL.md'), 'local customization');
+  await fs.writeFile(path.join(dest, 'mine.txt'), 'keep');
+  assert.notEqual(command(dir, 'install', both).status, 0);
+  ok(command(dir, 'install', [...both, '--replace']));
