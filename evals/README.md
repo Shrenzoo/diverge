@@ -18,3 +18,4 @@ The last two commands probe the native executable and write a preflight report. 
 node scripts/run-evals.mjs --live --agent codex --model MODEL_ID --case shift-desk --case exact-label --repeat 2 --timeout 180
 node scripts/run-evals.mjs --live --agent claude --model MODEL_ID --case shift-desk --case exact-label --repeat 2 --timeout 180
 ```
+
