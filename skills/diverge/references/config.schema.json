@@ -33,3 +33,5 @@
       "default": "autonomous"
     },
     "maxCandidates": {
+      "type": "integer",
+      "minimum": 1,
