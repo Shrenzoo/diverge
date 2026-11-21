@@ -40,3 +40,5 @@ test('invalid configuration gets no partial effect', () => {
     { maxCandidates: 6 },
     { maxRefinementPasses: 3 },
     { respectExistingDesignSystem: 'false' },
+    ...['/tmp', '../data', 'a/..', 'x/./y', 'C:/etc', 'a\\b', 'a//b', ''].map((s) => ({
+      excludedPaths: [s],
