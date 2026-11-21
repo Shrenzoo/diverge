@@ -133,3 +133,8 @@ export function grade(c, before, after) {
   return {
     changed,
     unexpected,
+    checks,
+    builds,
+    pass: !unexpected.length && checks.every((x) => x.pass) && builds.every((x) => x.pass),
+  };
+}
