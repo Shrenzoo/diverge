@@ -14,3 +14,5 @@ The coordinator needed to fill a vacancy with volunteers who can call or text, i
 Two independent model reviewers received anonymized artifacts, the brief and the [rubric](../rubric.md). Neither received the conditions or the other review. They scored the delivered plans, not a trial in the field.
 
 | Blinded review | Originality | Usefulness | Alignment | Feasibility | Execution | Simplicity | Constraints | Artifact safety |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |
+| Rowan, baseline | 3 | 4 | 4 | 4 | 4 | 4 | Pass | Pass |
