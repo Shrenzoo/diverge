@@ -65,3 +65,10 @@ test('adapters preserve the implicit control prompt and pin the chosen model', (
     assert.deepEqual(explicit.slice(0, -1), baseline.slice(0, -1));
     const env = isolatedEnv('/tmp/fake-home', agent, '/tmp/fake-tmp');
     assert.equal(env.HOME, '/tmp/fake-home');
+    assert.equal(env.SSH_AUTH_SOCK, undefined);
+  }
+});
+
+test('trace interpretation separates host discovery, observed calls, denials and absent evidence', () => {
+  const lines = (...xs) => xs.map((x) => JSON.stringify(x)).join('\n');
+  const raw = lines(
