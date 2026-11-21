@@ -10,3 +10,4 @@ jobs:
         os: [ubuntu-latest, macos-latest, windows-latest]
         node: [20, 24]
     runs-on: ${{ matrix.os }}
+    steps:
