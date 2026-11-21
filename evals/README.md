@@ -38,3 +38,4 @@ A host tool call or a successful command reading the skill can supply invocation
 Reviewers independently score the six dimensions and the two gates in [rubric.md](rubric.md). Review notes, disagreement, and failed gates remain visible. Rebuild the summary after collecting the ratings:
 
 ```sh
+node scripts/report.mjs --run RUN_DIRECTORY --ratings RATINGS_JSON_FILE
