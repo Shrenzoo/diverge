@@ -1,0 +1,12 @@
+[
+  {
+    "id": "repair-landing",
+    "fixture": "studio",
+    "budget": "STANDARD",
+    "activation": "consider",
+    "prompt": "Build Harbor Home a more useful landing page in index.html. Help visitors decide whether to request service. Keep the existing request destination and theme stylesheet. Use brief.md.",
+    "outputs": [
+      "index.html"
+    ],
+    "checks": [
+      {
