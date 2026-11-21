@@ -54,3 +54,6 @@
     },
     "showCreativeRationale": {
       "type": "string",
+      "enum": [
+        "none",
+        "brief",
