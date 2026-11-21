@@ -47,3 +47,5 @@ export async function validateSkill() {
       'architecture',
       'problem-solving',
       'configuration',
+    ].map((x) => `references/${x}.md`),
+  ];
