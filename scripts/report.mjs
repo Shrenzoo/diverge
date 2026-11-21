@@ -19,3 +19,8 @@ function stats(xs) {
   const sd =
     ns.length > 1
       ? Math.sqrt(ns.reduce((s, n) => s + (n - avg) ** 2, 0) / (ns.length - 1)).toFixed(2)
+      : 'n/a';
+  return `n=${ns.length}, mean ${avg.toFixed(2)}, sample SD ${sd}`;
+}
+const safe = (s) =>
+  String(s ?? '—')
