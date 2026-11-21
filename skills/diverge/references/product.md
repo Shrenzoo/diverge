@@ -6,3 +6,4 @@ Compare improving the bottleneck, moving the action earlier, and removing its ca
 
 When delivery includes a measured trial, define which cases count, who records the event, and how to interpret a period with no eligible cases.
 
+Example: volunteers repeatedly type availability into shift requests. Remembering a draft cuts typing; exposing open shifts filtered by availability changes the starting point; an automatic assignment creates a new consent decision. Test the first two with a volunteer who can cover only part of a shift. Measure completed suitable requests and wrong assignments.
