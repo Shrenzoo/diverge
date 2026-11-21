@@ -24,3 +24,4 @@ try {
   }
   for (const directory of ['scripts', 'skills', 'tests']) {
     for (const file of (await filesIn(path.join(root, directory))).filter((f) => f.endsWith('.mjs'))) {
+      const result = spawnSync(process.execPath, ['--check', path.join(root, directory, file)], {
