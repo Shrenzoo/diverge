@@ -37,3 +37,11 @@ export function invocation(agent, condition, model, prompt) {
     return [
       '-a',
       'never',
+      'exec',
+      '--json',
+      '--ephemeral',
+      '--ignore-user-config',
+      '--sandbox',
+      'workspace-write',
+      '--skip-git-repo-check',
+      '-c',
