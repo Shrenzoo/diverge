@@ -61,3 +61,8 @@ export function report(manifest, ratings = []) {
     '',
     '## Per-task evidence',
     '',
+    '| Case / repetition | Condition | Result | Changed files | Build / parse | Contract checks | Seconds | Tokens | Calls / failed | Edits / revisions | Permission denials | Invocation evidence or skip reason |',
+    '|---|---|---|---|---|---|---:|---:|---|---|---|---|',
+  ];
+  for (const r of runs) {
+    const d = r.deterministic,
