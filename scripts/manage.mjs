@@ -24,3 +24,10 @@ async function directory(dir, create = false) {
 
 async function parentsOK(root, name) {
   let parent = root;
+  for (const segment of name.split('/').slice(0, -1)) {
+    parent = path.join(parent, segment);
+    if (!(await stat(parent))?.isDirectory()) return false;
+  }
+  return true;
+}
+
