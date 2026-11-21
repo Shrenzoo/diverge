@@ -57,3 +57,7 @@ export async function snapshot(dir) {
         bytes += info.size;
         if (info.size > 4_000_000 || bytes > 30_000_000) throw new Error('Workspace size limit exceeded');
         const body = await fs.readFile(file);
+        entries.set(key, { kind: 'file', hash: digest(body), body });
+      } else
+        entries.set(key, {
+          kind: 'unsafe',
