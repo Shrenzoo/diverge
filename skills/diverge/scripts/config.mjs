@@ -50,3 +50,5 @@ export function loadConfig(file) {
     if (error.code === 'ENOENT') return { config: defaults() };
     return { config: defaults(), error: error.message };
   }
+  try {
+    return { config: preferences(JSON.parse(raw)) };
