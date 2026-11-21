@@ -11,3 +11,4 @@ jobs:
         node: [20, 24]
     runs-on: ${{ matrix.os }}
     steps:
+      - uses: actions/checkout@v4
