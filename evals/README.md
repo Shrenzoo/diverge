@@ -7,3 +7,4 @@ The research question is whether useful originality improves while reliability, 
 From the repository root:
 
 ```sh
+node scripts/run-evals.mjs --list
