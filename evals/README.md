@@ -27,3 +27,4 @@ Each arm receives identical fixture bytes and its own workspace, home, and tempo
 
 Codex runs `exec --json` with workspace-write sandboxing, approval requests disabled (sandbox failures are returned), ephemeral sessions, and no user config. Claude runs in print mode with JSON event streaming, isolated project settings, strict MCP configuration, and only local read, skill, edit and write tools. Claude's restricted mode on the tested build hid project skills, so this adapter selects tools explicitly. Adapters check required flags and skip unsupported binaries. Windows needs directly executable native CLIs on PATH. Unavailable credentials and binaries yield skipped rows with reasons.
 
+## Evidence and scoring
