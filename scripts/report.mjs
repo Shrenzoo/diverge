@@ -77,3 +77,8 @@ export function report(manifest, ratings = []) {
     '## Descriptive statistics',
     '',
     'Timing includes failed executions with measured duration. Scores below give each rated artifact equal weight, averaging its independent reviews first.',
+  );
+  for (const arm of [...new Set(runs.map((r) => r.condition))]) {
+    const group = runs.filter((r) => r.condition === arm);
+    lines.push(
+      '',
