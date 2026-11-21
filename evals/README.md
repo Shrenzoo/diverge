@@ -30,3 +30,4 @@ Codex runs `exec --json` with workspace-write sandboxing, approval requests disa
 ## Evidence and scoring
 
 Every invocation creates a unique subdirectory under `eval-results/` (override with `--out`). `results.json` records assignments, model, CLI, budgets, execution status, measured metrics, declared checks and unexpected filesystem changes. `summary.md` shows per-task results, counts, means, sample standard deviations and paired cost flags. Failed or timed-out sessions retain available evidence. `raw/` holds local stdout/stderr and unexpected ordinary deliverables. `blind/` contains randomly labeled task briefs, starting fixtures, and submitted artifacts. Only the reviewer bundle and rubric go to the reviewer.
+
