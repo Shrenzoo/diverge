@@ -132,3 +132,11 @@ export function runProcess(command, args, cwd, env, timeoutMs) {
       [child.stderr, err],
     ])
       stream.on('data', (chunk) => {
+        bytes += chunk.length;
+        if (bytes <= 12_000_000) chunks.push(chunk);
+        else if (!reason) stop('Trace limit exceeded');
+      });
+    child.on('error', (e) => {
+      reason = e.message;
+    });
+    child.on('close', (code, signal) => {
