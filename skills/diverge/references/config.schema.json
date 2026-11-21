@@ -5,3 +5,5 @@
   "additionalProperties": false,
   "properties": {
     "mode": {
+      "type": "string",
+      "enum": [
