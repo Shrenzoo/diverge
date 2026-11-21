@@ -40,3 +40,8 @@ function validateRatings(runs, ratings) {
       typeof r.note !== 'string' ||
       !r.note.trim()
     )
+      throw new Error('Invalid reviewer, artifact ID, scores, gates, or evidence note');
+    const key = JSON.stringify([r.id, r.reviewer]);
+    if (seen.has(key)) throw new Error('Duplicate artifact/reviewer rating');
+    seen.add(key);
+  }
