@@ -131,3 +131,7 @@ test('concurrent installers leave a complete readable copy', async (t) => {
 });
 
 test('explicit replacement retains a backup of an unreadable receipt', async (t) => {
+  const dir = await sandbox(t);
+  ok(command(dir, 'install', codex));
+  const parent = path.join(dir, '.agents');
+  const receipt = path.join('skills', 'diverge', '.diverge-install.json');
