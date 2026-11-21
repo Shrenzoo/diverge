@@ -15,3 +15,4 @@ Name the allowed files, a consequential failure, and what evidence would disting
 
 ## Evidence
 
+Label observations and hypotheses separately. Include condition, model, host version, and repetitions when reporting a run. Share sanitized artifacts only.
