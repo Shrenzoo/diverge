@@ -131,3 +131,10 @@ async function install(target, plan, hashes) {
 async function uninstall(dest, { remove, old }) {
   const dirs = new Set();
   for (const name of remove) {
+    if (!(await matches(dest, name, old[name]))) continue;
+    await fs.unlink(path.join(dest, name));
+    let dir = path.posix.dirname(name);
+    while (dir !== '.') {
+      dirs.add(dir);
+      dir = path.posix.dirname(dir);
+    }
