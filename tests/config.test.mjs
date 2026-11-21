@@ -15,3 +15,5 @@ test('schema defaults and configured modes resolve independently', () => {
   assert.deepEqual(preferences({}), defaults());
   for (const mode of schema.properties.mode.enum)
     for (const interaction of schema.properties.interaction.enum) {
+      const settings = preferences({ mode, interaction, creativity: 'experimental', maxRefinementPasses: 0 });
+      assert.equal(settings.mode, mode);
