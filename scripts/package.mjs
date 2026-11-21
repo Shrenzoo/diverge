@@ -29,3 +29,6 @@ export async function filesIn(directory, relative = '') {
   return files.sort();
 }
 
+export async function validateSkill() {
+  const files = await filesIn(source);
+  const required = [
