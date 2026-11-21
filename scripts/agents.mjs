@@ -228,3 +228,11 @@ export function traceMetrics(agent, raw) {
         denied += event.permission_denials?.length ?? 0;
         if (event.usage)
           tokens = [
+            'input_tokens',
+            'output_tokens',
+            'cache_creation_input_tokens',
+            'cache_read_input_tokens',
+          ].reduce((s, k) => s + (event.usage[k] ?? 0), 0);
+      }
+    }
+  }
