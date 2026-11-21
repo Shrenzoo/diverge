@@ -13,3 +13,4 @@ Include OS, Node and agent versions, command, scope, and a small synthetic examp
 
 ## Impact and recovery
 
+Which files or decisions were affected? Include redacted diagnostic output when available.
