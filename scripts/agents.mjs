@@ -252,3 +252,11 @@ export function traceMetrics(agent, raw) {
     agentError: error,
   };
 }
+
+export function activation(condition, expectation, metrics) {
+  if (condition === 'baseline' && (metrics.discoverable || metrics.invocationEvidence))
+    return 'contaminated baseline';
+  if (condition !== 'baseline' && metrics.discoverable === false) return 'skill missing';
+  if (!metrics.invocationEvidence) return 'unobserved';
+  return condition === 'implicit' && expectation === 'avoid' ? 'unexpected activation' : 'observed';
+}
