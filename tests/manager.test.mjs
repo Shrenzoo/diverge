@@ -39,3 +39,7 @@ for (const [agent, base] of [
       ok(command(home, 'install', [...args, '--dry-run']));
       await assert.rejects(fs.access(dest), { code: 'ENOENT' });
       ok(command(home, 'install', args));
+      for (const name of await filesIn(source))
+        assert.deepEqual(
+          await fs.readFile(path.join(dest, name)),
+          await fs.readFile(path.join(source, name)),
