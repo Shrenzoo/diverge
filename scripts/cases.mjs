@@ -95,3 +95,7 @@ export function grade(c, before, after) {
       changed.includes(file) && after.get(file)?.kind === 'file' && !!after.get(file).body.toString().trim(),
   }));
   for (const check of c.checks) {
+    let pass = false;
+    try {
+      pass = !!passed(check, after.get(check.file).body.toString(), before.get(check.file)?.body?.toString());
+    } catch {
