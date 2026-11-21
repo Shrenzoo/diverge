@@ -101,3 +101,11 @@ export function runProcess(command, args, cwd, env, timeoutMs) {
       out = [],
       err = [];
     let bytes = 0,
+      reason = null;
+    const group = process.platform !== 'win32';
+    const child = spawn(command, args, {
+      cwd,
+      env,
+      shell: false,
+      windowsHide: true,
+      detached: group,
