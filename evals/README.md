@@ -39,3 +39,4 @@ Reviewers independently score the six dimensions and the two gates in [rubric.md
 
 ```sh
 node scripts/report.mjs --run RUN_DIRECTORY --ratings RATINGS_JSON_FILE
+```
