@@ -108,3 +108,8 @@ async function main() {
     throw new Error('Choose --agent codex|claude. Live trials also require --model ID.');
   const n = Number(v.repeat),
     timeout = Number(v.timeout);
+  if (!Number.isInteger(n) || n < 1 || n > 100 || !Number.isInteger(timeout) || timeout < 1 || timeout > 3600)
+    throw new Error('Use 1–100 repetitions and 1–3600 seconds per trial.');
+  const selected = v.case ? cases.filter((c) => v.case.includes(c.id)) : cases;
+  if (v.case?.some((id) => !cases.some((c) => c.id === id))) throw new Error('Unknown case. See --list.');
+  const arms = v.condition === 'all' ? conditions : [v.condition];
