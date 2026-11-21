@@ -140,3 +140,10 @@ test('report separates quality, gate disagreement and paired inefficiency', () =
   assert.match(output, /safety false/);
   assert.throws(() => report(sim, [...ratings, ratings[0]]), /Duplicate/);
   assert.throws(() => report(sim, [{ ...ratings[0], id: 'unknown' }]), /Invalid/);
+});
+
+test('preflight writes valid JSON and Markdown without starting a trial', async (t) => {
+  const dir = await scratch(t);
+  const out = spawnSync(
+    process.execPath,
+    [path.join(root, 'scripts', 'run-evals.mjs'), '--agent', 'codex', '--case', 'button-fix', '--out', dir],
