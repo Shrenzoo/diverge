@@ -66,3 +66,6 @@ export async function validateSkill() {
   assert(
     /^interface:\r?\n  display_name: "[^"\n]+"\r?\n  short_description: "[^"\n]{25,64}"\r?\n  default_prompt: ".*\$diverge[^"\n]*"\s*$/.test(
       metadata,
+    ),
+    'Invalid Codex interface metadata',
+  );
