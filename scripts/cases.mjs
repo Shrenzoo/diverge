@@ -31,3 +31,8 @@ export async function loadCases() {
         c.outputs.includes(check.file) &&
           ['pattern', 'equals', 'actions', 'replace'].filter((k) => Object.hasOwn(check, k)).length === 1,
         c.id,
+      );
+      if (check.pattern) new RegExp(check.pattern, 'iu');
+      if (check.replace) assert(input.includes(check.file) && check.replace.length === 2, c.id);
+    }
+  }
