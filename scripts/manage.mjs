@@ -111,3 +111,10 @@ async function install(target, plan, hashes) {
       JSON.stringify({ format: 1, skill: 'diverge', files: hashes }, null, 2) + '\n',
       { flag: 'wx' },
     );
+    if (plan.action === 'replace') {
+      backup = path.join(target.meta, `.diverge-backup-${randomUUID()}`);
+      await fs.rename(target.dest, backup);
+      console.log(`Backup: ${backup}`);
+    }
+    try {
+      await fs.rename(stage, target.dest);
