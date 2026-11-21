@@ -40,3 +40,5 @@ Reviewers independently score the six dimensions and the two gates in [rubric.md
 ```sh
 node scripts/report.mjs --run RUN_DIRECTORY --ratings RATINGS_JSON_FILE
 ```
+
+Token, tool, edit, failed-attempt, and permission counts depend on trace coverage. Revision counts are observed subsequent edit operations on the same path. Shell-only edits can escape this count. Missing values stay missing. File changes come from the final workspace comparison. Timings include failed executions with measured duration. A 1.5× increase in time or tokens over a passing paired baseline triggers review, alongside the originality difference when rated. Rates across providers are not interchangeable. The [pilot](pilot/README.md) records separately collected observed artifacts.
