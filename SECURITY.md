@@ -15,3 +15,4 @@ Project scope anchors at the current directory or the existing directory passed 
 | `skills/diverge/` | Complete skill copy plus a `.diverge-install.json` receipt containing package file names and SHA-256 digests. |
 | `.diverge-lock/` | Exclusive directory shared by install and uninstall. Removed after normal completion. |
 | `.diverge-stage-*` | Private staging directory for an incoming copy. Installation publishes it with a rename. |
+| `.diverge-backup-*` | The complete previous directory, retained after an explicitly authorized replacement. |
