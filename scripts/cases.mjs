@@ -82,3 +82,8 @@ function passed(check, body, initial) {
 
 export function grade(c, before, after) {
   const changed = [...new Set([...before.keys(), ...after.keys()])]
+    .filter((key) => {
+      const first = before.get(key),
+        last = after.get(key);
+      return first?.kind !== last?.kind || first?.hash !== last?.hash;
+    })
