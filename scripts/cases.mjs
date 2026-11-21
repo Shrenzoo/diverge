@@ -129,3 +129,7 @@ export function grade(c, before, after) {
       });
       builds.push({ file, pass: body != null && out.status === 0 });
     }
+  }
+  return {
+    changed,
+    unexpected,
