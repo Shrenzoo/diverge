@@ -18,3 +18,5 @@ function check(value, rule, field) {
       throw new Error(`${field} must be an integer from ${rule.minimum} to ${rule.maximum}`);
   } else if (rule.type === 'array') {
     if (!Array.isArray(value)) throw new Error(`${field} must be an array`);
+    value.forEach((entry, i) => check(entry, rule.items, `${field}[${i}]`));
+    if (rule.uniqueItems && new Set(value).size !== value.length)
