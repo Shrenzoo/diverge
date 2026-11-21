@@ -36,3 +36,5 @@ test('invalid configuration gets no partial effect', () => {
     { unknown: true },
     JSON.parse('{"__proto__":1}'),
     { maxCandidates: 0 },
+    { maxCandidates: 2.5 },
+    { maxCandidates: 6 },
