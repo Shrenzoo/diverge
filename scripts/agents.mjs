@@ -244,3 +244,11 @@ export function traceMetrics(agent, raw) {
     toolCalls: observed ? tools : null,
     failedAttempts: observed ? failed : null,
     editCalls: observed ? edits : null,
+    revisions: editedPaths.size ? revisions : null,
+    permissionDenials: agent === 'claude' && observed ? denied : null,
+    invocationEvidence,
+    discoverable,
+    traceComplete: observed,
+    agentError: error,
+  };
+}
