@@ -14,3 +14,7 @@ Requires Node.js 20+ for the installer. Run from this source checkout. No npm in
 | --- | --- |
 | Codex, this project | `node scripts/install.mjs --agent codex --scope project` |
 | Claude Code, this project | `node scripts/install.mjs --agent claude --scope project` |
+| Codex, this user | `node scripts/install.mjs --agent codex --scope user` |
+| Claude Code, this user | `node scripts/install.mjs --agent claude --scope user` |
+| Both, this project | `node scripts/install.mjs --agent both --scope project` |
+
