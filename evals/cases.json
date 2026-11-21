@@ -49,3 +49,16 @@
     "id": "study-session",
     "fixture": "student",
     "budget": "STANDARD",
+    "activation": "consider",
+    "prompt": "Build an offline study planner in index.html. Help a student use ten minutes productively with the supplied course data. Include what happens when a course has no grades.",
+    "outputs": [
+      "index.html"
+    ],
+    "checks": [
+      {
+        "file": "index.html",
+        "pattern": "History",
+        "what": "Grounded in the supplied courses"
+      }
+    ],
+    "review": "Can a student complete a concrete planning action in ten minutes?"
