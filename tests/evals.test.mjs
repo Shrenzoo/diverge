@@ -194,3 +194,10 @@ console.log(JSON.stringify({type:'result',is_error:false,usage:{input_tokens:1,o
       {
         encoding: 'utf8',
         env: {
+          ...process.env,
+          PATH: dir + path.delimiter + process.env.PATH,
+          ANTHROPIC_API_KEY: 'synthetic-test-value',
+        },
+      },
+    );
+    assert.equal(run.status, 0, run.stdout + run.stderr);
