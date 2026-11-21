@@ -34,3 +34,6 @@ export async function validateSkill() {
   const required = [
     'SKILL.md',
     'agents/openai.yaml',
+    'scripts/config.mjs',
+    'references/config.schema.json',
+    ...[
