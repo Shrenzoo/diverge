@@ -69,3 +69,11 @@ export function invocation(agent, condition, model, prompt) {
     task,
   ];
 }
+
+export function isolatedEnv(home, agent, tmp) {
+  const env = {};
+  for (const k of ['PATH', 'SystemRoot', 'ComSpec', 'PATHEXT', 'LANG', 'LC_ALL', 'WINDIR'])
+    if (process.env[k]) env[k] = process.env[k];
+  Object.assign(env, {
+    HOME: home,
+    USERPROFILE: home,
