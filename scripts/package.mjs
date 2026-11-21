@@ -32,3 +32,5 @@ export async function filesIn(directory, relative = '') {
 export async function validateSkill() {
   const files = await filesIn(source);
   const required = [
+    'SKILL.md',
+    'agents/openai.yaml',
