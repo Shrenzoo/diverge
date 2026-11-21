@@ -46,3 +46,5 @@ export function loadConfig(file) {
   let raw;
   try {
     raw = readFileSync(file, 'utf8');
+  } catch (error) {
+    if (error.code === 'ENOENT') return { config: defaults() };
