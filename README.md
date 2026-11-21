@@ -69,3 +69,6 @@ Place an optional `diverge.config.json` in the project root. These are the defau
   "creativity": "balanced",
   "interaction": "autonomous",
   "maxCandidates": 3,
+  "maxRefinementPasses": 1,
+  "respectExistingDesignSystem": true,
+  "allowMajorRedesignWithoutApproval": false,
