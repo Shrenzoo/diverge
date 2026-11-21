@@ -9,3 +9,4 @@ Start with the narrowest row that can settle a real choice. Openness means an im
 | STANDARD | Several mechanisms could serve an open brief | Up to three distinct directions, then implement one. | Students need to decide what assignment to work on next. |
 | DEEP | An important, genuinely open problem rewards reframing | Apply an additional technique, test the strongest assumption. Stay under the candidate cap. | Rethink a study product with an explicit experimentation mandate. |
 
+Increase breadth for a requested departure with a practical upside. Lower it for regressions, expensive verification, little time, or little freedom. A consequential decision can warrant deep **proposal** work while execution waits for approval. These are heuristics.
