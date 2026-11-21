@@ -55,3 +55,5 @@ test('missing, malformed and valid project files yield documented results on CLI
   const file = path.join(dir, 'diverge.config.json');
   const cli = () =>
     spawnSync(process.execPath, [path.join(source, 'scripts', 'config.mjs'), file], { encoding: 'utf8' });
+  assert.deepEqual(loadConfig(file), { config: defaults() });
+  await fs.writeFile(file, '{"mode":"wildcard",');
