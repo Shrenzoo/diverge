@@ -121,3 +121,7 @@ export function grade(c, before, after) {
         builds.push({ file, pass: true });
       } catch {
         builds.push({ file, pass: false });
+      }
+    } else if (file.endsWith('.mjs')) {
+      const out = spawnSync(process.execPath, ['--input-type=module', '--check'], {
+        input: body ?? '',
