@@ -171,3 +171,10 @@ export async function manage(operation, args = process.argv.slice(2)) {
   if (values['project-dir'] && values.scope !== 'project')
     throw new Error('--project-dir requires --scope project');
   const base = await fs.realpath(
+    values.scope === 'user' ? os.homedir() : (values['project-dir'] ?? process.cwd()),
+  );
+  if (!(await directory(base))) throw new Error(`Missing root: ${base}`);
+  const names = await validateSkill();
+  const hashes = Object.fromEntries(
+    await Promise.all(names.map(async (n) => [n, digest(await fs.readFile(path.join(source, n)))])),
+  );
