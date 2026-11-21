@@ -74,3 +74,5 @@ export async function validateSkill() {
     for (const match of body.matchAll(/\[[^\]]+\]\(([^)]+)\)/g)) {
       const target = path.posix.normalize(path.posix.join(path.posix.dirname(name), match[1]));
       assert(files.includes(target), `Broken reference in ${name}: ${match[1]}`);
+    }
+  }
