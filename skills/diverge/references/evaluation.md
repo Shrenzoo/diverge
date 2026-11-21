@@ -16,3 +16,4 @@ Eliminate directions that fail a hard contract, access need, budget, or safety r
 
 For close calls, record one short reason for each dimension that distinguishes the candidates. Prefer a small discriminating test over a weighted sum. If evidence is sparse, use the simpler reversible choice and state the uncertainty.
 
+Review the delivered artifact against the original ledger. Exercise its defining mechanism and an edge case. A prettier surface without a better outcome earns no special credit. Apply a bounded repair if it changes the result. Give the user a compact decision summary, including what was actually verified.
