@@ -13,3 +13,11 @@ export function probe(agent) {
     return { reason: version.error?.message ?? 'Version probe failed' };
   const help = run(agent === 'codex' ? ['exec', '--help'] : ['--help']);
   const required =
+    agent === 'codex'
+      ? ['--json', '--sandbox', '--ignore-user-config', '--ephemeral']
+      : [
+          '--setting-sources',
+          '--tools',
+          '--permission-mode',
+          '--output-format',
+          '--no-session-persistence',
