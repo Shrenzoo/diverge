@@ -158,3 +158,9 @@ async function main() {
         console.log(`${c.id} / ${condition}: ${run.status}${run.reason ? ' — ' + run.reason : ''}`);
       }
   await saveReport(folder, manifest, []);
+  if (manifest.runs.some((r) => r.status === 'failed')) process.exitCode = 1;
+}
+main().catch((error) => {
+  console.error(error.message);
+  process.exitCode = 1;
+});
