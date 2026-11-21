@@ -22,3 +22,6 @@ export async function filesIn(directory, relative = '') {
   const files = [];
   for (const entry of await fs.readdir(path.join(directory, relative), { withFileTypes: true })) {
     const name = path.posix.join(relative, entry.name);
+    if (entry.isDirectory()) files.push(...(await filesIn(directory, name)));
+    else if (entry.isFile()) files.push(name);
+    else throw new Error(`Unexpected link or special file: ${name}`);
