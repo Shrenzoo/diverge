@@ -74,3 +74,16 @@
     ],
     "checks": [
       {
+        "file": "flow.json",
+        "actions": [
+          "reuse",
+          "confirm"
+        ],
+        "end": "done"
+      },
+      {
+        "file": "flow.json",
+        "actions": [
+          "continue",
+          "save",
+          "confirm"
