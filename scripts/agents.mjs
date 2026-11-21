@@ -180,3 +180,11 @@ export function traceMetrics(agent, raw) {
     editedPaths.add(file);
   }
   for (const event of events) {
+    if (agent === 'codex') {
+      if (event.type === 'turn.failed' || event.type === 'error') error = true;
+      if (event.type === 'turn.completed' && event.usage)
+        tokens = (tokens ?? 0) + event.usage.input_tokens + event.usage.output_tokens;
+      const item = event.item;
+      if (
+        event.type !== 'item.completed' ||
+        !item ||
