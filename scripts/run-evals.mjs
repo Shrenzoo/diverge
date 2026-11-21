@@ -148,3 +148,8 @@ async function main() {
           agent: v.agent,
           model: manifest.model,
           timeout,
+          folder,
+          skip,
+        });
+        manifest.runs.push(run);
+        const partial = path.join(folder, 'results.partial');
