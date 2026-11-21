@@ -184,3 +184,10 @@ export async function manage(operation, args = process.argv.slice(2)) {
     const dest = path.join(parent, 'diverge');
     if (dest.startsWith(source + path.sep) || source.startsWith(dest + path.sep) || dest === source)
       throw new Error('Installation overlaps the package source');
+    return { agent, meta, parent, dest };
+  });
+  const locks = [];
+  try {
+    for (const target of targets) {
+      // Validate every existing ancestor before creating descendants. Dry runs create nothing.
+      await directory(target.meta, operation === 'install' && !values['dry-run']);
