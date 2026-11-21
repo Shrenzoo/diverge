@@ -30,3 +30,5 @@ function check(value, rule, field) {
     throw new Error(`${field} must be a relative project path`);
 }
 
+export function preferences(input) {
+  if (input === null || typeof input !== 'object' || Array.isArray(input))
