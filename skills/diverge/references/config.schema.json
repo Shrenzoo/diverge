@@ -21,3 +21,6 @@
         "balanced",
         "high",
         "experimental"
+      ],
+      "default": "balanced"
+    },
