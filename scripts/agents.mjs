@@ -212,3 +212,11 @@ export function traceMetrics(agent, raw) {
         for (const b of event.message?.content ?? [])
           if (b.type === 'tool_use') {
             tools++;
+            if (['Write', 'Edit'].includes(b.name)) {
+              edits++;
+              noteEdit(b.input?.file_path);
+            }
+            if (b.name === 'Skill' && b.input?.skill === 'diverge')
+              invocationEvidence = 'Skill tool requested diverge';
+            if (b.name === 'Read' && /[\\/]diverge[\\/]SKILL\.md$/.test(b.input?.file_path ?? ''))
+              invocationEvidence = 'Read tool requested the entry point';
