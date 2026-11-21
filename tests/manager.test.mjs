@@ -20,3 +20,8 @@ function command(dir, script, args) {
 }
 function ok(output) {
   assert.equal(output.status, 0, output.stderr);
+}
+const both = ['--agent', 'both', '--scope', 'project'];
+const codex = ['--agent', 'codex', '--scope', 'project'];
+
+for (const [agent, base] of [
