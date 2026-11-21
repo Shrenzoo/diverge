@@ -117,3 +117,8 @@ test('forged receipt cannot select unrelated paths', async (t) => {
 test('concurrent installers leave a complete readable copy', async (t) => {
   const dir = await sandbox(t);
   const install = () =>
+    new Promise((resolve, reject) => {
+      const child = spawn(process.execPath, [path.join(root, 'scripts', 'install.mjs'), ...codex], {
+        cwd: dir,
+        stdio: 'ignore',
+      });
