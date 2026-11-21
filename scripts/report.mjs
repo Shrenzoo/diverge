@@ -98,3 +98,9 @@ export function report(manifest, ratings = []) {
     'Flag at 1.5× baseline time or tokens on a completed pair. This threshold is a review trigger. An originality gain requires a higher mean blinded originality rating.',
   );
   let flags = 0;
+  for (const r of runs.filter((x) => x.condition !== 'baseline' && x.status === 'passed')) {
+    const b = runs.find(
+      (x) =>
+        x.case === r.case && x.repeat === r.repeat && x.condition === 'baseline' && x.status === 'passed',
+    );
+    if (!b) continue;
