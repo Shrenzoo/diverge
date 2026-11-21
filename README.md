@@ -86,3 +86,6 @@ Host policy and permissions come first, then explicit current instructions, appl
 | Host | Skills directory under project or home | Local verification |
 | --- | --- | --- |
 | Codex CLI 0.170.0 | `.agents/skills/diverge/` | Installation and removal at both scopes. App-server `skills/list` returned the enabled project skill. |
+| Claude Code 2.1.330 | `.claude/skills/diverge/` | Installation and removal at both scopes. Normal print-mode initialization listed the project skill and its slash command. |
+| Cursor, Gemini CLI, GitHub Copilot | Future adapters | Unverified. |
+
