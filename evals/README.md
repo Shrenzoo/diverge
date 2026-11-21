@@ -10,3 +10,4 @@ From the repository root:
 node scripts/run-evals.mjs --list
 node scripts/run-evals.mjs --agent codex --case shift-desk
 node scripts/run-evals.mjs --agent claude --case exact-label
+```
