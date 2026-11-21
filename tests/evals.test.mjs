@@ -38,3 +38,10 @@ test('onboarding acceptance walks both routes and rejects broken transitions', a
   assert.equal((await check()).pass, false);
 });
 
+test('conflicting ticket permits only exact edit and detects added, modified and missing files', async (t) => {
+  const dir = await scratch(t);
+  const c = (await loadCases()).find((c) => c.id === 'conflicting-ticket');
+  await fs.cp(path.join(fixtures, c.fixture), dir, { recursive: true });
+  const before = await snapshot(dir);
+  await fs.writeFile(
+    path.join(dir, 'index.html'),
