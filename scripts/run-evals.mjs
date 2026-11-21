@@ -28,3 +28,8 @@ async function runOne({ c, condition, repeat, agent, model, timeout, folder, ski
     if (condition !== 'baseline') {
       const skill = path.join(workspace, agent === 'codex' ? '.agents' : '.claude', 'skills', 'diverge');
       await fs.mkdir(path.dirname(skill), { recursive: true });
+      await fs.cp(source, skill, { recursive: true });
+    }
+    const before = await snapshot(workspace);
+    const args = invocation(agent, condition, model, c.prompt);
+    const env = isolatedEnv(home, agent, tmp);
