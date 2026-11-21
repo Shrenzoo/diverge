@@ -10,3 +10,4 @@ If Node 20+ is available, run `node "<installed skill>/scripts/config.mjs" "<pro
 | maxCandidates | Ceiling across all explored directions, including the conventional one. SKIP uses zero. |
 | maxRefinementPasses | Limit on creative rework after the initial implementation. Zero still requires verification. |
 | respectExistingDesignSystem | True reuses project patterns. False allows proposals that depart from them within explicit constraints. |
+| allowMajorRedesignWithoutApproval | True permits a materially different **design** where the user already delegated that decision. It cannot authorize core workflow replacement, cost, deployment, or data changes. Collaborative interaction still requires agreement on material choices. |
