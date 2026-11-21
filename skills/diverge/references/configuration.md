@@ -11,3 +11,4 @@ If Node 20+ is available, run `node "<installed skill>/scripts/config.mjs" "<pro
 | maxRefinementPasses | Limit on creative rework after the initial implementation. Zero still requires verification. |
 | respectExistingDesignSystem | True reuses project patterns. False allows proposals that depart from them within explicit constraints. |
 | allowMajorRedesignWithoutApproval | True permits a materially different **design** where the user already delegated that decision. It cannot authorize core workflow replacement, cost, deployment, or data changes. Collaborative interaction still requires agreement on material choices. |
+| showCreativeRationale | none omits optional rationale, brief states the decisive tradeoff, detailed compares the decisive evidence. Preserve necessary permission and verification information. |
