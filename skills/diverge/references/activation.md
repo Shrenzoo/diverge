@@ -8,3 +8,4 @@ Start with the narrowest row that can settle a real choice. Openness means an im
 | LIGHT | A local choice has measurable payoff and low reversal cost | Compare the default with one small change. | An empty-state action could remove a support request. |
 | STANDARD | Several mechanisms could serve an open brief | Up to three distinct directions, then implement one. | Students need to decide what assignment to work on next. |
 | DEEP | An important, genuinely open problem rewards reframing | Apply an additional technique, test the strongest assumption. Stay under the candidate cap. | Rethink a study product with an explicit experimentation mandate. |
+
