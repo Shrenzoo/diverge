@@ -71,3 +71,8 @@ test('replacement retains backup and extra files; uninstall retains edited and u
   await assert.rejects(fs.access(path.join(dest, 'SKILL.md')), { code: 'ENOENT' });
 });
 
+test('two-host preflight detects an unmanaged second target before replacing the first', async (t) => {
+  const dir = await sandbox(t);
+  const unmanaged = path.join(dir, '.claude', 'skills', 'diverge');
+  await fs.mkdir(unmanaged, { recursive: true });
+  await fs.writeFile(path.join(unmanaged, 'notes'), 'mine');
