@@ -72,3 +72,8 @@ export function report(manifest, ratings = []) {
       `| ${r.case} / ${r.repeat} | ${r.condition} | ${r.status} | ${safe(d?.changed.join(', '))} | ${builds} | ${d ? d.checks.filter((c) => c.pass).length + '/' + d.checks.length : '—'} | ${r.runtime ? (r.runtime.ms / 1000).toFixed(2) : '—'} | ${safe(m?.tokens)} | ${safe(m?.toolCalls)} / ${safe(m?.failedAttempts)} | ${safe(m?.editCalls)} / ${safe(m?.revisions)} | ${safe(m?.permissionDenials)} | ${safe(r.reason ?? r.runtime?.reason ?? [r.activation, m?.invocationEvidence].filter(Boolean).join(' / '))} |`,
     );
   }
+  lines.push(
+    '',
+    '## Descriptive statistics',
+    '',
+    'Timing includes failed executions with measured duration. Scores below give each rated artifact equal weight, averaging its independent reviews first.',
