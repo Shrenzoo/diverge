@@ -20,3 +20,4 @@ Two independent model reviewers received anonymized artifacts, the brief and the
 | Rowan, explicit | 4 | 5 | 5 | 4 | 4 | 4 | Pass | Pass |
 | Cedar, explicit | 4 | 5 | 5 | 4 | 4 | 4 | Pass | Pass |
 
+Both reviewers preferred the fewer-handoffs rule. They agreed on every numeric score and both gates. Rowan additionally questioned the baseline denominator and missing confirmation-time field in the explicit plan. Cedar flagged ambiguous ownership after an unfilled shift starts in the baseline. Both found the explicit plan's zero-vacancy denominator unresolved. Within each artifact reviewer score range was zero on all six dimensions. A single task per condition has no estimable between-run variability.
