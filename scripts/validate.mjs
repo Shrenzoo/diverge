@@ -19,3 +19,4 @@ try {
     '.github/ISSUE_TEMPLATE/evaluation.md',
     'evals/rubric.md',
     'evals/README.md',
+  ]) {
