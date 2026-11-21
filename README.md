@@ -52,3 +52,6 @@ In a volunteer shift-desk pilot, the baseline plan assigned offers by arrival ti
 
 For illustrative UI, product, architecture, diagnosis, and Wildcard use cases, see [decision examples](examples/decisions.md).
 
+## Modes and configuration
+
+| Mode | Use |
