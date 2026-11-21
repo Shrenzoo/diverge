@@ -18,3 +18,4 @@ try {
     '.github/ISSUE_TEMPLATE/bug.md',
     '.github/ISSUE_TEMPLATE/evaluation.md',
     'evals/rubric.md',
+    'evals/README.md',
