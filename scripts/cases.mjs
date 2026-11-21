@@ -91,3 +91,7 @@ export function grade(c, before, after) {
   const unexpected = changed.filter((name) => !c.outputs.includes(name));
   const checks = c.outputs.map((file) => ({
     name: `Deliver ${file}`,
+    pass:
+      changed.includes(file) && after.get(file)?.kind === 'file' && !!after.get(file).body.toString().trim(),
+  }));
+  for (const check of c.checks) {
