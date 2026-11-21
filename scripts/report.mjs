@@ -104,3 +104,8 @@ export function report(manifest, ratings = []) {
         x.case === r.case && x.repeat === r.repeat && x.condition === 'baseline' && x.status === 'passed',
     );
     if (!b) continue;
+    const slow = r.runtime.ms >= b.runtime.ms * 1.5 && b.runtime.ms > 0;
+    const costly = b.metrics.tokens > 0 && r.metrics.tokens >= b.metrics.tokens * 1.5;
+    if (slow || costly) {
+      flags++;
+      const gain =
