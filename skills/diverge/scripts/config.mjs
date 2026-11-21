@@ -38,3 +38,5 @@ export function preferences(input) {
     if (!Object.hasOwn(schema.properties, key)) throw new Error(`Unknown preference: ${key}`);
     check(value, schema.properties[key], key);
     result[key] = value;
+  }
+  return result;
