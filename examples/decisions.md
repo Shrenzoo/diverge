@@ -22,3 +22,4 @@ Two local views refresh after one SQLite save. Notify them after commit and relo
 
 A dead login button calls for tracing the existing action, fixing its owner, and exercising login. An exact visual reproduction preserves the reference. Both suppress redesign even under explicit invocation.
 
+A Wildcard study brief admits a rehearsal model borrowed from musical practice: rehearse one difficult transition, observe an error, then repeat that transition. Test whether students can transfer the skill to a fresh problem. The benefit remains a hypothesis until measured.
