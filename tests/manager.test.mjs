@@ -11,3 +11,8 @@ async function sandbox(t) {
   t.after(() => fs.rm(dir, { recursive: true, force: true }));
   return dir;
 }
+function command(dir, script, args) {
+  return spawnSync(process.execPath, [path.join(root, 'scripts', script + '.mjs'), ...args], {
+    cwd: dir,
+    env: { ...process.env, HOME: dir, USERPROFILE: dir },
+    encoding: 'utf8',
