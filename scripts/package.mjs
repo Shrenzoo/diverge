@@ -54,3 +54,5 @@ export async function validateSkill() {
     await fs.readFile(path.join(source, 'LICENSE')),
     await fs.readFile(path.join(root, 'LICENSE')),
     'Bundled license differs from repository license',
+  );
+  const skill = await fs.readFile(path.join(source, 'SKILL.md'), 'utf8');
