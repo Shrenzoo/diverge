@@ -61,3 +61,6 @@ export async function validateSkill() {
   assert(
     header && header[1].trim().length > 0 && header[1].length <= 1024 && !/[:#]\s/.test(header[1]),
     'Invalid skill metadata',
+  );
+  const metadata = await fs.readFile(path.join(source, 'agents/openai.yaml'), 'utf8');
+  assert(
