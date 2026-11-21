@@ -70,3 +70,7 @@ export async function snapshot(dir) {
 }
 
 function passed(check, body, initial) {
+  if ('pattern' in check) return new RegExp(check.pattern, 'iu').test(body);
+  if ('replace' in check)
+    return initial?.includes(check.replace[0]) && body === initial.replace(...check.replace);
+  const data = JSON.parse(body);
