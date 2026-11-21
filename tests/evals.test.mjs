@@ -126,3 +126,10 @@ test('report separates quality, gate disagreement and paired inefficiency', () =
     })),
   };
   const rate = (id, reviewer, value) => ({
+    id,
+    reviewer,
+    scores: Object.fromEntries(dimensions.map((k) => [k, value])),
+    constraints: true,
+    safety: reviewer === 'Q',
+    note: 'Test-only observation',
+  });
