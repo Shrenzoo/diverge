@@ -16,3 +16,6 @@
     },
     "creativity": {
       "type": "string",
+      "enum": [
+        "low",
+        "balanced",
