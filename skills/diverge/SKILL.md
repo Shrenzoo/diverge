@@ -16,3 +16,4 @@ Start from the decision the user needs to make or the action they need to comple
 
 ## Preferences
 
+Defaults are Adaptive, balanced creativity, autonomous interaction, at most three candidates and one refinement pass. Exact scope always wins. A mode changes how to explore. Creativity sets breadth. Interaction governs who decides.
