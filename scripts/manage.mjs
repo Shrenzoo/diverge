@@ -11,3 +11,10 @@ const instructions = { codex: 'In Codex, use $diverge.', claude: 'In Claude Code
 
 async function directory(dir, create = false) {
   if (create) {
+    try {
+      await fs.mkdir(dir);
+    } catch (error) {
+      if (error.code !== 'EEXIST') throw error;
+    }
+  }
+  const info = await stat(dir);
