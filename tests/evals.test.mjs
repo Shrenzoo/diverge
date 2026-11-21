@@ -174,3 +174,10 @@ const installed = fs.existsSync('.claude/skills/diverge/SKILL.md');
 console.log(JSON.stringify({type:'system',subtype:'init',skills:installed?['diverge']:[]}));
 const f='index.html';fs.writeFileSync(f,fs.readFileSync(f,'utf8').replace('Click here','Request a repair'));
 console.log(JSON.stringify({type:'result',is_error:false,usage:{input_tokens:1,output_tokens:1}}));\n`,
+      { mode: 0o700 },
+    );
+    const out = path.join(dir, 'results');
+    const run = spawnSync(
+      process.execPath,
+      [
+        path.join(root, 'scripts', 'run-evals.mjs'),
