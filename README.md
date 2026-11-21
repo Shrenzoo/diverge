@@ -48,3 +48,7 @@ The [entry point](skills/diverge/SKILL.md) is the portable instruction set. Doma
 
 ## One observed difference
 
+In a volunteer shift-desk pilot, the baseline plan assigned offers by arrival time. The Diverge plan selected full coverage with the fewest handoffs before breaking ties. Both blinded model reviewers preferred the second rule. The baseline handled a week with zero vacancies more clearly. In a separate exact bug fix, both agents made the same single-value repair and passed the route test. These are two tasks with one repetition each. [Artifacts, scores, and limitations](evals/pilot/README.md)
+
+For illustrative UI, product, architecture, diagnosis, and Wildcard use cases, see [decision examples](examples/decisions.md).
+
