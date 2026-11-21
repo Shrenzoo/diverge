@@ -49,3 +49,6 @@ export async function validateSkill() {
       'configuration',
     ].map((x) => `references/${x}.md`),
   ];
+  for (const name of required) assert(files.includes(name), `Missing ${name}`);
+  assert.deepEqual(
+    await fs.readFile(path.join(source, 'LICENSE')),
