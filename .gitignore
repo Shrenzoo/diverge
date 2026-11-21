@@ -1,3 +1,4 @@
 node_modules/
 eval-results/
 .DS_Store
+.env
