@@ -4,3 +4,4 @@ Start with a realistic request and the decision you want to improve. State the h
 
 - **Technique or domain change.** Edit the guide that owns the decision. Include a concrete mechanism, a situation where it helps, and one where it adds cost. Keep the entry point short.
 - **Integration.** Check the host's official documentation. Reuse the same skill. Add disposable install, reinstall, conflict and removal checks for every destination. Capture discovery and invocation evidence separately.
+- **Evaluation case.** Add a redistributable starter under `evals/fixtures/` or reuse one. Add a case with a realistic prompt, required outputs, expected budget, selection expectation, and a reviewer question. Make machine checks match explicit contracts. Add a counterexample to a brittle check.
