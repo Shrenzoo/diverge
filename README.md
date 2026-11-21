@@ -65,3 +65,7 @@ Place an optional `diverge.config.json` in the project root. These are the defau
 
 ```json
 {
+  "mode": "adaptive",
+  "creativity": "balanced",
+  "interaction": "autonomous",
+  "maxCandidates": 3,
