@@ -87,3 +87,16 @@
           "continue",
           "save",
           "confirm"
+        ],
+        "end": "done"
+      }
+    ],
+    "review": "Check whether the new action earns the step it saves."
+  },
+  {
+    "id": "navigation",
+    "fixture": "studio",
+    "budget": "STANDARD",
+    "activation": "consider",
+    "prompt": "Redesign navigation in index.html so first-time visitors can reach the request and see the service area. Keep theme.css and request.html linked. Use the supplied neighborhood names.",
+    "outputs": [
