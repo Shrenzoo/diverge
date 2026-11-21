@@ -44,3 +44,5 @@ export function preferences(input) {
 
 export function loadConfig(file) {
   let raw;
+  try {
+    raw = readFileSync(file, 'utf8');
