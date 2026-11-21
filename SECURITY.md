@@ -12,3 +12,4 @@ Project scope anchors at the current directory or the existing directory passed 
 
 | Path | Purpose |
 | --- | --- |
+| `skills/diverge/` | Complete skill copy plus a `.diverge-install.json` receipt containing package file names and SHA-256 digests. |
