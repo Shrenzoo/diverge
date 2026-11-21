@@ -74,3 +74,7 @@ function passed(check, body, initial) {
   if ('replace' in check)
     return initial?.includes(check.replace[0]) && body === initial.replace(...check.replace);
   const data = JSON.parse(body);
+  if ('equals' in check) return isDeepStrictEqual(data, check.equals);
+  let current = data.start;
+  for (const action of check.actions) current = data.screens[current]?.[action];
+  return current === check.end && Object.hasOwn(data.screens, current);
