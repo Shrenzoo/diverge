@@ -7,3 +7,6 @@ import { defaults, preferences } from '../skills/diverge/scripts/config.mjs';
 
 export const root = fileURLToPath(new URL('../', import.meta.url));
 export const source = path.join(root, 'skills', 'diverge');
+export const digest = (bytes) => createHash('sha256').update(bytes).digest('hex');
+
+export async function stat(file) {
