@@ -13,3 +13,4 @@ Provide a redistributable fixture and an observable outcome.
 
 Name the allowed files, a consequential failure, and what evidence would distinguish a useful alternative from a superficial variation.
 
+## Evidence
