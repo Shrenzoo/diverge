@@ -45,3 +45,11 @@ export function invocation(agent, condition, model, prompt) {
       'workspace-write',
       '--skip-git-repo-check',
       '-c',
+      'shell_environment_policy.inherit="none"',
+      '-m',
+      model,
+      task,
+    ];
+  return [
+    '-p',
+    '--setting-sources',
