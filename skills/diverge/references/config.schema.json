@@ -71,3 +71,5 @@
       "default": [
         "vendor",
         "node_modules",
+        "dist"
+      ]
