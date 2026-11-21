@@ -42,3 +42,6 @@ For removal, use the same agent, scope and optional project directory with `node
 3. **Exploration.** Compare mechanisms. Inversion, analogies, and removing steps can change what a user can do. Cosmetic variation alone is insufficient.
 4. **Evaluation.** Gate on hard requirements, then compare user benefit, feasibility, accessibility, maintenance effort, simplicity and risk.
 5. **Execution.** Build or write the selected deliverable. Seek approval for consequential choices outside existing authorization.
+6. **Reflection.** Try the defining path and an edge case. Make a bounded improvement when evidence warrants it.
+
+The [entry point](skills/diverge/SKILL.md) is the portable instruction set. Domain guides load when relevant. Node scripts perform the deterministic work of configuration validation, installation, and evaluation. There is no daemon, model service, persistent memory, telemetry, or change to model weights. Offline use requires a host/model that can itself operate offline.
