@@ -77,3 +77,11 @@ export function isolatedEnv(home, agent, tmp) {
   Object.assign(env, {
     HOME: home,
     USERPROFILE: home,
+    CODEX_HOME: path.join(home, '.codex'),
+    CLAUDE_CONFIG_DIR: path.join(home, '.claude'),
+    XDG_CONFIG_HOME: path.join(home, 'config'),
+    XDG_DATA_HOME: path.join(home, 'data'),
+    XDG_CACHE_HOME: path.join(home, 'cache'),
+    APPDATA: path.join(home, 'appdata'),
+    LOCALAPPDATA: path.join(home, 'local'),
+    TMPDIR: tmp,
