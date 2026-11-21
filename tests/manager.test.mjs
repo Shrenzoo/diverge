@@ -126,3 +126,8 @@ test('concurrent installers leave a complete readable copy', async (t) => {
       child.on('exit', resolve);
     });
   const codes = await Promise.all([install(), install(), install()]);
+  assert(codes.includes(0));
+  assert.match(command(dir, 'install', codex).stdout, /up to date/);
+});
+
+test('explicit replacement retains a backup of an unreadable receipt', async (t) => {
