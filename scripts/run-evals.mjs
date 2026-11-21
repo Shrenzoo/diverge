@@ -83,3 +83,8 @@ function shuffle(items) {
   return items;
 }
 
+async function main() {
+  const { values: v } = parseArgs({
+    options: {
+      agent: { type: 'string' },
+      model: { type: 'string' },
