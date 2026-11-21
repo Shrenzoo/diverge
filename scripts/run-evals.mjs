@@ -128,3 +128,8 @@ async function main() {
   console.log(folder);
   const manifest = {
     format: 1,
+    created: new Date().toISOString(),
+    agent: v.agent,
+    model: v.model ?? null,
+    cli: adapter.version ?? null,
+    platform: process.platform,
