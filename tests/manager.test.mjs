@@ -140,3 +140,8 @@ test('explicit replacement retains a backup of an unreadable receipt', async (t)
   ok(command(dir, 'install', [...codex, '--replace']));
   const backup = (await fs.readdir(parent)).find((s) => s.startsWith('.diverge-backup-'));
   assert.equal(
+    await fs.readFile(path.join(parent, backup, '.diverge-install.json'), 'utf8'),
+    'old receipt format',
+  );
+  ok(command(dir, 'uninstall', codex));
+});
