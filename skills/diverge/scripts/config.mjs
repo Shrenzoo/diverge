@@ -20,3 +20,5 @@ function check(value, rule, field) {
     if (!Array.isArray(value)) throw new Error(`${field} must be an array`);
     value.forEach((entry, i) => check(entry, rule.items, `${field}[${i}]`));
     if (rule.uniqueItems && new Set(value).size !== value.length)
+      throw new Error(`${field} contains duplicates`);
+  } else if (typeof value !== rule.type) {
