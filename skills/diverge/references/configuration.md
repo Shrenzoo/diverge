@@ -14,3 +14,4 @@ If Node 20+ is available, run `node "<installed skill>/scripts/config.mjs" "<pro
 | showCreativeRationale | none omits optional rationale, brief states the decisive tradeoff, detailed compares the decisive evidence. Preserve necessary permission and verification information. |
 | excludedPaths | Project-relative directory or file prefixes, matched at path segment boundaries. Skip creative changes there. An exact explicit user request still governs. |
 
+The schema contains the accepted values, numeric bounds, and defaults. Keep local preferences within platform policy, current user intent, and applicable repository instructions.
