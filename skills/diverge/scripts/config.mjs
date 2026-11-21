@@ -36,3 +36,5 @@ export function preferences(input) {
   const result = defaults();
   for (const [key, value] of Object.entries(input)) {
     if (!Object.hasOwn(schema.properties, key)) throw new Error(`Unknown preference: ${key}`);
+    check(value, schema.properties[key], key);
+    result[key] = value;
