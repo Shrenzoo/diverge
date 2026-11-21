@@ -11,3 +11,4 @@ The required artifact is a dashboard. A student with 68 of 80 possible points an
 A diagnosis-first flow helps visitors who do not know which service to request. A neighborhood lookup helps visitors who doubt eligibility. Choose the mechanism that addresses the best-supported barrier. Preserve the request destination, avoid invented availability, and verify that a keyboard user can proceed. If evidence is missing, ship a small reversible treatment and identify the uncertainty.
 
 ## A product trial
+
