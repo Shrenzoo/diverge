@@ -153,3 +153,10 @@ test('preflight writes valid JSON and Markdown without starting a trial', async 
   const folder = path.join(dir, (await fs.readdir(dir))[0]);
   const results = JSON.parse(await fs.readFile(path.join(folder, 'results.json')));
   assert.equal(results.runs.length, 3);
+  assert(results.runs.every((r) => r.status === 'skipped' && !r.metrics));
+  assert.match(await fs.readFile(path.join(folder, 'summary.md'), 'utf8'), /3 skipped/);
+});
+
+// Transport fixture exercises the live runner's orchestration without a model or external network.
+test(
+  'synthetic transport runs a full three-arm trial with private traces and blinded outputs',
