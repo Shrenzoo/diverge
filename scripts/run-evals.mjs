@@ -23,3 +23,8 @@ async function runOne({ c, condition, repeat, agent, model, timeout, folder, ski
   try {
     await fs.mkdir(raw, { recursive: true });
     await fs.mkdir(path.join(home, '.codex'), { recursive: true });
+    await fs.mkdir(tmp);
+    await fs.cp(path.join(fixtures, c.fixture), workspace, { recursive: true });
+    if (condition !== 'baseline') {
+      const skill = path.join(workspace, agent === 'codex' ? '.agents' : '.claude', 'skills', 'diverge');
+      await fs.mkdir(path.dirname(skill), { recursive: true });
