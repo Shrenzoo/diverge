@@ -133,3 +133,10 @@ test('report separates quality, gate disagreement and paired inefficiency', () =
     safety: reviewer === 'Q',
     note: 'Test-only observation',
   });
+  const ratings = [rate('baseline', 'Q', 2), rate('explicit', 'Q', 3), rate('explicit', 'R', 5)];
+  const output = report(sim, ratings);
+  assert.match(output, /time flagged. Originality delta 2.00/);
+  assert.match(output, /originality 3–5/);
+  assert.match(output, /safety false/);
+  assert.throws(() => report(sim, [...ratings, ratings[0]]), /Duplicate/);
+  assert.throws(() => report(sim, [{ ...ratings[0], id: 'unknown' }]), /Invalid/);
