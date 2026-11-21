@@ -4,3 +4,4 @@
   "private": true,
   "description": "A portable creative reasoning skill for coding agents",
   "license": "MIT",
+  "type": "module",
