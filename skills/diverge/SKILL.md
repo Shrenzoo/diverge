@@ -22,3 +22,4 @@ Check only the active project root for `diverge.config.json`. If present, follow
 
 ## Domain guides
 
+Open the guide for the decision at hand. Use [frontend](references/frontend.md) for interactions and interface hierarchy, [product](references/product.md) for workflows and features, [startup](references/startup.md) for venture hypotheses, [architecture](references/architecture.md) for system boundaries, or [problem-solving](references/problem-solving.md) for competing explanations.
