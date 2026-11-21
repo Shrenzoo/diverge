@@ -10,3 +10,5 @@ import { source, validateSkill } from '../scripts/package.mjs';
 test('the portable skill validates, including all local references', async () => {
   assert((await validateSkill()).includes('agents/openai.yaml'));
 });
+
+test('schema defaults and configured modes resolve independently', () => {
