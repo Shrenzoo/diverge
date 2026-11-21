@@ -1,1 +1,2 @@
 name: Verify Diverge
+on: [push, pull_request]
