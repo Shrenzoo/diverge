@@ -38,3 +38,5 @@
       "maximum": 5,
       "default": 3
     },
+    "maxRefinementPasses": {
+      "type": "integer",
