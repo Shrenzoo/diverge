@@ -8,3 +8,8 @@ import { loadCases, fixtures, snapshot, grade } from './cases.mjs';
 import { probe, keyNames, invocation, isolatedEnv, runAgent, traceMetrics, activation } from './agents.mjs';
 import { saveReport } from './report.mjs';
 
+const conditions = ['baseline', 'implicit', 'explicit'];
+const json = (value) => JSON.stringify(value, null, 2) + '\n';
+
+async function runOne({ c, condition, repeat, agent, model, timeout, folder, skip }) {
+  const id = randomUUID();
