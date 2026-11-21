@@ -14,3 +14,8 @@ export async function loadCases() {
     'Expected at least 20 unique cases',
   );
   for (const c of cases) {
+    assert(simple.test(c.id) && simple.test(c.fixture), 'Invalid case or fixture ID');
+    assert(
+      c.prompt?.trim() && c.review?.trim() && ['SKIP', 'LIGHT', 'STANDARD', 'DEEP'].includes(c.budget),
+      c.id,
+    );
