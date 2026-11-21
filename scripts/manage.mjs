@@ -164,3 +164,10 @@ export async function manage(operation, args = process.argv.slice(2)) {
     console.log(
       `node scripts/${operation}.mjs --agent codex|claude|both --scope project|user [--project-dir PATH] [--dry-run]${operation === 'install' ? ' [--replace]' : ''}`,
     );
+    return;
+  }
+  if (!['codex', 'claude', 'both'].includes(values.agent) || !['user', 'project'].includes(values.scope))
+    throw new Error('Choose --agent codex|claude|both and --scope user|project. See --help.');
+  if (values['project-dir'] && values.scope !== 'project')
+    throw new Error('--project-dir requires --scope project');
+  const base = await fs.realpath(
