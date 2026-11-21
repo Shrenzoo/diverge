@@ -25,3 +25,8 @@ const both = ['--agent', 'both', '--scope', 'project'];
 const codex = ['--agent', 'codex', '--scope', 'project'];
 
 for (const [agent, base] of [
+  ['codex', '.agents'],
+  ['claude', '.claude'],
+])
+  for (const scope of ['project', 'user']) {
+    test(agent + ' ' + scope + ' lifecycle in a path with spaces', async (t) => {
