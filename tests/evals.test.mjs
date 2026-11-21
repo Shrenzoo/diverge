@@ -86,3 +86,9 @@ test('trace interpretation separates host discovery, observed calls, denials and
   const claude = traceMetrics('claude', raw);
   assert.equal(claude.tokens, 17);
   assert.equal(claude.discoverable, true);
+  assert.equal(claude.permissionDenials, 1);
+  assert.equal(activation('baseline', 'consider', claude), 'contaminated baseline');
+  assert.equal(activation('implicit', 'avoid', claude), 'unexpected activation');
+  assert.equal(activation('explicit', 'avoid', claude), 'observed');
+  assert.equal(activation('implicit', 'consider', { discoverable: false }), 'skill missing');
+  const events = lines(
