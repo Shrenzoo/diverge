@@ -23,3 +23,7 @@ export async function loadCases() {
     assert(
       c.outputs.length && c.outputs.every((f) => /^[a-z][a-z0-9-]*\.(html|json|md|txt|mjs)$/.test(f)),
       c.id,
+    );
+    const input = await filesIn(path.join(fixtures, c.fixture));
+    assert(input.length, c.fixture);
+    for (const check of c.checks) {
