@@ -187,3 +187,10 @@ console.log(JSON.stringify({type:'result',is_error:false,usage:{input_tokens:1,o
         '--agent',
         'claude',
         '--case',
+        'exact-label',
+        '--out',
+        out,
+      ],
+      {
+        encoding: 'utf8',
+        env: {
