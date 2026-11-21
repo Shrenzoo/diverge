@@ -82,3 +82,7 @@ Creativity accepts `low`, `balanced`, `high`, or `experimental`. Interaction acc
 Host policy and permissions come first, then explicit current instructions, applicable repository instructions, project preferences, and defaults, subject to the host's instruction hierarchy. Creative freedom grants no new execution permissions.
 
 ## Compatibility and current evidence
+
+| Host | Skills directory under project or home | Local verification |
+| --- | --- | --- |
+| Codex CLI 0.170.0 | `.agents/skills/diverge/` | Installation and removal at both scopes. App-server `skills/list` returned the enabled project skill. |
