@@ -106,3 +106,10 @@ test('trace interpretation separates host discovery, observed calls, denials and
 });
 
 test('timeout terminates the CLI and returns captured evidence', async (t) => {
+  const dir = await scratch(t);
+  const output = await runProcess(process.execPath, ['-e', 'setInterval(() => {},10000)'], dir, {}, 200);
+  assert.equal(output.reason, 'Time limit exceeded');
+});
+
+test('report separates quality, gate disagreement and paired inefficiency', () => {
+  const sim = {
