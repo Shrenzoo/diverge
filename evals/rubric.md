@@ -8,3 +8,4 @@ Give each artifact to a reviewer with the original brief, starter files, and thi
 | 1 | Cosmetic variation | Trivial benefit | Addresses a symptom | Critical resource missing | Bare outline or broken primary path | Extra system dominates |
 | 2 | Familiar mechanism with a small twist | Helps a secondary step | Covers only part of the job | Several dependencies untested | Primary path incomplete | Multiple avoidable steps |
 | 3 | Distinct choice of workflow | Solves the main use case | Fits likely user and task | Implementable with named resources | Usable happy path | Proportionate with minor waste |
+| 4 | Reframes an important decision | Removes a real handoff or failure | Handles important context and edges | Key dependency checked or readily testable | Complete, including recovery | Little unnecessary machinery |
