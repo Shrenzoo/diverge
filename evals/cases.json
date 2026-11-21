@@ -113,3 +113,16 @@
         "pattern": "href\\s*=\\s*['\"](?:\\./)?theme\\.css['\"]",
         "what": "Shared stylesheet loaded"
       },
+      {
+        "file": "index.html",
+        "pattern": "North Ward",
+        "what": "North Ward present"
+      },
+      {
+        "file": "index.html",
+        "pattern": "South Ward",
+        "what": "South Ward present"
+      }
+    ],
+    "review": "Try finding coverage before and after navigating."
+  },
