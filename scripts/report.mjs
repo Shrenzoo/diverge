@@ -119,3 +119,9 @@ export function report(manifest, ratings = []) {
     }
   }
   if (!flags)
+    lines.push(
+      '',
+      'No observed pair crossed the threshold. Skipped and incomplete pairs provide no cost comparison.',
+    );
+  lines.push('', '## Independent review', '');
+  if (!ratings.length) lines.push('No ratings supplied. Creative quality is unassessed.');
