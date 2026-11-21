@@ -12,3 +12,5 @@ node scripts/run-evals.mjs --agent codex --case shift-desk
 node scripts/run-evals.mjs --agent claude --case exact-label
 ```
 
+The last two commands probe the native executable and write a preflight report. For live trials choose a pinned model identifier supported by your account and provider. Set `CODEX_API_KEY` for Codex or `ANTHROPIC_API_KEY` for Claude in the invoking environment. The runner starts with a fresh home and does not reuse desktop login information. The following commands are templates for authenticated evaluation:
+
