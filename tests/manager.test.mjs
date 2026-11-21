@@ -66,3 +66,8 @@ test('replacement retains backup and extra files; uninstall retains edited and u
   assert.equal(await fs.readFile(path.join(parent, backup, 'SKILL.md'), 'utf8'), 'local customization');
   await fs.writeFile(path.join(dest, 'references', 'frontend.md'), 'local guide');
   ok(command(dir, 'uninstall', both));
+  assert.equal(await fs.readFile(path.join(dest, 'mine.txt'), 'utf8'), 'keep');
+  assert.equal(await fs.readFile(path.join(dest, 'references', 'frontend.md'), 'utf8'), 'local guide');
+  await assert.rejects(fs.access(path.join(dest, 'SKILL.md')), { code: 'ENOENT' });
+});
+
