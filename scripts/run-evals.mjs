@@ -78,3 +78,8 @@ async function runOne({ c, condition, repeat, agent, model, timeout, folder, ski
 function shuffle(items) {
   for (let i = items.length - 1; i > 0; i--) {
     const j = randomInt(i + 1);
+    [items[i], items[j]] = [items[j], items[i]];
+  }
+  return items;
+}
+
