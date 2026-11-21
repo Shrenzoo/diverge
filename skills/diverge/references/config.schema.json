@@ -2,3 +2,6 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Diverge project preferences",
   "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "mode": {
