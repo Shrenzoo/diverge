@@ -12,3 +12,4 @@ If Node 20+ is available, run `node "<installed skill>/scripts/config.mjs" "<pro
 | respectExistingDesignSystem | True reuses project patterns. False allows proposals that depart from them within explicit constraints. |
 | allowMajorRedesignWithoutApproval | True permits a materially different **design** where the user already delegated that decision. It cannot authorize core workflow replacement, cost, deployment, or data changes. Collaborative interaction still requires agreement on material choices. |
 | showCreativeRationale | none omits optional rationale, brief states the decisive tradeoff, detailed compares the decisive evidence. Preserve necessary permission and verification information. |
+| excludedPaths | Project-relative directory or file prefixes, matched at path segment boundaries. Skip creative changes there. An exact explicit user request still governs. |
