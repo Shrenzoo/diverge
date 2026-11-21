@@ -120,3 +120,9 @@ test('report separates quality, gate disagreement and paired inefficiency', () =
       repeat: 1,
       id: condition,
       condition,
+      status: 'passed',
+      runtime: { ms: 1000 + i * 700 },
+      metrics: { tokens: 100 },
+    })),
+  };
+  const rate = (id, reviewer, value) => ({
