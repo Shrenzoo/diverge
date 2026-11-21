@@ -56,3 +56,6 @@ export async function validateSkill() {
     'Bundled license differs from repository license',
   );
   const skill = await fs.readFile(path.join(source, 'SKILL.md'), 'utf8');
+  // Validate the deliberately narrow portable frontmatter emitted in this repository.
+  const header = /^---\r?\nname: diverge\r?\ndescription: ([^\r\n]+)\r?\n---\r?\n/.exec(skill);
+  assert(
