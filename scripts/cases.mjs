@@ -10,3 +10,7 @@ const simple = /^[a-z][a-z0-9-]*$/;
 export async function loadCases() {
   const cases = JSON.parse(await fs.readFile(path.join(root, 'evals', 'cases.json'), 'utf8'));
   assert(
+    cases.length >= 20 && new Set(cases.map((c) => c.id)).size === cases.length,
+    'Expected at least 20 unique cases',
+  );
+  for (const c of cases) {
