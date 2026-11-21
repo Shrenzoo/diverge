@@ -139,3 +139,15 @@
       {
         "file": "index.html",
         "pattern": "href\\s*=\\s*['\"](?:\\./)?request\\.html['\"]",
+        "what": "Request destination preserved"
+      },
+      {
+        "file": "index.html",
+        "pattern": "href\\s*=\\s*['\"](?:\\./)?theme\\.css['\"]",
+        "what": "Shared stylesheet loaded"
+      }
+    ],
+    "review": "Does the label communicate its destination out of context?"
+  },
+  {
+    "id": "feature-idea",
