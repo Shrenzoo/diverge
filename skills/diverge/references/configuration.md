@@ -9,3 +9,4 @@ If Node 20+ is available, run `node "<installed skill>/scripts/config.mjs" "<pro
 | mode, creativity, interaction | Select the reasoning lens, breadth, and decision owner independently. |
 | maxCandidates | Ceiling across all explored directions, including the conventional one. SKIP uses zero. |
 | maxRefinementPasses | Limit on creative rework after the initial implementation. Zero still requires verification. |
+| respectExistingDesignSystem | True reuses project patterns. False allows proposals that depart from them within explicit constraints. |
