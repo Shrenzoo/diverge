@@ -48,3 +48,8 @@ async function runOne({ c, condition, repeat, agent, model, timeout, folder, ski
     await fs.writeFile(path.join(blind, 'task.txt'), c.prompt + '\n');
     await fs.cp(path.join(fixtures, c.fixture), path.join(blind, 'starter'), { recursive: true });
     const deliverables = path.join(blind, 'deliverables');
+    await fs.mkdir(deliverables);
+    for (const name of c.outputs)
+      if (after.get(name)?.kind === 'file')
+        await fs.writeFile(path.join(deliverables, name), after.get(name).body);
+    // Record extra artifact contents privately. Never traverse links or export host skill/config files.
