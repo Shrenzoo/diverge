@@ -331,3 +331,16 @@
         "file": "index.html",
         "pattern": "href\\s*=\\s*['\"]request\\.html['\"]",
         "what": "Destination preserved"
+      }
+    ],
+    "review": "Check the computed accessible name and keyboard use. Cosmetic changes alone do not help."
+  },
+  {
+    "id": "system-preservation",
+    "fixture": "studio",
+    "budget": "LIGHT",
+    "activation": "consider",
+    "prompt": "Improve information hierarchy on index.html for the coverage decision. Reuse the existing theme, keep request.html linked and preserve every other file.",
+    "outputs": [
+      "index.html"
+    ],
