@@ -69,3 +69,5 @@ export async function validateSkill() {
     ),
     'Invalid Codex interface metadata',
   );
+  for (const name of files.filter((x) => x.endsWith('.md'))) {
+    const body = await fs.readFile(path.join(source, name), 'utf8');
