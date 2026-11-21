@@ -10,3 +10,16 @@
     ],
     "checks": [
       {
+        "file": "index.html",
+        "pattern": "href\\s*=\\s*['\"](?:\\./)?request\\.html['\"]",
+        "what": "Request destination preserved"
+      },
+      {
+        "file": "index.html",
+        "pattern": "href\\s*=\\s*['\"](?:\\./)?theme\\.css['\"]",
+        "what": "Shared stylesheet loaded"
+      }
+    ],
+    "review": "Does the experience resolve visitor uncertainty? Check claims against the brief."
+  },
+  {
