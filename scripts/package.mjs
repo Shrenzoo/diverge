@@ -12,3 +12,6 @@ export const digest = (bytes) => createHash('sha256').update(bytes).digest('hex'
 export async function stat(file) {
   try {
     return await fs.lstat(file);
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+    return null;
