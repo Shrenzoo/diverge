@@ -15,3 +15,4 @@ Start from the decision the user needs to make or the action they need to comple
 6. **Critique once by default.** Try the primary task and a difficult state. Check intent, accessibility, needless steps, breakage, and assumptions. Repair the most consequential verified gap within budget. Report the artifact, meaningful tradeoff, checks actually run, and limitations. Keep private deliberation private.
 
 ## Preferences
+
