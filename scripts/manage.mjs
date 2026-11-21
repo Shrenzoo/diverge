@@ -38,3 +38,9 @@ async function matches(dir, name, hash) {
 }
 
 async function readReceipt(dir, names) {
+  const file = path.join(dir, receipt);
+  const info = await stat(file);
+  if (!info) return null;
+  if (!info.isFile()) throw new Error(`Unsafe receipt: ${file}`);
+  const data = JSON.parse(await fs.readFile(file, 'utf8'));
+  if (
