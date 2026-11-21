@@ -215,3 +215,16 @@
     "checks": [],
     "review": "Trace notification timing and what a stale view does after restart."
   },
+  {
+    "id": "performance",
+    "fixture": "engine",
+    "budget": "LIGHT",
+    "activation": "consider",
+    "prompt": "Write an optimization and measurement plan in performance.md for filter toggles. Use the measured timings from brief.md and preserve search semantics.",
+    "outputs": [
+      "performance.md"
+    ],
+    "checks": [
+      {
+        "file": "performance.md",
+        "pattern": "1[,.]?900|1\\.9\\s*s",
