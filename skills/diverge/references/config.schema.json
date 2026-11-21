@@ -12,3 +12,5 @@
         "first-principles",
         "wildcard"
       ],
+      "default": "adaptive"
+    },
