@@ -122,3 +122,7 @@ test('concurrent installers leave a complete readable copy', async (t) => {
         cwd: dir,
         stdio: 'ignore',
       });
+      child.on('error', reject);
+      child.on('exit', resolve);
+    });
+  const codes = await Promise.all([install(), install(), install()]);
