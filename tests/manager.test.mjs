@@ -94,3 +94,8 @@ test('host roots and installed parent links cannot redirect writes or removal', 
   const dest = path.join(dir, '.claude', 'skills', 'diverge');
   await fs.rename(path.join(dest, 'references'), path.join(elsewhere, 'references'));
   await fs.symlink(
+    path.join(elsewhere, 'references'),
+    path.join(dest, 'references'),
+    process.platform === 'win32' ? 'junction' : 'dir',
+  );
+  ok(command(dir, 'uninstall', claude));
