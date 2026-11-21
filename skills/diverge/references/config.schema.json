@@ -45,3 +45,5 @@
       "default": 1
     },
     "respectExistingDesignSystem": {
+      "type": "boolean",
+      "default": true
