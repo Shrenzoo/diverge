@@ -31,3 +31,10 @@ test('onboarding acceptance walks both routes and rejects broken transitions', a
     return grade(c, before, await snapshot(dir));
   };
   flow.screens.welcome.reuse = 'details';
+  assert.equal((await check()).pass, false);
+  flow.screens.welcome.reuse = 'review';
+  assert.equal((await check()).pass, true);
+  delete flow.screens.done;
+  assert.equal((await check()).pass, false);
+});
+
