@@ -6,3 +6,4 @@ Start with the narrowest row that can settle a real choice. Openness means an im
 | --- | --- | --- | --- |
 | SKIP | Exact output, prescribed implementation, active incident, or no credible improvement | Direct repair, explanation, or requested check. Zero alternatives. | Patch the login button, preserve the authentication flow. |
 | LIGHT | A local choice has measurable payoff and low reversal cost | Compare the default with one small change. | An empty-state action could remove a support request. |
+| STANDARD | Several mechanisms could serve an open brief | Up to three distinct directions, then implement one. | Students need to decide what assignment to work on next. |
