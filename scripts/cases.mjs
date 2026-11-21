@@ -87,3 +87,7 @@ export function grade(c, before, after) {
         last = after.get(key);
       return first?.kind !== last?.kind || first?.hash !== last?.hash;
     })
+    .sort();
+  const unexpected = changed.filter((name) => !c.outputs.includes(name));
+  const checks = c.outputs.map((file) => ({
+    name: `Deliver ${file}`,
