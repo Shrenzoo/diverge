@@ -7,3 +7,4 @@ labels: evaluation
 
 ## User task and starting state
 
+Provide a redistributable fixture and an observable outcome.
