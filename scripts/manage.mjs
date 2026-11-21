@@ -84,3 +84,10 @@ async function inspect(target, operation, replace, hashes) {
         identical = false;
         break;
       }
+    if (identical) return { action: 'up to date' };
+  }
+  if (!replace)
+    throw new Error(`Conflicting installation: ${dest}. Review first, then use --replace to back it up.`);
+  const extras = (await filesIn(dest)).filter((name) => name !== receipt && !Object.hasOwn(hashes, name));
+  return { action: 'replace', extras };
+}
