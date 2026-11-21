@@ -11,3 +11,4 @@ Eliminate directions that fail a hard contract, access need, budget, or safety r
 | Simplicity | Count added steps, states, dependencies, and concepts. |
 | Maintainability | Identify the layer that owns the invariant and who will operate it. |
 | Accessibility | Walk the alternative input and recovery paths. |
+| Risk | Examine a failure, its blast radius, and the cost of reversal. |
