@@ -6,3 +6,4 @@ If Node 20+ is available, run `node "<installed skill>/scripts/config.mjs" "<pro
 
 | Preference | Effect |
 | --- | --- |
+| mode, creativity, interaction | Select the reasoning lens, breadth, and decision owner independently. |
