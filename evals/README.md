@@ -20,3 +20,5 @@ node scripts/run-evals.mjs --live --agent claude --model MODEL_ID --case shift-d
 ```
 
 Use `--condition baseline|implicit|explicit` to run one arm. Default `all` runs three arms per case per repetition, in randomized order within each block. With 22 cases and one repetition, an unfiltered live run attempts 66 provider sessions. A wall-clock limit applies per session. It is not a spending cap. Use a dedicated account budget and a disposable evaluation machine.
+
+## Controls
