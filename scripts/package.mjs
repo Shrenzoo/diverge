@@ -44,3 +44,6 @@ export async function validateSkill() {
       'frontend',
       'product',
       'startup',
+      'architecture',
+      'problem-solving',
+      'configuration',
