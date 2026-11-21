@@ -31,3 +31,10 @@ async function parentsOK(root, name) {
   return true;
 }
 
+async function matches(dir, name, hash) {
+  if (!(await parentsOK(dir, name))) return false;
+  const file = path.join(dir, name);
+  return (await stat(file))?.isFile() && digest(await fs.readFile(file)) === hash;
+}
+
+async function readReceipt(dir, names) {
