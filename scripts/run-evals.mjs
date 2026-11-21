@@ -133,3 +133,8 @@ async function main() {
     model: v.model ?? null,
     cli: adapter.version ?? null,
     platform: process.platform,
+    node: process.version,
+    timeoutSeconds: timeout,
+    repeats: n,
+    runs: [],
+  };
