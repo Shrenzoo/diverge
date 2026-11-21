@@ -43,3 +43,8 @@ for (const [agent, base] of [
         assert.deepEqual(
           await fs.readFile(path.join(dest, name)),
           await fs.readFile(path.join(source, name)),
+        );
+      assert.match(command(home, 'install', args).stdout, /up to date/);
+      ok(command(home, 'uninstall', [...args, '--dry-run']));
+      await fs.access(path.join(dest, 'SKILL.md'));
+      ok(command(home, 'uninstall', args));
