@@ -45,3 +45,9 @@ function validateRatings(runs, ratings) {
     if (seen.has(key)) throw new Error('Duplicate artifact/reviewer rating');
     seen.add(key);
   }
+}
+
+export function report(manifest, ratings = []) {
+  const { runs } = manifest;
+  if (manifest.format !== 1 || !Array.isArray(runs)) throw new Error('Unsupported run manifest');
+  validateRatings(runs, ratings);
