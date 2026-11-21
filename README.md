@@ -55,3 +55,7 @@ For illustrative UI, product, architecture, diagnosis, and Wildcard use cases, s
 ## Modes and configuration
 
 | Mode | Use |
+| --- | --- |
+| Adaptive | Match exploration to the task. |
+| Director | Examine hierarchy, interaction, feedback, and consistency. |
+| First Principles | Reconstruct the problem and test which layers or steps it needs. |
