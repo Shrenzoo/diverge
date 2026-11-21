@@ -143,3 +143,8 @@ async function main() {
       for (const condition of shuffle([...arms])) {
         const run = await runOne({
           c,
+          condition,
+          repeat,
+          agent: v.agent,
+          model: manifest.model,
+          timeout,
