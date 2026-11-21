@@ -10,3 +10,5 @@ export const source = path.join(root, 'skills', 'diverge');
 export const digest = (bytes) => createHash('sha256').update(bytes).digest('hex');
 
 export async function stat(file) {
+  try {
+    return await fs.lstat(file);
