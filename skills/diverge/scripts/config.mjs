@@ -56,3 +56,5 @@ export function loadConfig(file) {
     return { config: defaults(), error: error.message };
   }
 }
+
+if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.meta.url) {
