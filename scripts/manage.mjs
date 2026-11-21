@@ -104,3 +104,10 @@ async function install(target, plan, hashes) {
     for (const [name, hash] of Object.entries(hashes)) {
       await copyFile(source, stage, name);
       if (!(await matches(stage, name, hash))) throw new Error(`Source changed while copying: ${name}`);
+    }
+    for (const name of plan.extras ?? []) await copyFile(target.dest, stage, name);
+    await fs.writeFile(
+      path.join(stage, receipt),
+      JSON.stringify({ format: 1, skill: 'diverge', files: hashes }, null, 2) + '\n',
+      { flag: 'wx' },
+    );
