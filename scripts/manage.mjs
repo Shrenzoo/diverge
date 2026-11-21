@@ -58,3 +58,9 @@ async function readReceipt(dir, names) {
   return data.files;
 }
 
+async function inspect(target, operation, replace, hashes) {
+  const { parent, meta, dest } = target;
+  await directory(meta);
+  await directory(parent);
+  if (!(await directory(dest))) return { action: operation === 'install' ? 'install' : 'absent' };
+  let old;
