@@ -130,3 +130,8 @@ export function report(manifest, ratings = []) {
     lines.push(`### ${r.case} / ${r.condition} / ${r.repeat}`, '');
     for (const x of rows)
       lines.push(
+        `- ${safe(x.reviewer)}: ${dimensions.map((k) => k + ' ' + x.scores[k]).join(', ')}. Constraints ${safe(x.constraints)}, safety ${safe(x.safety)}. ${safe(x.note)}`,
+      );
+    if (rows.length > 1)
+      lines.push(
+        '',
