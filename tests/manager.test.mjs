@@ -112,3 +112,8 @@ test('forged receipt cannot select unrelated paths', async (t) => {
   await fs.writeFile(path.join(dir, 'victim'), 'keep');
   assert.notEqual(command(dir, 'uninstall', codex).status, 0);
   assert.equal(await fs.readFile(path.join(dir, 'victim'), 'utf8'), 'keep');
+});
+
+test('concurrent installers leave a complete readable copy', async (t) => {
+  const dir = await sandbox(t);
+  const install = () =>
