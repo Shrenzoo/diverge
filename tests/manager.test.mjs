@@ -89,3 +89,8 @@ test('host roots and installed parent links cannot redirect writes or removal', 
   await fs.symlink(elsewhere, path.join(dir, '.agents'), process.platform === 'win32' ? 'junction' : 'dir');
   assert.notEqual(command(dir, 'install', codex).status, 0);
   assert.deepEqual(await fs.readdir(elsewhere), []);
+  const claude = ['--agent', 'claude', '--scope', 'project'];
+  ok(command(dir, 'install', claude));
+  const dest = path.join(dir, '.claude', 'skills', 'diverge');
+  await fs.rename(path.join(dest, 'references'), path.join(elsewhere, 'references'));
+  await fs.symlink(
