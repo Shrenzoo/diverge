@@ -241,3 +241,16 @@
     "prompt": "Propose a backward-compatible interface for cancellable searches in api.md. Show one old caller and one new caller and define stale-result behavior.",
     "outputs": [
       "api.md"
+    ],
+    "checks": [],
+    "review": "Walk a slow first query finishing after the second. Can existing callers still run?"
+  },
+  {
+    "id": "difficult-diagnosis",
+    "fixture": "engine",
+    "budget": "STANDARD",
+    "activation": "consider",
+    "prompt": "Users report the wrong note list after rapid clicks. Write diagnosis.md with two competing explanations, a discriminating reproduction, and the narrowest supported fix.",
+    "outputs": [
+      "diagnosis.md"
+    ],
