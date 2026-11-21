@@ -71,3 +71,10 @@ async function inspect(target, operation, replace, hashes) {
     // Only a full-directory backup authorizes replacing an unreadable or older receipt.
     console.warn(`Backing up conflicting installation with unrecognized receipt: ${dest}`);
   }
+  if (operation === 'uninstall') {
+    if (!old) throw new Error(`Unmanaged installation: ${dest}. Review its files manually.`);
+    const remove = [];
+    for (const [name, hash] of Object.entries(old)) if (await matches(dest, name, hash)) remove.push(name);
+    return { action: 'uninstall', remove, old };
+  }
+  if (old && Object.keys(old).length === Object.keys(hashes).length) {
