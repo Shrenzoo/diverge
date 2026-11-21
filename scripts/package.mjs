@@ -71,3 +71,6 @@ export async function validateSkill() {
   );
   for (const name of files.filter((x) => x.endsWith('.md'))) {
     const body = await fs.readFile(path.join(source, name), 'utf8');
+    for (const match of body.matchAll(/\[[^\]]+\]\(([^)]+)\)/g)) {
+      const target = path.posix.normalize(path.posix.join(path.posix.dirname(name), match[1]));
+      assert(files.includes(target), `Broken reference in ${name}: ${match[1]}`);
