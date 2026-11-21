@@ -9,3 +9,5 @@ try {
   const files = await validateSkill();
   const cases = await loadCases();
   for (const name of [
+    'README.md',
+    'LICENSE',
