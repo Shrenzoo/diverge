@@ -164,3 +164,16 @@
         "pattern": "History|Art",
         "what": "Example names a supplied course"
       }
+    ],
+    "review": "Check the example calculation, the student's next action, and whether the metric measures benefit."
+  },
+  {
+    "id": "shift-desk",
+    "fixture": "shift-desk",
+    "budget": "STANDARD",
+    "activation": "consider",
+    "prompt": "Improve how the shift desk fills a vacancy. Deliver a one-page trial plan in plan.md for the coordinator, including a success measure. Respect every constraint in brief.md.",
+    "outputs": [
+      "plan.md"
+    ],
+    "checks": [],
