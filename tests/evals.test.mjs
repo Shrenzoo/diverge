@@ -99,3 +99,10 @@ test('trace interpretation separates host discovery, observed calls, denials and
     { type: 'turn.completed', usage: { input_tokens: 12, output_tokens: 6 } },
   );
   assert.equal(traceMetrics('codex', events).tokens, 18);
+  assert(traceMetrics('codex', events).invocationEvidence);
+  const missing = traceMetrics('codex', 'Agent says it used Diverge.');
+  assert.equal(missing.toolCalls, null);
+  assert.equal(activation('explicit', 'consider', missing), 'unobserved');
+});
+
+test('timeout terminates the CLI and returns captured evidence', async (t) => {
