@@ -44,3 +44,7 @@ export async function snapshot(dir) {
   const entries = new Map();
   let bytes = 0;
   async function visit(relative) {
+    for (const name of await fs.readdir(path.join(dir, relative))) {
+      const key = path.posix.join(relative, name);
+      const file = path.join(dir, key);
+      const info = await fs.lstat(file);
