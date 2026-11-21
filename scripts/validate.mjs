@@ -7,3 +7,4 @@ import { loadCases } from './cases.mjs';
 
 try {
   const files = await validateSkill();
+  const cases = await loadCases();
