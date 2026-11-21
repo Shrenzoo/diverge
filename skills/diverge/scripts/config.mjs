@@ -58,3 +58,5 @@ export function loadConfig(file) {
 }
 
 if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.meta.url) {
+  const { config, error } = loadConfig(process.argv[2] ?? 'diverge.config.json');
+  if (error) {
