@@ -79,3 +79,10 @@ test('trace interpretation separates host discovery, observed calls, denials and
     },
     {
       type: 'result',
+      usage: { input_tokens: 10, output_tokens: 5, cache_read_input_tokens: 2 },
+      permission_denials: [{}],
+    },
+  );
+  const claude = traceMetrics('claude', raw);
+  assert.equal(claude.tokens, 17);
+  assert.equal(claude.discoverable, true);
