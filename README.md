@@ -25,3 +25,6 @@ Open a fresh session in the target project and try one of these prompts:
 ```text
 Codex: $diverge Design a dashboard that helps students choose what to work on next.
 Claude Code: /diverge Design a dashboard that helps students choose what to work on next.
+```
+
+“Use Diverge in first-principles mode to rethink this event system” also describes the desired behavior. A host may implicitly select the skill for an open brief. Explicit invocation is easier to check. Optional project preference for a maintainer to add to `AGENTS.md` or `CLAUDE.md`:
