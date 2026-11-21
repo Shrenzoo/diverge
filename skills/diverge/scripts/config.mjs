@@ -26,3 +26,5 @@ function check(value, rule, field) {
   }
   if (rule.enum && !rule.enum.includes(value))
     throw new Error(`${field} must be one of ${rule.enum.join(', ')}`);
+  if (rule.pattern && !new RegExp(rule.pattern, 'u').test(value))
+    throw new Error(`${field} must be a relative project path`);
