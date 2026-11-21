@@ -8,3 +8,4 @@ Eliminate directions that fail a hard contract, access need, budget, or safety r
 | Originality | Identify the functional difference from the conventional baseline. |
 | Usefulness | Show the saved decision, prevented error, or newly possible action. |
 | Feasibility | Identify required data, integrations, time, and missing capabilities. |
+| Simplicity | Count added steps, states, dependencies, and concepts. |
