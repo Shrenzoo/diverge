@@ -116,3 +116,8 @@ export function grade(c, before, after) {
   for (const file of c.outputs) {
     const body = after.get(file)?.body?.toString();
     if (file.endsWith('.json')) {
+      try {
+        JSON.parse(body);
+        builds.push({ file, pass: true });
+      } catch {
+        builds.push({ file, pass: false });
