@@ -112,3 +112,7 @@ export function grade(c, before, after) {
       pass,
     });
   }
+  const builds = [];
+  for (const file of c.outputs) {
+    const body = after.get(file)?.body?.toString();
+    if (file.endsWith('.json')) {
