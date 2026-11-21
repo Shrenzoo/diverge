@@ -29,3 +29,9 @@ const safe = (s) =>
 function validateRatings(runs, ratings) {
   if (!Array.isArray(ratings)) throw new Error('Ratings must be a JSON array');
   const seen = new Set();
+  for (const r of ratings) {
+    if (
+      !runs.some((x) => x.id === r.id && x.status !== 'skipped') ||
+      typeof r.reviewer !== 'string' ||
+      !r.reviewer.trim() ||
+      !dimensions.every((k) => Number.isInteger(r.scores?.[k]) && r.scores[k] >= 0 && r.scores[k] <= 5) ||
