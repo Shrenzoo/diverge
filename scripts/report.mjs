@@ -162,3 +162,8 @@ export async function saveReport(folder, manifest, ratings) {
 
 if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url) {
   try {
+    const { values } = parseArgs({ options: { run: { type: 'string' }, ratings: { type: 'string' } } });
+    if (!values.run) throw new Error('Usage: node scripts/report.mjs --run DIR [--ratings FILE]');
+    const manifest = JSON.parse(await fs.readFile(path.join(values.run, 'results.json'), 'utf8'));
+    const ratings = values.ratings ? JSON.parse(await fs.readFile(values.ratings, 'utf8')) : [];
+    await saveReport(values.run, manifest, ratings);
