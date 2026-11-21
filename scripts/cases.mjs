@@ -48,3 +48,8 @@ export async function snapshot(dir) {
       const key = path.posix.join(relative, name);
       const file = path.join(dir, key);
       const info = await fs.lstat(file);
+      if (entries.size > 3000 || key.split('/').length > 32)
+        throw new Error('Workspace inventory limit exceeded');
+      if (info.isDirectory()) {
+        entries.set(key, { kind: 'directory' });
+        await visit(key);
