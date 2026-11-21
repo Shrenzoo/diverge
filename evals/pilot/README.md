@@ -30,3 +30,4 @@ Both agents received the same [broken workflow](../fixtures/broken/flow.json). T
 
 ## Scope of evidence
 
+Four artifacts, four deterministic passes, zero observed scope violations or execution failures in these sessions. Two plans received four sheets from two model reviewers. No human or field evaluation. Two distinct task types, one repetition each, and no cost comparison cannot support a general efficacy claim.
