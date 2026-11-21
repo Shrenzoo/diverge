@@ -190,3 +190,16 @@
     ],
     "checks": [],
     "review": "Can the proposed test distinguish the two positioning hypotheses?"
+  },
+  {
+    "id": "startup-mvp",
+    "fixture": "studio",
+    "budget": "STANDARD",
+    "activation": "consider",
+    "prompt": "Design a one-week, zero-new-service MVP in trial.md. Name the target user, existing substitute, distribution route, test, and stop criterion. Use brief.md.",
+    "outputs": [
+      "trial.md"
+    ],
+    "checks": [],
+    "review": "Is the test feasible under the team's constraints? Flag unsupported market claims."
+  },
