@@ -12,3 +12,4 @@ try {
     'README.md',
     'LICENSE',
     'CONTRIBUTING.md',
+    'SECURITY.md',
