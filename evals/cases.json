@@ -62,3 +62,15 @@
       }
     ],
     "review": "Can a student complete a concrete planning action in ten minutes?"
+  },
+  {
+    "id": "onboarding",
+    "fixture": "flow",
+    "budget": "STANDARD",
+    "activation": "consider",
+    "prompt": "Improve appointment intake for repeat visitors. Edit flow.json. Add a reuse action on welcome that takes a returning visitor directly to review, preserve the default route and confirmation.",
+    "outputs": [
+      "flow.json"
+    ],
+    "checks": [
+      {
