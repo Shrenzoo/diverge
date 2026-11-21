@@ -126,3 +126,16 @@
     ],
     "review": "Try finding coverage before and after navigating."
   },
+  {
+    "id": "local-polish",
+    "fixture": "studio",
+    "budget": "LIGHT",
+    "activation": "consider",
+    "prompt": "Polish the request link in index.html. Improve its label and immediate context, using the existing theme and destination.",
+    "outputs": [
+      "index.html"
+    ],
+    "checks": [
+      {
+        "file": "index.html",
+        "pattern": "href\\s*=\\s*['\"](?:\\./)?request\\.html['\"]",
