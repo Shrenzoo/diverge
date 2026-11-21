@@ -6,3 +6,5 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { defaults, preferences, loadConfig, schema } from '../skills/diverge/scripts/config.mjs';
 import { source, validateSkill } from '../scripts/package.mjs';
+
+test('the portable skill validates, including all local references', async () => {
