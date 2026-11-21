@@ -13,3 +13,4 @@
     "check": "node scripts/validate.mjs",
     "eval": "node scripts/run-evals.mjs"
   }
+}
