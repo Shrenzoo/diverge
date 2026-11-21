@@ -280,3 +280,15 @@
             },
             "review": {
               "confirm": "done"
+            },
+            "done": {}
+          }
+        }
+      },
+      {
+        "file": "flow.json",
+        "actions": [
+          "continue",
+          "save",
+          "confirm"
+        ],
