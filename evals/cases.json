@@ -318,3 +318,16 @@
     "review": "Exact replacement is the complete task."
   },
   {
+    "id": "accessibility",
+    "fixture": "intake",
+    "budget": "LIGHT",
+    "activation": "consider",
+    "prompt": "Give the service link an accessible name that communicates its repair-request destination. Preserve the link URL. Edit only index.html.",
+    "outputs": [
+      "index.html"
+    ],
+    "checks": [
+      {
+        "file": "index.html",
+        "pattern": "href\\s*=\\s*['\"]request\\.html['\"]",
+        "what": "Destination preserved"
