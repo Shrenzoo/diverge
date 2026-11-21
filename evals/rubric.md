@@ -12,3 +12,4 @@ Give each artifact to a reviewer with the original brief, starter files, and thi
 | 5 | Unexpected mechanism with a defensible advantage | Makes a valuable task possible or substantially easier | Directly serves the end goal across relevant constraints | Demonstrated in the target setting | Verified, coherent, polished throughout | Minimal design handles hard cases cleanly |
 
 For exact tasks a conventional result can earn the highest usefulness. A low originality score alone does not imply failure. Do not total the scores into a single index.
+
