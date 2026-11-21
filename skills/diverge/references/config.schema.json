@@ -26,3 +26,5 @@
     },
     "interaction": {
       "type": "string",
+      "enum": [
+        "autonomous",
