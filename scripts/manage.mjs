@@ -144,3 +144,10 @@ async function uninstall(dest, { remove, old }) {
     try {
       await fs.rmdir(path.join(dest, dir));
     } catch (error) {
+      if (!['ENOTEMPTY', 'EEXIST', 'ENOENT'].includes(error.code)) throw error;
+    }
+  }
+  if (await stat(dest)) console.log(`Preserved remaining contents in ${dest}`);
+}
+
+export async function manage(operation, args = process.argv.slice(2)) {
