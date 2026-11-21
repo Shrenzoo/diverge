@@ -203,3 +203,15 @@
     "checks": [],
     "review": "Is the test feasible under the team's constraints? Flag unsupported market claims."
   },
+  {
+    "id": "event-system",
+    "fixture": "engine",
+    "budget": "STANDARD",
+    "activation": "consider",
+    "prompt": "Design how two local views learn about a saved note. Write decision.md for the maintainer. Cover a failed transaction, restart, and the condition that would justify a durable queue. Preserve the public API.",
+    "outputs": [
+      "decision.md"
+    ],
+    "checks": [],
+    "review": "Trace notification timing and what a stale view does after restart."
+  },
