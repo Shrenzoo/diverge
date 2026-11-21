@@ -18,3 +18,9 @@ async function directory(dir, create = false) {
     }
   }
   const info = await stat(dir);
+  if (info && !info.isDirectory()) throw new Error(`Expected a real directory: ${dir}`);
+  return !!info;
+}
+
+async function parentsOK(root, name) {
+  let parent = root;
