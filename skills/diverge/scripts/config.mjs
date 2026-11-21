@@ -22,3 +22,5 @@ function check(value, rule, field) {
     if (rule.uniqueItems && new Set(value).size !== value.length)
       throw new Error(`${field} contains duplicates`);
   } else if (typeof value !== rule.type) {
+    throw new Error(`${field} must be a ${rule.type}`);
+  }
