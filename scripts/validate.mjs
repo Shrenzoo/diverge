@@ -33,3 +33,4 @@ try {
   console.log(
     `Validated ${files.length} skill files, ${cases.length} cases, release files, and JavaScript syntax.`,
   );
+} catch (error) {
