@@ -28,3 +28,4 @@ try {
         encoding: 'utf8',
       });
       assert.equal(result.status, 0, result.stderr);
+    }
