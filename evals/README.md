@@ -36,3 +36,5 @@ A successful exit alone cannot pass. Required files must change, unexpected chan
 A host tool call or a successful command reading the skill can supply invocation evidence. Discovery alone is weaker. Direct injection of a skill into model context may leave no separate event. An unobserved read is inconclusive. Negative implicit cases with observed activation and contaminated baselines are flagged. Explicit negative cases are expected to use minimal exploration. Quality and scope compliance are assessed from their outputs.
 
 Reviewers independently score the six dimensions and the two gates in [rubric.md](rubric.md). Review notes, disagreement, and failed gates remain visible. Rebuild the summary after collecting the ratings:
+
+```sh
