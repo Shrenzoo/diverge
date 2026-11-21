@@ -11,3 +11,4 @@ For each direction, write a private one-sentence hypothesis: “For this audienc
 | Opportunity expansion | Identify an adjacent unmet need. Estimate additional scope and keep it only if the original task depends on it. | An undo action can make bulk editing usable. A new reporting product can wait. |
 | Simplification | Eliminate one handoff, state, screen, dependency, or choice. Walk through the resulting failure case. | Can a validated import preview replace a separate clean-up wizard? |
 
+**Adaptive** selects depth from the budget. **Director** follows a person's first meaningful action through hierarchy, feedback, motion, and recovery. **First Principles** tests whether the named feature or service is needed at all. **Wildcard** combines inversion with a distant functional analogy. Label its predictions as hypotheses and keep a feasible path back.
