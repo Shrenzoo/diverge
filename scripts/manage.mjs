@@ -151,3 +151,10 @@ async function uninstall(dest, { remove, old }) {
 }
 
 export async function manage(operation, args = process.argv.slice(2)) {
+  const options = {
+    agent: { type: 'string' },
+    scope: { type: 'string' },
+    'project-dir': { type: 'string' },
+    'dry-run': { type: 'boolean' },
+    help: { type: 'boolean' },
+  };
