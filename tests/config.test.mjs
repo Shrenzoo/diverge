@@ -59,3 +59,5 @@ test('missing, malformed and valid project files yield documented results on CLI
   await fs.writeFile(file, '{"mode":"wildcard",');
   const invalid = cli();
   assert.equal(invalid.status, 1);
+  assert.match(invalid.stderr, /using defaults/);
+  assert.deepEqual(JSON.parse(invalid.stdout), defaults());
