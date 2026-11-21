@@ -25,3 +25,9 @@ test('onboarding acceptance walks both routes and rejects broken transitions', a
   const c = (await loadCases()).find((c) => c.id === 'onboarding');
   await fs.cp(path.join(fixtures, c.fixture), dir, { recursive: true });
   const before = await snapshot(dir);
+  const flow = JSON.parse(before.get('flow.json').body);
+  const check = async () => {
+    await fs.writeFile(path.join(dir, 'flow.json'), JSON.stringify(flow));
+    return grade(c, before, await snapshot(dir));
+  };
+  flow.screens.welcome.reuse = 'details';
