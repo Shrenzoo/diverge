@@ -51,3 +51,8 @@ export function report(manifest, ratings = []) {
   const { runs } = manifest;
   if (manifest.format !== 1 || !Array.isArray(runs)) throw new Error('Unsupported run manifest');
   validateRatings(runs, ratings);
+  const scored = (r) => ratings.filter((x) => x.id === r.id);
+  const lines = [
+    '# Diverge evaluation',
+    '',
+    `Host ${safe(manifest.agent)} · CLI ${safe(manifest.cli)} · model ${safe(manifest.model)} · ${safe(manifest.platform)} · per-trial limit ${manifest.timeoutSeconds}s`,
