@@ -34,3 +34,8 @@ for (const [agent, base] of [
       const project = path.join(home, 'consumer project');
       await fs.mkdir(project);
       const args = ['--agent', agent, '--scope', scope];
+      if (scope === 'project') args.push('--project-dir', project);
+      const dest = path.join(scope === 'project' ? project : home, base, 'skills', 'diverge');
+      ok(command(home, 'install', [...args, '--dry-run']));
+      await assert.rejects(fs.access(dest), { code: 'ENOENT' });
+      ok(command(home, 'install', args));
