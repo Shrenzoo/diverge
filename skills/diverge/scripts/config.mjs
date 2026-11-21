@@ -62,3 +62,6 @@ if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.m
   if (error) {
     console.error(`Invalid configuration, using defaults: ${error}`);
     process.exitCode = 1;
+  }
+  console.log(JSON.stringify(config, null, 2));
+}
