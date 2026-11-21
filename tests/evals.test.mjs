@@ -59,3 +59,9 @@ test('adapters preserve the implicit control prompt and pin the chosen model', (
   for (const agent of ['codex', 'claude']) {
     const baseline = invocation(agent, 'baseline', 'model-id', 'Fix it.');
     assert.deepEqual(invocation(agent, 'implicit', 'model-id', 'Fix it.'), baseline);
+    assert(baseline.includes('model-id'));
+    const explicit = invocation(agent, 'explicit', 'model-id', 'Fix it.');
+    assert.match(explicit.at(-1), agent === 'claude' ? /^\/diverge / : /\$diverge/);
+    assert.deepEqual(explicit.slice(0, -1), baseline.slice(0, -1));
+    const env = isolatedEnv('/tmp/fake-home', agent, '/tmp/fake-tmp');
+    assert.equal(env.HOME, '/tmp/fake-home');
