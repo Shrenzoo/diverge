@@ -64,3 +64,5 @@ export async function validateSkill() {
   );
   const metadata = await fs.readFile(path.join(source, 'agents/openai.yaml'), 'utf8');
   assert(
+    /^interface:\r?\n  display_name: "[^"\n]+"\r?\n  short_description: "[^"\n]{25,64}"\r?\n  default_prompt: ".*\$diverge[^"\n]*"\s*$/.test(
+      metadata,
