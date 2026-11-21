@@ -99,3 +99,7 @@ test('host roots and installed parent links cannot redirect writes or removal', 
     process.platform === 'win32' ? 'junction' : 'dir',
   );
   ok(command(dir, 'uninstall', claude));
+  await fs.access(path.join(elsewhere, 'references', 'activation.md'));
+});
+
+test('forged receipt cannot select unrelated paths', async (t) => {
