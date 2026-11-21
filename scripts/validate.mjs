@@ -20,3 +20,4 @@ try {
     'evals/rubric.md',
     'evals/README.md',
   ]) {
+    assert((await fs.stat(path.join(root, name))).size > 0, name + ' is empty');
