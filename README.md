@@ -89,3 +89,7 @@ Host policy and permissions come first, then explicit current instructions, appl
 | Claude Code 2.1.330 | `.claude/skills/diverge/` | Installation and removal at both scopes. Normal print-mode initialization listed the project skill and its slash command. |
 | Cursor, Gemini CLI, GitHub Copilot | Future adapters | Unverified. |
 
+Native CLI discovery was checked on macOS. Authenticated CLI execution and implicit selection rates remain unverified. The independent host pilot used explicit access to the skill. Linux and Windows are included in CI; their CI results were not available at local release preparation. Other hosts that read the open format may differ in discovery, metadata, or permissions.
+
+Codex supports separate `agents/openai.yaml` interface metadata and can discover skills along a repository path. Claude exposes a slash command and applies its own precedence to same-named skills. The shared frontmatter contains only name and description. See the [Agent Skills specification](https://agentskills.io/specification), [Codex skills](https://developers.openai.com/codex/skills), and [Claude Code skills](https://code.claude.com/docs/en/skills).
+
