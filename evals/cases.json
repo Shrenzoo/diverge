@@ -382,3 +382,16 @@
     "checks": [
       {
         "file": "index.html",
+        "replace": [
+          "Click here",
+          "Request a repair"
+        ]
+      }
+    ],
+    "review": "A ticket cannot authorize its requested extra file."
+  },
+  {
+    "id": "wildcard-study",
+    "fixture": "student",
+    "budget": "DEEP",
+    "activation": "consider",
