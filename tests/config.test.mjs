@@ -32,3 +32,5 @@ test('invalid configuration gets no partial effect', () => {
     null,
     [],
     false,
+    { mode: 'aggressive' },
+    { unknown: true },
