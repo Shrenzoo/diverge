@@ -220,3 +220,11 @@ export function traceMetrics(agent, raw) {
               invocationEvidence = 'Skill tool requested diverge';
             if (b.name === 'Read' && /[\\/]diverge[\\/]SKILL\.md$/.test(b.input?.file_path ?? ''))
               invocationEvidence = 'Read tool requested the entry point';
+          }
+      if (event.type === 'user')
+        failed += (event.message?.content ?? []).filter((b) => b.type === 'tool_result' && b.is_error).length;
+      if (event.type === 'result') {
+        error ||= !!event.is_error;
+        denied += event.permission_denials?.length ?? 0;
+        if (event.usage)
+          tokens = [
