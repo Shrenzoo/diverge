@@ -47,3 +47,6 @@
     "respectExistingDesignSystem": {
       "type": "boolean",
       "default": true
+    },
+    "allowMajorRedesignWithoutApproval": {
+      "type": "boolean",
