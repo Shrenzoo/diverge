@@ -4,3 +4,4 @@ eval-results/
 .env
 .env.*
 .agents/
+.claude/
