@@ -19,3 +19,7 @@ export async function loadCases() {
       c.prompt?.trim() && c.review?.trim() && ['SKIP', 'LIGHT', 'STANDARD', 'DEEP'].includes(c.budget),
       c.id,
     );
+    assert(c.activation === (c.budget === 'SKIP' ? 'avoid' : 'consider'), c.id);
+    assert(
+      c.outputs.length && c.outputs.every((f) => /^[a-z][a-z0-9-]*\.(html|json|md|txt|mjs)$/.test(f)),
+      c.id,
