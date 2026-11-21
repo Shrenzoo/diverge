@@ -8,3 +8,8 @@ export const dimensions = [
   'usefulness',
   'alignment',
   'feasibility',
+  'execution',
+  'simplicity',
+];
+const mean = (xs) => xs.reduce((a, b) => a + b, 0) / xs.length;
+function stats(xs) {
