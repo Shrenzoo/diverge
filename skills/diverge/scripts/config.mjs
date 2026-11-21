@@ -40,3 +40,5 @@ export function preferences(input) {
     result[key] = value;
   }
   return result;
+}
+
