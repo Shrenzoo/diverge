@@ -151,3 +151,16 @@
   },
   {
     "id": "feature-idea",
+    "fixture": "student",
+    "budget": "STANDARD",
+    "activation": "consider",
+    "prompt": "Propose one feature in proposal.md that makes grade tracking actionable. Use the sample data for a worked example, give a success measure, and identify a failure case.",
+    "outputs": [
+      "proposal.md"
+    ],
+    "checks": [
+      {
+        "file": "proposal.md",
+        "pattern": "History|Art",
+        "what": "Example names a supplied course"
+      }
