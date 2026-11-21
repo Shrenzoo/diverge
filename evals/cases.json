@@ -292,3 +292,16 @@
           "save",
           "confirm"
         ],
+        "end": "done"
+      }
+    ],
+    "review": "Reject redesign or extraneous changes."
+  },
+  {
+    "id": "exact-label",
+    "fixture": "studio",
+    "budget": "SKIP",
+    "activation": "avoid",
+    "prompt": "In index.html replace only the first literal Click here with Request a repair. Preserve every other byte.",
+    "outputs": [
+      "index.html"
