@@ -88,3 +88,8 @@ export function report(manifest, ratings = []) {
     );
     for (const k of dimensions)
       lines.push(
+        `- ${k}: ${stats(group.filter((r) => scored(r).length).map((r) => mean(scored(r).map((x) => x.scores[k]))))}`,
+      );
+  }
+  lines.push(
+    '',
