@@ -66,3 +66,9 @@ export function report(manifest, ratings = []) {
   ];
   for (const r of runs) {
     const d = r.deterministic,
+      m = r.metrics;
+    const builds = d?.builds?.length ? (d.builds.every((x) => x.pass) ? 'pass' : 'fail') : 'n/a';
+    lines.push(
+      `| ${r.case} / ${r.repeat} | ${r.condition} | ${r.status} | ${safe(d?.changed.join(', '))} | ${builds} | ${d ? d.checks.filter((c) => c.pass).length + '/' + d.checks.length : '—'} | ${r.runtime ? (r.runtime.ms / 1000).toFixed(2) : '—'} | ${safe(m?.tokens)} | ${safe(m?.toolCalls)} / ${safe(m?.failedAttempts)} | ${safe(m?.editCalls)} / ${safe(m?.revisions)} | ${safe(m?.permissionDenials)} | ${safe(r.reason ?? r.runtime?.reason ?? [r.activation, m?.invocationEvidence].filter(Boolean).join(' / '))} |`,
+    );
+  }
