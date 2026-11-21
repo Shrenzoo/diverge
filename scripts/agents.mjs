@@ -156,3 +156,11 @@ export function runProcess(command, args, cwd, env, timeoutMs) {
 export const runAgent = (agent, args, cwd, env, timeoutMs) =>
   runProcess(binary(agent), args, cwd, env, timeoutMs);
 
+export function traceMetrics(agent, raw) {
+  const events = raw.split(/\r?\n/).flatMap((line) => {
+    try {
+      return [JSON.parse(line)];
+    } catch {
+      return [];
+    }
+  });
