@@ -148,3 +148,11 @@ export function runProcess(command, args, cwd, env, timeoutMs) {
         ms: Math.round(performance.now() - start),
         stdout: Buffer.concat(out).toString(),
         stderr: Buffer.concat(err).toString(),
+      });
+    });
+  });
+}
+
+export const runAgent = (agent, args, cwd, env, timeoutMs) =>
+  runProcess(binary(agent), args, cwd, env, timeoutMs);
+
