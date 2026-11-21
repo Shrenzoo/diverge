@@ -96,3 +96,6 @@ Codex supports separate `agents/openai.yaml` interface metadata and can discover
 ## Verification and evaluation
 
 ```sh
+node scripts/validate.mjs
+node --test
+node scripts/run-evals.mjs --list
