@@ -4,3 +4,4 @@ Start with the narrowest row that can settle a real choice. Openness means an im
 
 | Budget | When to choose it | Work allowed | Example |
 | --- | --- | --- | --- |
+| SKIP | Exact output, prescribed implementation, active incident, or no credible improvement | Direct repair, explanation, or requested check. Zero alternatives. | Patch the login button, preserve the authentication flow. |
