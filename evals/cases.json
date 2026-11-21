@@ -228,3 +228,16 @@
       {
         "file": "performance.md",
         "pattern": "1[,.]?900|1\\.9\\s*s",
+        "what": "Uses the measured full-list cost"
+      }
+    ],
+    "review": "Look for a falsifiable before/after test under the same load."
+  },
+  {
+    "id": "api-design",
+    "fixture": "engine",
+    "budget": "STANDARD",
+    "activation": "consider",
+    "prompt": "Propose a backward-compatible interface for cancellable searches in api.md. Show one old caller and one new caller and define stale-result behavior.",
+    "outputs": [
+      "api.md"
