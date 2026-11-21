@@ -8,3 +8,5 @@ export const schema = JSON.parse(
 export function defaults() {
   return Object.fromEntries(
     Object.entries(schema.properties).map(([key, rule]) => [key, structuredClone(rule.default)]),
+  );
+}
