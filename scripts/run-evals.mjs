@@ -38,3 +38,8 @@ async function runOne({ c, condition, repeat, agent, model, timeout, folder, ski
     const clean = (s) => s.split(env[keyNames[agent]]).join('[redacted provider key]');
     await fs.writeFile(path.join(raw, 'stdout.jsonl'), clean(output.stdout));
     await fs.writeFile(path.join(raw, 'stderr.txt'), clean(output.stderr));
+    record.runtime = { ms: output.ms, code: output.code, signal: output.signal, reason: output.reason };
+    record.metrics = traceMetrics(agent, output.stdout);
+    record.activation = activation(condition, c.activation, record.metrics);
+    const after = await snapshot(workspace);
+    record.deterministic = grade(c, before, after);
